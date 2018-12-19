@@ -1,0 +1,6 @@
+dist
+node_modules
+.vendor
+.bundle
+Gemfile.lock
+_site

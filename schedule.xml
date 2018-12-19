@@ -1,0 +1,49 @@
+---
+layout: null
+rdf_prefix_path: _data/prefixes.sparql
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+    <version>{{ "now" | date: "%Y-%m-%d_%H-%M" }}</version>
+    <conference>
+        {%- assign lswt = site.eventurl | rdf_get -%}
+        <title>{{ lswt | rdf_property: "rdfs:label" }}</title>
+        <acronym>{{ lswt | rdf_property: "site:abbrevation" }}</acronym>
+        <start>{{ lswt | rdf_property: "schema:startDate" }}</start>
+        <end>{{ lswt | rdf_property: "schema:endDate" }}</end>
+        <generator>Jekyll v{{ jekyll.version }}</generator>
+    </conference>
+    <day date="{{ lswt | rdf_property: "schema:startDate" }}" start="{{ lswt | rdf_property: "schema:startDate" }}" end="{{ lswt | rdf_property: "<http://schema.org/endDate>" }}" index="1">
+    {%- assign results = lswt | sparql_query: "SELECT distinct ?room WHERE {?resourceUri schema:subEvent ?subEvent . ?subEvent schema:location ?room } ORDER BY DESC(?room)" -%}
+    {%- for row in results -%}
+        {% assign room = row.room %}
+        <room name="{{ room | rdf_property: "rdfs:label" }}">
+        {%- assign events_query = "SELECT ?event WHERE {?event schema:location <" | append: room.iri | append: ">; schema:startDate ?date . OPTIONAL {?event schema:subEvent ?subEvent} FILTER(!bound(?subEvent)) } ORDER BY ASC(?date)" -%}
+        {%- assign events = room | sparql_query: events_query -%}
+        {%- for row in events -%}
+        {% assign event = row.event %}
+            {%- assign performers = event | rdf_property: "schema:performer", nil, true -%}
+            {%- assign persons = "" | split: " " -%}
+            {%- for performer in performers -%}
+                {%- assign persons = performer | rdf_property: "foaf:name" , nil, true | concat: persons -%}
+            {%- endfor -%}
+            {% assign track = event | rdf_property: "site:track" | rdf_property: "rdfs:label" %}
+            {% unless track %}
+              {% assign track = event | rdf_property: "schema:location" | rdf_property: "rdfs:label" %}
+            {% endunless %}
+            <event id="{{ event | rdf_property: "site:id" }}">
+                <title>{{ event | rdf_property: "rdfs:label" }}</title>
+                <date>{{ event | rdf_property: "schema:startDate" | date: "%Y-%m-%dT%H:%M:%SZ" }}</date>
+                <start>{{ event | rdf_property: "schema:startDate" | date: "%H:%M" }}</start>
+                <duration>{{ event | rdf_property: "schema:duration" }}</duration>
+                <person>{{ persons | join: ", " }}</person>
+                <track>{{ track }}</track>
+                <room>{{ room | rdf_property: "rdfs:label" }}</room>
+                <description><![CDATA[{{ event | rdf_property: "dc:description" }}]]></description>
+                <slug>{{ event.iri }}</slug>
+            </event>
+        {% endfor %}
+        </room>
+    {% endfor %}
+    </day>
+</schedule>

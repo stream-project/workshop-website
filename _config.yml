@@ -1,0 +1,34 @@
+# Site settings
+title: lswt2019.aksw.org
+email:
+description: ""
+baseurl: ""
+url: "https://lswt2019.aksw.org"
+twitter_username: aksw
+github_username:  aksw
+
+# Build settings
+permalink: /:year/:month/:day/:title
+timezone: Europe/Berlin
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
+# Build settings
+#theme: minima
+plugins:
+  - jekyll-rdf
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - src
+jekyll_rdf:
+    path: "_data/graph.ttl"
+    restriction: "SELECT ?resourceUri WHERE { ?resourceUri ?p ?o . FILTER regex(str(?resourceUri), \"https://lasw2019.aksw.org/\") }"
+    class_template_mappings:
+        "http://purl.org/dc/terms/BibliographicResource" : "publication.html"
+        "http://xmlns.com/foaf/0.1/Document" : "page.html"
