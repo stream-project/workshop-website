@@ -28,7 +28,7 @@ exclude:
   - src
 jekyll_rdf:
     path: "_data/graph.ttl"
-    restriction: "SELECT ?resourceUri WHERE { ?resourceUri ?p ?o . FILTER regex(str(?resourceUri), \"https://lasw2019.aksw.org/\") }"
+    restriction: "SELECT ?resourceUri WHERE { ?resourceUri ?p ?o . FILTER regex(str(?resourceUri), \"https://lswt2019.aksw.org/\") }"
     class_template_mappings:
         "http://purl.org/dc/terms/BibliographicResource" : "publication.html"
         "http://xmlns.com/foaf/0.1/Document" : "page.html"

@@ -1,0 +1,60 @@
+---
+layout: page
+title: LSWT2019
+language: de
+type: Event
+rdf_prefix_path: _data/prefixes.sparql
+---
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+#LSWT2019
+<h1 class="display-4">{{ page.rdf | rdf_property: "rdfs:label" }}</h1>
+<p class="lead">Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 Wissenschaftlern, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
+Diese Schwerpunkte werden im Rahmen von Vorträgen durch Experten aus Industrie und Wissenschaft demonstriert (<a href="#programm">Programm</a>).
+Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#organisation">Organisations-Team</a> wenden.</p>
+</div>
+</div>
+
+<dl>
+<dt>Anmeldung</dt>
+<dd><em>wird bekannt gegeben</em></dd>
+<dt>Datum</dt>
+<dd>voraussichtlich 22. Mai 2019</dd>
+<dt>Ort</dt>
+<dd>Leipzig, <em>genaueres wird bekannt gegeben</em></dd>
+</dl>
+
+<h2>Programm</h2>
+
+<em>wird bekannt gegeben</em>
+
+<h2>Veranstaltungsort</h2>
+
+<em>wird bekannt gegeben</em>
+
+<h2>Organisation</h2>
+
+Das Organisationsteam:
+
+{% assign organizers = page.rdf | rdf_property: "schema:organizer", nil, true %}
+
+<ul>
+{% for organizer in organizers %}
+{% assign affiliations = organizer | rdf_property: "schema:affiliation", nil, true %}
+<li><a href="{{ organizer | rdf_property: "foaf:homepage" }}">{{ organizer | rdf_property: "foaf:name" }}</a> @
+  {% for affiliation in affiliations %}
+  <a href="{{ affiliation | rdf_property: "foaf:homepage" }}">{{ affiliation | rdf_property: "foaf:name" }}</a>{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+</li>
+{% endfor %}
+</ul>
+
+<h2>Rückblick</h2>
+
+{% assign previousEvents = page.rdf | rdf_collection: "schema:successorOf" %}
+<ul>
+{% for prev in previousEvents %}
+<li><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></li>
+{% endfor %}
+</ul>

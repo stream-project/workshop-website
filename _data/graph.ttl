@@ -1,0 +1,85 @@
+@base <https://lswt2019.aksw.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix leds: <https://www.leds-projekt.de/> .
+@prefix lswt: <https://lswt2019.aksw.org/#> .
+@prefix aksw: <http://aksw.org/> .
+@prefix akswgroups: <http://aksw.org/Groups/> .
+@prefix akswpartner: <http://aksw.org/Partner/> .
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
+@prefix unil: <https://www.uni-leipzig.de/> .
+@prefix ecc: <https://www.eccenca.com/> .
+@prefix dbpedia: <https://dbpedia.org/> .
+@prefix infai: <https://infai.org/> .
+
+<> a foaf:Document, schema:Event ;
+   rdfs:label "7. Leipziger Semantic Web Tag" ;
+   schema:organizer aksw:NatanaelArndt, aksw:SebastianTramp, aksw:MichaelMartin, aksw:SandraBartsch, aksw:JuliaHolze ;
+   schema:successorOf (
+     <https://www.leds-projekt.de/lswt2018.html>
+     <https://informatik2017.de/ws29-ledsplay17/>
+     <https://2016.semantics.cc/>
+     <https://2014.semantics.cc/>
+     <http://aksw.org/Events/2013/LeipzigerSemanticWebTag>
+     <https://web.archive.org/web/20150530150440/http://wiki.aksw.org/Events/2012/LeipzigerSemanticWebDay>
+     <https://web.archive.org/web/20120926225119/http://aksw.org/Events/2011/LeipzigerSemanticWebDay>
+     <https://web.archive.org/web/20131219160129/http://wiki.aksw.org/Events/2010/LeipzigerSemanticWebDay>
+     <https://web.archive.org/web/20150808075745/http://wiki.aksw.org:80/Events/2009/LeipzigerSemanticWebDay>
+   ).
+
+<https://www.leds-projekt.de/lswt2018.html> rdfs:label "LSWT2018" .
+<https://informatik2017.de/ws29-ledsplay17/> rdfs:label "LEDSPLaY17" .
+<https://2016.semantics.cc/> rdfs:label "SEMANTiCS Leipzig 2016" .
+<https://2014.semantics.cc/> rdfs:label "SEMANTiCS Leipzig 2014" .
+<http://aksw.org/Events/2013/LeipzigerSemanticWebTag> rdfs:label "LSWT2013" .
+<https://web.archive.org/web/20150530150440/http://wiki.aksw.org/Events/2012/LeipzigerSemanticWebDay> rdfs:label "LSWT2012 ".
+<https://web.archive.org/web/20120926225119/http://aksw.org/Events/2011/LeipzigerSemanticWebDay> rdfs:label "LSWT2011" .
+<https://web.archive.org/web/20131219160129/http://wiki.aksw.org/Events/2010/LeipzigerSemanticWebDay> rdfs:label "LSWT2010" .
+<https://web.archive.org/web/20150808075745/http://wiki.aksw.org:80/Events/2009/LeipzigerSemanticWebDay> rdfs:label "LSWT2009" .
+
+aksw:Group foaf:name "AKSW";
+           foaf:homepage <http://aksw.org/> .
+
+infai: foaf:name "InfAI";
+       foaf:homepage infai: .
+
+unil: foaf:name "Universität Leipzig";
+      foaf:homepage <https://www.uni-leipzig.de/> .
+
+ecc: foaf:name "eccenca GmbH";
+      foaf:homepage <https://www.eccenca.com/> .
+
+dbpedia: foaf:name "DBpedia Association";
+      foaf:homepage dbpedia: .
+
+aksw:NatanaelArndt foaf:name "Natanael Arndt" ;
+    foaf:homepage aksw:NatanaelArndt ;
+    schema:affiliation aksw:Group , unil: .
+
+aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
+    foaf:homepage aksw:SebastianTramp ;
+    schema:affiliation ecc: .
+
+aksw:JuliaHolze foaf:name "Julia Holze" ;
+    foaf:homepage aksw:JuliaHolze ;
+    schema:affiliation dbpedia: .
+
+aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
+    foaf:homepage aksw:SebastianHellmann ;
+    schema:affiliation dbpedia: .
+
+aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
+    foaf:homepage aksw:MichaelMartin ;
+    schema:affiliation aksw:Group, infai: .
+
+aksw:EdgardMarx foaf:name "Edgard Marx" ;
+    foaf:homepage aksw:EdgardMarx ;
+    schema:affiliation aksw:Group .
+
+aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
+    foaf:homepage aksw:EdgardMarx ;
+    schema:affiliation aksw:Group, infai: .
