@@ -37,7 +37,7 @@ Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#orga
 
 Das Organisationsteam:
 
-{% assign organizers = page.rdf | rdf_property: "schema:organizer", nil, true %}
+{% assign organizers = page.rdf | rdf_container: "schema:organizer" %}
 
 <ul>
 {% for organizer in organizers %}
@@ -52,7 +52,7 @@ Das Organisationsteam:
 
 <h2>Rückblick</h2>
 
-{% assign previousEvents = page.rdf | rdf_collection: "schema:successorOf" %}
+{% assign previousEvents = page.rdf | rdf_container: "schema:successorOf" %}
 <ul>
 {% for prev in previousEvents %}
 <li><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></li>
