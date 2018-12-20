@@ -28,8 +28,9 @@ lswt:Team a foaf:Group ;
   rdf:_2 aksw:NatanaelArndt ;
   rdf:_3 aksw:SandraBartsch ;
   rdf:_4 aksw:JuliaHolze ;
-  rdf:_5 aksw:SebastianTramp ;
-  rdf:_6 aksw:ThomasRiechert .
+  rdf:_5 lswt:NivesSande ;
+  rdf:_6 aksw:SebastianTramp ;
+  rdf:_7 aksw:ThomasRiechert .
 
 lswt:PreviousEvents a schema:EventSeries ;
   rdf:_1 <https://www.leds-projekt.de/lswt2018.html> ;
@@ -99,6 +100,9 @@ aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
 aksw:ThomasRiechert foaf:name "Professor Dr. Thomas Riechert" ;
     foaf:homepage aksw:ThomasRiechert ;
     schema:affiliation aksw:Group, htwk: .
+
+lswt:NivesSande foaf:name "Nives Sande" ;
+    schema:affiliation ecc: .
 
 aksw:EdgardMarx foaf:name "Edgard Marx" ;
     foaf:homepage aksw:EdgardMarx ;
