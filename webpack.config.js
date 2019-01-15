@@ -1,34 +1,23 @@
-const path = require('path');
+const path = require('path'),
+  ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src",
+  entry: {
+    main: './src',
+  },
   module: {
     rules: [
       {
-        test: /\.(scss)$/,
-        use: [{
-          loader: 'style-loader', // inject CSS to page
-        }, {
-          loader: 'css-loader', // translates CSS into CommonJS modules
-        }, {
-          loader: 'postcss-loader', // Run post css actions
-          options: {
-            plugins: function () { // post css plugins, can be exported to postcss.config.js
-              return [
-                require('precss'),
-                require('autoprefixer')
-              ];
-            }
-          }
-        }, {
-          loader: 'sass-loader' // compiles Sass to CSS
-        }]
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /.scss$/,
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
       }
     ]
-  }
+  },
+  output: { filename: '[name].js' },
+  plugins: [new ExtractTextPlugin({
+    filename: '[name].css',
+    allChunks: true,
+  })],
+  performance: { hints: false }
 }
