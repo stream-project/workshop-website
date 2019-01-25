@@ -19,6 +19,9 @@
 
 <> a foaf:Document, schema:Event ;
    rdfs:label "7. Leipziger Semantic Web Tag" ;
+   schema:startDate "voraussichtlich 22. Mai 2019" ;
+   schema:location "Leipzig, _genaueres wird bekannt gegeben_" ;
+   site:registrationPage "_wird bekannt gegeben_" ;
    schema:organizer lswt:Team ;
    schema:successorOf lswt:PreviousEvents .
 

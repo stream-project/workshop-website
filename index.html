@@ -18,11 +18,11 @@ Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#orga
 
 <dl>
 <dt>Anmeldung</dt>
-<dd><em>wird bekannt gegeben</em></dd>
+<dd>{{ page.rdf | rdf_property: "site:registrationPage" | markdownify }}</dd>
 <dt>Datum</dt>
-<dd>voraussichtlich 22. Mai 2019</dd>
+<dd>{{ page.rdf | rdf_property: "schema:startDate" }}</dd>
 <dt>Ort</dt>
-<dd>Leipzig, <em>genaueres wird bekannt gegeben</em></dd>
+<dd>{{ page.rdf | rdf_property: "schema:location" | markdownify }}</dd>
 </dl>
 
 <h2>Programm</h2>
