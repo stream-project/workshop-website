@@ -28,11 +28,12 @@
   schema:successorOf lswt:PreviousEvents .
 
 lswt:Location a schema:PostalAddress ;
+  rdfs:seeAlso <https://www.melia.com/de/hotels/deutschland/leipzig/innside-leipzig/index.htm> ;
   schema:addressCountry "Germany" ;
   schema:addressLocality "Leipzig" ;
   schema:postalCode "04109" ;
   schema:streetAddress "Gottschedstraße 1" ;
-  rdfs:label "INSIDE Hotel Leipzig" ;
+  rdfs:label "INNSIDE Hotel Leipzig" ;
   geo:geometry "POINT(12.3707470 51.3397239)" ;
   geo:lat "51.3397239"^^xsd:float ;
   geo:long "12.3707470"^^xsd:float .
