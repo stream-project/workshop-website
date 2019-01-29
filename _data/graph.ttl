@@ -16,14 +16,26 @@
 @prefix dbpedia: <https://dbpedia.org/> .
 @prefix infai: <https://infai.org/> .
 @prefix htwk: <https://htwk-leipzig.de/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 
 <> a foaf:Document, schema:Event ;
-   rdfs:label "7. Leipziger Semantic Web Tag" ;
-   schema:startDate "voraussichtlich 22. Mai 2019" ;
-   schema:location "Leipzig, _genaueres wird bekannt gegeben_" ;
-   site:registrationPage "_wird bekannt gegeben_" ;
-   schema:organizer lswt:Team ;
-   schema:successorOf lswt:PreviousEvents .
+  rdfs:label "7. Leipziger Semantic Web Tag" ;
+  schema:startDate "2019-05-22"^^xsd:date ;
+  schema:endDate "2019-05-22"^^xsd:date ;
+  schema:location lswt:Location ;
+  site:registrationPage "_wird bekannt gegeben_" ;
+  schema:organizer lswt:Team ;
+  schema:successorOf lswt:PreviousEvents .
+
+lswt:Location a schema:PostalAddress ;
+  schema:addressCountry "Germany" ;
+  schema:addressLocality "Leipzig" ;
+  schema:postalCode "04109" ;
+  schema:streetAddress "Gottschedstraße 1" ;
+  rdfs:label "INSIDE Hotel Leipzig" ;
+  geo:geometry "POINT(12.3707470 51.3397239)" ;
+  geo:lat "51.3397239"^^xsd:float ;
+  geo:long "12.3707470"^^xsd:float .
 
 lswt:Team a foaf:Group ;
   foaf:member aksw:NatanaelArndt, aksw:SebastianTramp, aksw:MichaelMartin, aksw:SandraBartsch, aksw:JuliaHolze, aksw:ThomasRiechert ;
