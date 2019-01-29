@@ -35,9 +35,7 @@ Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#Orga
 {% include address.html %}
 {% assign mapboxDiff = 0.00223964452743 %}
 <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
-
-<p><br>
-<small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
+<p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
 
 <h2 id="Team">Organisation</h2>
 
