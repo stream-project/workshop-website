@@ -49,7 +49,7 @@ lswt:Team a foaf:Group ;
   rdf:_7 aksw:ThomasRiechert .
 
 lswt:PreviousEvents a schema:EventSeries ;
-  rdf:_1 <https://www.leds-projekt.de/lswt2018.html> ;
+  rdf:_1 <https://web.archive.org/web/20190118125843/https://www.leds-projekt.de/lswt2018.html> ;
   rdf:_2 <https://informatik2017.de/ws29-ledsplay17/> ;
   rdf:_3 <https://2016.semantics.cc/> ;
   rdf:_4 <https://2014.semantics.cc/> ;
@@ -60,7 +60,7 @@ lswt:PreviousEvents a schema:EventSeries ;
   rdf:_9 <https://web.archive.org/web/20150808075745/http://wiki.aksw.org:80/Events/2009/LeipzigerSemanticWebDay> .
 
 
-<https://www.leds-projekt.de/lswt2018.html> rdfs:label "LSWT2018" .
+<https://web.archive.org/web/20190118125843/https://www.leds-projekt.de/lswt2018.html> rdfs:label "LSWT2018" .
 <https://informatik2017.de/ws29-ledsplay17/> rdfs:label "LEDSPLaY17" .
 <https://2016.semantics.cc/> rdfs:label "SEMANTiCS Leipzig 2016" .
 <https://2014.semantics.cc/> rdfs:label "SEMANTiCS Leipzig 2014" .
