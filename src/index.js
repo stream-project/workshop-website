@@ -1,5 +1,7 @@
 import 'bootstrap';
 import './main.scss';
+
+import IScroll from 'fullpage.js/vendors/scrolloverflow';
 import fullpage from 'fullpage.js';
 
 var fullPageInstance = new fullpage('#fullpage', {
