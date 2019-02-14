@@ -44,7 +44,7 @@ lswt:Team a foaf:Group ;
   rdf:_2 aksw:NatanaelArndt ;
   rdf:_3 aksw:SandraBartsch ;
   rdf:_4 aksw:JuliaHolze ;
-  rdf:_5 lswt:NivesSande ;
+  rdf:_5 lswt:NievesSande ;
   rdf:_6 aksw:SebastianTramp ;
   rdf:_7 aksw:ThomasRiechert .
 
@@ -117,7 +117,7 @@ aksw:ThomasRiechert foaf:name "Professor Dr. Thomas Riechert" ;
     foaf:homepage aksw:ThomasRiechert ;
     schema:affiliation aksw:Group, htwk: .
 
-lswt:NivesSande foaf:name "Nives Sande" ;
+lswt:NievesSande foaf:name "Nieves Sande" ;
     schema:affiliation ecc: .
 
 aksw:EdgardMarx foaf:name "Edgard Marx" ;
