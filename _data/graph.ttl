@@ -25,7 +25,12 @@
   schema:location lswt:Location ;
   site:registrationPage "_wird bekannt gegeben_" ;
   schema:organizer lswt:Team ;
+  schema:subEvent lswt:StudentProgram ;
   schema:successorOf lswt:PreviousEvents .
+
+lswt:StudentProgram a schema:Event ;
+  rdfs:label "LSWT2019 Student Program" ;
+  schema:organizer lswt:StudentProgramTeam .
 
 lswt:Location a schema:PostalAddress ;
   rdfs:seeAlso <https://www.melia.com/de/hotels/deutschland/leipzig/innside-leipzig/index.htm> ;
@@ -39,14 +44,18 @@ lswt:Location a schema:PostalAddress ;
   geo:long "12.3707470"^^xsd:float .
 
 lswt:Team a foaf:Group ;
-  foaf:member aksw:NatanaelArndt, aksw:SebastianTramp, aksw:MichaelMartin, aksw:SandraBartsch, aksw:JuliaHolze, aksw:ThomasRiechert ;
+  foaf:member aksw:NatanaelArndt, aksw:SebastianTramp, aksw:MichaelMartin, aksw:SandraBartsch, aksw:JuliaHolze ;
   rdf:_1 aksw:MichaelMartin ;
   rdf:_2 aksw:NatanaelArndt ;
   rdf:_3 aksw:SandraBartsch ;
   rdf:_4 aksw:JuliaHolze ;
   rdf:_5 lswt:NievesSande ;
-  rdf:_6 aksw:SebastianTramp ;
-  rdf:_7 aksw:ThomasRiechert .
+  rdf:_6 aksw:SebastianTramp .
+
+lswt:StudentProgramTeam a foaf:Group ;
+  foaf:member aksw:ThomasRiechert, aksw:EdgardMarx ;
+  rdf:_1 aksw:ThomasRiechert ;
+  rdf:_2 aksw:EdgardMarx .
 
 lswt:PreviousEvents a schema:EventSeries ;
   rdf:_1 <https://web.archive.org/web/20190118125843/https://www.leds-projekt.de/lswt2018.html> ;
@@ -103,7 +112,7 @@ aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
 
 aksw:JuliaHolze foaf:name "Julia Holze" ;
     foaf:homepage aksw:JuliaHolze ;
-    schema:affiliation infai: .
+    schema:affiliation infai:, dbpedia: .
 
 aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
     foaf:homepage aksw:SebastianHellmann ;
@@ -122,4 +131,4 @@ lswt:NievesSande foaf:name "Nieves Sande" ;
 
 aksw:EdgardMarx foaf:name "Edgard Marx" ;
     foaf:homepage aksw:EdgardMarx ;
-    schema:affiliation aksw:Group .
+    schema:affiliation aksw:Group, htwk: .

@@ -1,0 +1,18 @@
+{% assign organizers = include.organizers %}
+<ul>
+{% for organizer in organizers %}
+{% assign homepage = organizer | rdf_property: "foaf:homepage" %}
+{% assign affiliations = organizer | rdf_property: "schema:affiliation", nil, true %}
+<li>
+  {% if homepage %}
+  <a href="{{ organizer | rdf_property: "foaf:homepage" }}">{{ organizer | rdf_property: "foaf:name" }}</a>
+  {% else %}
+  {{ organizer | rdf_property: "foaf:name" }}
+  {% endif %}
+  @
+  {% for affiliation in affiliations %}
+  <a href="{{ affiliation | rdf_property: "foaf:homepage" }}">{{ affiliation | rdf_property: "foaf:name" }}</a>{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+</li>
+{% endfor %}
+</ul>
