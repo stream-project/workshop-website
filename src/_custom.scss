@@ -5,3 +5,37 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.3rem;
 }
+
+div.container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.dark-theme {
+  color: #e8ebed;
+}
+
+.dark-theme a {
+  color: #8bc3ff;
+}
+
+.dark-theme a:hover {
+  color: #71b5ff;
+}
+
+.bluebg-theme a {
+  color: #8bc3ff;
+}
+
+.bluebg-theme a:hover {
+  color: #71b5ff;
+}
+
+
+.light-theme a {
+  color: #0056b3;
+}
+
+.light-theme a:hover {
+  color: #003d80;
+}

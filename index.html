@@ -6,55 +6,74 @@ type: Event
 rdf_prefix_path: _data/prefixes.sparql
 ---
 
-<div class="jumbotron jumbotron-fluid">
-<div class="container">
-#LSWT2019
-<h1 class="display-4">{{ page.rdf | rdf_property: "rdfs:label" }}</h1>
-<p class="lead">Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
-Diese Schwerpunkte werden im Rahmen von Vorträgen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert (<a href="#Programm">Programm</a>).
-Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#Organisation">Organisations-Team</a> wenden.</p>
+<div class="section" data-anchor="Top">
+  <div class="container">
+    <div class="jumbotron">
+      #LSWT2019
+      <h1 class="display-4">{{ page.rdf | rdf_property: "rdfs:label" }}</h1>
+      <p class="lead">Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
+      Diese Schwerpunkte werden im Rahmen von Vorträgen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert (<a href="#Programm">Programm</a>).
+      Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#Team">Organisations-Team</a> wenden.</p>
+    </div>
+
+    <dl>
+      <dt>Anmeldung</dt>
+      <dd>{{ page.rdf | rdf_property: "site:registrationPage" | markdownify }}</dd>
+      <dt>Datum</dt>
+      <dd>{{ page.rdf | rdf_property: "schema:startDate" | date: "%-d. %B %Y" }}</dd>
+      <dt>Ort</dt>
+      {% assign location = page.rdf | rdf_property: "schema:location" %}
+      <dd><a href="{{ location.page_url }}">{% include address.html %}</a></dd>
+    </dl>
+  </div>
 </div>
+
+<div class="section" data-anchor="Programm">
+  <div class="container">
+    <h2>Programm</h2>
+
+    <em>wird bekannt gegeben</em>
+
+  </div>
 </div>
 
-<dl>
-<dt>Anmeldung</dt>
-<dd>{{ page.rdf | rdf_property: "site:registrationPage" | markdownify }}</dd>
-<dt>Datum</dt>
-<dd>{{ page.rdf | rdf_property: "schema:startDate" | date: "%-d. %B %Y" }}</dd>
-<dt>Ort</dt>
-{% assign location = page.rdf | rdf_property: "schema:location" %}
-<dd><a href="{{ location.page_url }}">{% include address.html %}</a></dd>
-</dl>
+<div class="section dark-theme" data-anchor="Location">
+  <div class="container">
+    <h2>Veranstaltungsort</h2>
 
-<h2 id="Programm">Programm</h2>
+    {% include address.html %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Homepage</a>)
+    {% assign mapboxDiff = 0.00223964452743 %}
+    <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
+    <p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
+  </div>
+</div>
 
-<em>wird bekannt gegeben</em>
+<div class="section light-theme">
+  <div class="container">
+    <h2 data-anchor="Team">Organisationsteam</h2>
 
-<h2 id="Location">Veranstaltungsort</h2>
+    {% assign organizers = page.rdf | rdf_container: "schema:organizer" %}
 
-{% include address.html %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Homepage</a>)
-{% assign mapboxDiff = 0.00223964452743 %}
-<iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
-<p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
+    {% include organizers.html organizers=organizers %}
+    {% assign studentprogram = page.rdf | rdf_property: "schema:subEvent" %}
 
-<h2 id="Team">Organisationsteam</h2>
+    <h3>Organisationsteam des {{ studentprogram | rdf_property: "rdfs:label" }}</h3>
 
-{% assign organizers = page.rdf | rdf_container: "schema:organizer" %}
+    {% assign studentorganizers = studentprogram | rdf_container: "schema:organizer" %}
 
-{% include organizers.html organizers=organizers %}
-{% assign studentprogram = page.rdf | rdf_property: "schema:subEvent" %}
+    {% include organizers.html organizers=studentorganizers %}
+  </div>
+</div>
 
-<h3>{{ studentprogram | rdf_property: "rdfs:label" }} Organisationsteam</h3>
+<div class="section bluebg-theme">
+  <div class="container">
+    <h2 data-anchor="PreviousEvents">Rückblick</h2>
 
-{% assign studentorganizers = studentprogram | rdf_container: "schema:organizer" %}
-
-{% include organizers.html organizers=studentorganizers %}
-
-<h2 id="PreviousEvents">Rückblick</h2>
-
-{% assign previousEvents = page.rdf | rdf_container: "schema:successorOf" %}
-<ul>
-{% for prev in previousEvents %}
-<li><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></li>
-{% endfor %}
-</ul>
+    {% assign previousEvents = page.rdf | rdf_container: "schema:successorOf" %}
+    <ul>
+    {% for prev in previousEvents %}
+    <li><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
