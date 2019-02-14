@@ -12,5 +12,5 @@ var fullPageInstance = new fullpage('#fullpage', {
   navigationPosition: 'right',
   navigationTooltips: ['Home', 'Programm', 'Veranstaltungsort', 'Organisationsteam', 'Rückblick'],
   scrollOverflow: true,
-  sectionsColor: ['#a7d1e2ff', '#b72c37ff', '#215063ff', '#81bdd5ff', '#3887a7ff', '#b64d55ff']
+  sectionsColor: ['#a7d1e2ff', '#b64d55ff', '#215063ff', '#81bdd5ff', '#3887a7ff', '#b64d55ff']
 });

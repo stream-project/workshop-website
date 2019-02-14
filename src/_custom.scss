@@ -34,3 +34,17 @@ h4, .h4 {
 .light-theme a:hover {
   color: #003d80;
 }
+
+#Home {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/Web_BG_pfade_narrow.svg")
+}
+
+@media (min-aspect-ratio: 6/5) { /* and (max-aspect-ratio: 15/5)  */
+  #Home {
+    background-size: cover;
+    background-position: center;
+    background-image: url("/images/Web_BG_pfade.svg")
+  }
+}
