@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" type="text/css" href="/dist/main.css" />
     <title>{{ site.title }}</title>
+
+    <meta property="og:title" content="{{ site.title }}">
+    <meta name="twitter:title" content="{{ site.title }}">
+
+
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+
+    <meta name="description" content="{{ site.description }}">
+    <meta name="og:description" content="{{ site.description }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:image" content="{{ site.url | append: site.baseurl | append: "/images/logo.png" }}">
+
+    <meta name="twitter:site" content="akswgroup">
+
   </head>
 <body>
   <div id="fullpage">
