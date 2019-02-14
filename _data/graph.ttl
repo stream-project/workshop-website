@@ -20,6 +20,9 @@
 
 <> a foaf:Document, schema:Event ;
   rdfs:label "7. Leipziger Semantic Web Tag" ;
+  rdfs:comment """Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
+  Diese Schwerpunkte werden im Rahmen von Vorträgen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert.""";
+  schema:logo </images/logo.png> ;
   schema:startDate "2019-05-22"^^xsd:date ;
   schema:endDate "2019-05-22"^^xsd:date ;
   schema:location lswt:Location ;
