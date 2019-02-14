@@ -103,7 +103,7 @@ aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
 
 aksw:JuliaHolze foaf:name "Julia Holze" ;
     foaf:homepage aksw:JuliaHolze ;
-    schema:affiliation dbpedia: .
+    schema:affiliation infai: .
 
 aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
     foaf:homepage aksw:SebastianHellmann ;
