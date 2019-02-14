@@ -90,7 +90,7 @@ htwk: foaf:name "HTWK Leipzig";
 
 aksw:NatanaelArndt foaf:name "Natanael Arndt" ;
   foaf:homepage aksw:NatanaelArndt ;
-  schema:affiliation aksw:Group , unil: .
+  schema:affiliation aksw:Group , infai: .
 
 
 aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
