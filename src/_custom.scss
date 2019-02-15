@@ -35,14 +35,14 @@ h4, .h4 {
   color: #003d80;
 }
 
-#Home {
+#HomeSection {
   background-size: cover;
   background-position: center;
   background-image: url("/images/Web_BG_pfade_narrow.svg")
 }
 
 @media (min-aspect-ratio: 6/5) { /* and (max-aspect-ratio: 15/5)  */
-  #Home {
+  #HomeSection {
     background-size: cover;
     background-position: center;
     background-image: url("/images/Web_BG_pfade.svg")
