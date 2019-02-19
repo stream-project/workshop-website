@@ -66,9 +66,9 @@ rdf_prefix_path: _data/prefixes.sparql
   </div>
 </div>
 
-<div class="section light-theme">
+<div class="section light-theme" data-anchor="Team">
   <div class="container">
-    <h2 data-anchor="Team">Organisationsteam</h2>
+    <h2>Organisationsteam</h2>
 
     {% assign organizers = page.rdf | rdf_container: "schema:organizer" %}
 
@@ -83,15 +83,29 @@ rdf_prefix_path: _data/prefixes.sparql
   </div>
 </div>
 
-<div class="section dark-theme">
+<div class="section dark-theme" data-anchor="PreviousEvents">
   <div class="container">
-    <h2 data-anchor="PreviousEvents">Rückblick</h2>
+    <h2>Rückblick</h2>
 
     {% assign previousEvents = page.rdf | rdf_container: "schema:successorOf" %}
     <ul>
     {% for prev in previousEvents %}
     <li><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></li>
     {% endfor %}
+    </ul>
+  </div>
+</div>
+
+
+<div class="section" data-anchor="Impressum">
+  <div class="container">
+    <h2>Impressum</h2>
+    Diese Seite verwendet <strong>keine</strong> Cookies. Die Seite speichert die Technische Zugriffsdaten (IP-Adresse und User-Agent) zur Erkennung von Angriffen.
+    Die Seite bindet Kartendaten des OSM Projekts ein.
+    <ul class="nav flex-column">
+      <li><a href="https://infai.org/das-institut/impressum/">Impressum</a></li>
+      <li><a href="https://infai.org/das-institut/kontakt/">Kontaktformular</a></li>
+      <li>Copyright {{ 'now' | date: "%Y" }} Institut für Angewandte Informatik e.V.</li>
     </ul>
   </div>
 </div>

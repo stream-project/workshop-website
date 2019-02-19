@@ -10,7 +10,7 @@ var fullPageInstance = new fullpage('#fullpage', {
   navigation: true,
   slidesNavigation: true,
   navigationPosition: 'right',
-  navigationTooltips: ['Home', 'Programm', 'Veranstaltungsort', 'Organisationsteam', 'Rückblick'],
+  navigationTooltips: ['Home', 'Programm', 'Veranstaltungsort', 'Organisationsteam', 'Rückblick', 'Impressum'],
   scrollOverflow: true,
-  sectionsColor: ['#a7d1e2ff', '#b64d55ff', '#215063ff', '#81bdd5ff', '#3887a7ff', '#b64d55ff']
+  sectionsColor: ['#a7d1e2', '#b64d55', '#215063', '#81bdd5', '#3887a7', '#fff']
 });
