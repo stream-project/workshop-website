@@ -22,7 +22,7 @@ rdf_prefix_path: _data/prefixes.sparql
         <dt>Anmeldung</dt>
         <dd>{{ page.rdf | rdf_property: "site:registrationPage" | markdownify }}</dd>
         <dt>Datum</dt>
-        <dd>{{ page.rdf | rdf_property: "schema:startDate" | date: "%-d. %B %Y" }}</dd>
+        <dd>{{ page.rdf | rdf_property: "schema:startDate" | localize: "%-d. %B %Y" }}</dd>
         <dt>Ort</dt>
         {% assign location = page.rdf | rdf_property: "schema:location" %}
         <dd><a href="{{ location.page_url }}">{% include address.html %}</a></dd>
