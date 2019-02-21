@@ -9,7 +9,7 @@ rdf_prefix_path: _data/prefixes.sparql
 <div class="section" id="HomeSection" data-anchor="Home">
 </div>
 
-<!-- <div class="section" data-anchor="Date">
+<div class="section" id="DateSection" data-anchor="Date">
   <div class="container">
     <div class="jumbotron">
       #LSWT2019
@@ -17,52 +17,104 @@ rdf_prefix_path: _data/prefixes.sparql
       <p class="lead">Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
       Diese Schwerpunkte werden im Rahmen von Vorträgen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert (<a href="#Programm">Programm</a>).
       Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#Team">Organisations-Team</a> wenden.</p>
+
+      <dl>
+        <dt>Anmeldung</dt>
+        <dd>{{ page.rdf | rdf_property: "site:registrationPage" | markdownify }}</dd>
+        <dt>Datum</dt>
+        <dd>{{ page.rdf | rdf_property: "schema:startDate" | date: "%-d. %B %Y" }}</dd>
+        <dt>Ort</dt>
+        {% assign location = page.rdf | rdf_property: "schema:location" %}
+        <dd><a href="{{ location.page_url }}">{% include address.html %}</a></dd>
+      </dl>
     </div>
-
-    <dl>
-      <dt>Anmeldung</dt>
-      <dd>{{ page.rdf | rdf_property: "site:registrationPage" | markdownify }}</dd>
-      <dt>Datum</dt>
-      <dd>{{ page.rdf | rdf_property: "schema:startDate" | date: "%-d. %B %Y" }}</dd>
-      <dt>Ort</dt>
-      {% assign location = page.rdf | rdf_property: "schema:location" %}
-      <dd><a href="{{ location.page_url }}">{% include address.html %}</a></dd>
-    </dl>
-  </div>
-</div> -->
-
-<div class="section dark-theme" data-anchor="Programm">
-  <div class="container">
-    <h2>Programm</h2>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Vorträge</th>
-          <th scope="col">Tutorials</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><em>wird bekannt gegeben</em></td>
-          <td><em>wird bekannt gegeben</em></td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
   </div>
 </div>
 
-<div class="section dark-theme" data-anchor="Location">
+<div class="section" id="LocationSection" data-anchor="Location">
   <div class="container">
-    <h2>Veranstaltungsort</h2>
+    <div class="jumbotron">
+      <h2 class="display-4">Veranstaltungsort</h2>
 
-    {% include address.html %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Homepage</a>)
-    {% assign mapboxDiff = 0.00223964452743 %}
-    <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
-    <p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
+      <p>{% include address.html %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Hier geht es zum INNSIDE</a>)</p>
+      <p>Das INNSIDE by Meliá Leipzig liegt im Herzen der Stadt gegenüber der Thomaskirche.</p>
+
+      {% assign mapboxDiff = 0.00223964452743 %}
+      <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
+      <p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
+    </div>
+  </div>
+</div>
+
+<div class="section" data-anchor="Programm">
+  <div class="container">
+    <div class="jumbotron">
+      <h2 class="display-4">Programm</h2>
+
+      <em>Das programm kann sich jederzeit ohne Vorankündigung ändern.</em>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th scope="col">Vorträge</th>
+            <th scope="col">Tutorials</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><em>wird bekannt gegeben</em></td>
+            <td><em>wird bekannt gegeben</em></td>
+          </tr>
+          <tr>
+            <td>09.00 bis 09.10</td>
+            <td>Begrüßung</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>09.10 bis 09.40</td>
+            <td>Keynote</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>09.40 bis 11.00</td>
+            <td>wird bekannt gegeben</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>11.00 bis 11.15</td>
+            <td>Kaffeepause</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>11.15 bis 12.15</td>
+            <td>wird bekannt gegeben</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>13.30 bis 14.30</td>
+            <td>wird bekannt gegeben</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>14.30 bis 15.30</td>
+            <td>wird bekannt gegeben</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>15.30 bis 16.00</td>
+            <td>Kaffeepause</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>16.00 bis 17.30</td>
+            <td>wird bekannt gegeben</td>
+            <td></td>
+          </tr>
+        </tbody>
+        ab 17.30 Uhr Abschluss und „Eccenca Semantic Beergarden“
+      </table>
+    </div>
   </div>
 </div>
 
