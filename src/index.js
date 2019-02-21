@@ -6,11 +6,11 @@ import fullpage from 'fullpage.js';
 
 var fullPageInstance = new fullpage('#fullpage', {
   licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-  anchors: ['Home', 'Programm', 'Location', 'Team', 'PreviousEvents'],
+  anchors: ['Home', 'Date', 'Location', 'Programm', 'Team', 'Partner', 'PreviousEvents', 'Impressum'],
   navigation: true,
   slidesNavigation: true,
   navigationPosition: 'right',
-  navigationTooltips: ['Home', 'Über', 'Veranstaltungsort', 'Programm', 'Organisationsteam', 'Rückblick', 'Impressum'],
+  navigationTooltips: ['Home', 'Über', 'Veranstaltungsort', 'Programm', 'Organisationsteam', 'Partner', 'Rückblick', 'Impressum'],
   scrollOverflow: true,
-  sectionsColor: ['#a7d1e2', '#a7d1e2', '#215063', '#b64d55', '#81bdd5', '#3887a7', '#fff']
+  sectionsColor: ['#a7d1e2', '#a7d1e2', '#215063', '#b64d55', '#fff', '#3887a7', '#215063', '#81bdd5']
 });

@@ -28,6 +28,7 @@
   schema:location lswt:Location ;
   site:registrationPage "_wird bekannt gegeben_" ;
   schema:organizer lswt:Team ;
+  schema:partner lswt:Partner ;
   schema:subEvent lswt:StudentProgram ;
   schema:successorOf lswt:PreviousEvents .
 
@@ -45,6 +46,11 @@ lswt:Location a schema:PostalAddress ;
   geo:geometry "POINT(12.3707470 51.3397239)" ;
   geo:lat "51.3397239"^^xsd:float ;
   geo:long "12.3707470"^^xsd:float .
+
+lswt:Partner
+  rdf:_1 dbpedia: ;
+  rdf:_2 ecc: ;
+  rdf:_3 infai: .
 
 lswt:Team a foaf:Group ;
   foaf:member aksw:NatanaelArndt, aksw:SebastianTramp, aksw:MichaelMartin, aksw:SandraBartsch, aksw:JuliaHolze ;
@@ -83,38 +89,51 @@ lswt:PreviousEvents a schema:EventSeries ;
 <https://web.archive.org/web/20150808075745/http://wiki.aksw.org:80/Events/2009/LeipzigerSemanticWebDay> rdfs:label "LSWT2009" .
 
 aksw:Group foaf:name "AKSW";
+  site:small_depiction "/images/partner/AKSW_Logo_small.svg" ;
+  foaf:depiction "/images/partner/AKSW_Logo.svg" ;
   foaf:homepage <http://aksw.org/> .
 
 infai: foaf:name "InfAI";
+  site:small_depiction "/images/partner/InfAI_small.svg" ;
+  foaf:depiction "/images/partner/InfAI_h.svg" ;
   foaf:homepage infai: .
 
 unil: foaf:name "Universität Leipzig";
   foaf:homepage <https://www.uni-leipzig.de/> .
 
 ecc: foaf:name "eccenca GmbH";
+  site:small_depiction "/images/partner/eccenca_w.svg" ;
+  foaf:depiction "/images/partner/eccenca_h.svg" ;
   foaf:homepage <https://www.eccenca.com/> .
 
 dbpedia: foaf:name "DBpedia Association";
+  site:small_depiction "/images/partner/DBpediaLogo.svg" ;
+  foaf:depiction "/images/partner/DBpediaLogo_sq.svg" ;
   foaf:homepage dbpedia: .
 
 htwk: foaf:name "HTWK Leipzig";
+  foaf:depiction "/images/partner/logo-htwk.svg" ;
   foaf:homepage htwk: .
 
 aksw:NatanaelArndt foaf:name "Natanael Arndt" ;
   foaf:homepage aksw:NatanaelArndt ;
+  foaf:depiction "/images/people/NatanaelArndt.png" ;
   schema:affiliation aksw:Group , infai: .
 
 
 aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
   foaf:homepage aksw:EdgardMarx ;
+  foaf:depiction "/images/people/SandraBartsch.png" ;
   schema:affiliation aksw:Group, infai: .
 
 aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
   foaf:homepage aksw:SebastianTramp ;
+  foaf:depiction "/images/people/SebastianTramp.png" ;
   schema:affiliation ecc: .
 
 aksw:JuliaHolze foaf:name "Julia Holze" ;
     foaf:homepage aksw:JuliaHolze ;
+    foaf:depiction "/images/people/JuliaHolze.png" ;
     schema:affiliation infai:, dbpedia: .
 
 aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
@@ -123,6 +142,7 @@ aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
 
 aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
     foaf:homepage aksw:MichaelMartin ;
+    foaf:depiction "/images/people/MichaelMartin.png" ;
     schema:affiliation aksw:Group, infai: .
 
 aksw:ThomasRiechert foaf:name "Professor Dr. Thomas Riechert" ;
@@ -130,6 +150,7 @@ aksw:ThomasRiechert foaf:name "Professor Dr. Thomas Riechert" ;
     schema:affiliation aksw:Group, htwk: .
 
 lswt:NievesSande foaf:name "Nieves Sande" ;
+    foaf:depiction "/images/people/NievesSande.png" ;
     schema:affiliation ecc: .
 
 aksw:EdgardMarx foaf:name "Edgard Marx" ;

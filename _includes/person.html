@@ -1,0 +1,36 @@
+{% assign organizer = include.organizer %}
+{% assign name = organizer | rdf_property: "foaf:name" %}
+{% assign homepage = organizer | rdf_property: "foaf:homepage" %}
+{% assign depiction = organizer | rdf_property: "foaf:depiction" %}
+{% assign affiliations = organizer | rdf_property: "schema:affiliation", nil, true %}
+<div class="card">
+  <div class="row">
+    <div class="col-md-4 pr-0">
+      {% if depiction %}
+        <img class="w-100" src="{{ depiction }}" alt="{{ name }}">
+      {% else %}
+        <img class="w-100" src="/images/people/placeholder.svg" alt="{{ name }}">
+      {% endif %}
+    </div>
+    <div class="col-md-8">
+      <div class="card-block py-3">
+        <h5 class="card-title">
+        {% if homepage %}
+          <a href="{{ homepage }}">{{ name }}</a>
+        {% else %}
+        {{ name }}
+        {% endif %}
+        </h5>
+        <p class="card-text">
+          {% for affiliation in affiliations %}
+          {% assign depiction = affiliation | rdf_property: "site:small_depiction" %}
+          {% unless depiction %}
+            {% assign depiction = affiliation | rdf_property: "foaf:depiction" %}
+          {% endunless %}
+          <a href="{{ homepage }}"><img src="{{ depiction }}" alt="{{ affiliation | rdf_property: "foaf:name" }}" {% unless forloop.last and forloop.first %}style="width: 40%"{% endunless %}></a>
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
