@@ -120,14 +120,14 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section light-theme" id="TeamSection" data-anchor="Team">
   <div class="container">
-    <h2>Organisationsteam</h2>
+    <h2 class="display-4">Organisationsteam</h2>
 
     {% assign organizers = page.rdf | rdf_container: "schema:organizer" %}
 
     {% include organizers.html organizers=organizers %}
     {% assign studentprogram = page.rdf | rdf_property: "schema:subEvent" %}
 
-    <h3>Organisationsteam des {{ studentprogram | rdf_property: "rdfs:label" }}</h3>
+    <h3 class="display-5">Organisationsteam des {{ studentprogram | rdf_property: "rdfs:label" }}</h3>
 
     {% assign studentorganizers = studentprogram | rdf_container: "schema:organizer" %}
 
@@ -138,7 +138,7 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section light-theme" id="PartnerSection" data-anchor="Partner">
   <div class="container">
-    <h2>Partner</h2>
+    <h2 class="display-4">Partner</h2>
     {% assign partners = page.rdf | rdf_container: "schema:partner" %}
     <div class="lswt-card-columns">
       {% for partner in partners %}
@@ -155,7 +155,7 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section dark-theme" id="PreviousSection" data-anchor="PreviousEvents">
   <div class="container">
-    <h2>Rückblick</h2>
+    <h2 class="display-4">Rückblick</h2>
 
     {% assign previousEvents = page.rdf | rdf_container: "schema:successorOf" %}
     <div class="lswt-card-columns">
@@ -169,7 +169,7 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section" id="ImpressumSection" data-anchor="Impressum">
   <div class="container">
-    <h2>Impressum</h2>
+    <h2 class="display-4">Impressum</h2>
     Diese Seite verwendet <strong>keine</strong> Cookies. Die Seite speichert die technischen Zugriffsdaten (IP-Adresse und User-Agent) zur Erkennung von Angriffen.
     Die Seite bindet Kartendaten des <a href="http://osm.org/">OpenStreetMap Projekts</a> ein.
     <ul class="nav flex-column">
