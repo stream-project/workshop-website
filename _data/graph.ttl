@@ -26,7 +26,7 @@
   schema:startDate "2019-05-22"^^xsd:date ;
   schema:endDate "2019-05-22"^^xsd:date ;
   schema:location lswt:Location ;
-  site:registrationPage "_wird bekannt gegeben_" ;
+  site:registrationPage <https://pretix.eu/infai/lswt2019/> ;
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
   schema:subEvent lswt:StudentProgram ;
