@@ -28,7 +28,7 @@ exclude:
   - webpack.config.js
   - src
 jekyll_rdf:
-    path: "_data/graph.ttl"
+    path: "graph.ttl"
     restriction: "SELECT ?resourceUri WHERE { ?resourceUri ?p ?o . FILTER regex(str(?resourceUri), \"https://lswt2019.aksw.org/\") }"
     class_template_mappings:
         "http://purl.org/dc/terms/BibliographicResource" : "publication.html"
