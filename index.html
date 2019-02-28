@@ -153,7 +153,7 @@ rdf_prefix_path: _data/prefixes.sparql
   </div>
 </div>
 
-<div class="section dark-theme" id="PreviousSection" data-anchor="PreviousEvents">
+<div class="section" id="PreviousSection" data-anchor="PreviousEvents">
   <div class="container">
     <h2 class="display-4">Rückblick</h2>
 
@@ -170,12 +170,18 @@ rdf_prefix_path: _data/prefixes.sparql
 <div class="section" id="ImpressumSection" data-anchor="Impressum">
   <div class="container">
     <h2 class="display-4">Impressum</h2>
-    Diese Seite verwendet <strong>keine</strong> Cookies. Die Seite speichert die technischen Zugriffsdaten (IP-Adresse und User-Agent) zur Erkennung von Angriffen.
-    Die Seite bindet Kartendaten des <a href="http://osm.org/">OpenStreetMap Projekts</a> ein.
     <ul class="nav flex-column">
       <li><a href="https://infai.org/das-institut/impressum/">Impressum</a></li>
+      <li><a href="#Datenschutz">Datenschutzerklärung</a></li>
       <li><a href="https://infai.org/das-institut/kontakt/">Kontaktformular</a></li>
       <li>Copyright {{ 'now' | date: "%Y" }} Institut für Angewandte Informatik e.V.</li>
     </ul>
+  </div>
+</div>
+
+
+<div class="section" id="DatenschutzSection" data-anchor="Datenschutz">
+  <div class="container">
+    {% include datenschutz.html %}
   </div>
 </div>

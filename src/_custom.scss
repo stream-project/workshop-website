@@ -52,22 +52,29 @@ h4, .h4 {
 .section {
   background-size: cover;
   background-position: center;
-  background-image: url("/images/bg/bg.png")
+  // background-image: url("/images/bg/bg.png")
 }
 
 #DateSection {
-  background-image: url("/images/bg/About.jpg")
 }
 
 #LocationSection {
-  background-image: url("/images/bg/Location.jpg")
+  background-image: url("/images/bg/About.jpg")
 }
 
 #ProgrammSection {
-  background-image: url("/images/bg/Programm.jpg")
+  // background-image: url("/images/bg/Programm.jpg")
+}
+
+#TeamSection {
+  background-image: url("/images/bg/Location.jpg")
 }
 
 #PartnerSection {
+  // background-image: url("/images/bg/Partner.jpg")
+}
+
+#PreviousSection {
   background-image: url("/images/bg/Partner.jpg")
 }
 
