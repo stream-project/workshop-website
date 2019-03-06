@@ -147,6 +147,7 @@ aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
 
 aksw:ThomasRiechert foaf:name "Professor Dr. Thomas Riechert" ;
     foaf:homepage aksw:ThomasRiechert ;
+    foaf:depiction "/images/people/ThomasRiechert.png" ;
     schema:affiliation aksw:Group, htwk: .
 
 lswt:NievesSande foaf:name "Nieves Sande" ;
@@ -155,4 +156,5 @@ lswt:NievesSande foaf:name "Nieves Sande" ;
 
 aksw:EdgardMarx foaf:name "Edgard Marx" ;
     foaf:homepage aksw:EdgardMarx ;
+    foaf:depiction "/images/people/EdgardMarx.png" ;
     schema:affiliation aksw:Group, htwk: .
