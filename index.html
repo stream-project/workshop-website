@@ -16,12 +16,12 @@ rdf_prefix_path: _data/prefixes.sparql
       <h1 class="display-4">{{ page.rdf | rdf_property: "rdfs:label", page.language }}</h1>
       {{ page.rdf | rdf_property: "rdfs:comment", page.language | markdownify }}
 
-      <p><a href="{{ page.rdf | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">Anmeldung</a></p>
+      <p><a href="{{ page.rdf | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a></p>
 
       <dl>
-        <dt>Datum</dt>
+        <dt>{{ "schema:startDate" | rdf_property: "rdfs:label", page.language }}</dt>
         <dd>{{ page.rdf | rdf_property: "schema:startDate" | localize: "%-d. %B %Y", page.language }}</dd>
-        <dt>Ort</dt>
+        <dt>{{ "schema:location" | rdf_property: "rdfs:label", page.language }}</dt>
         {% assign location = page.rdf | rdf_property: "schema:location" %}
         <dd><a href="{{ location.page_url }}">{% include address.html location=location %}</a></dd>
       </dl>
@@ -34,12 +34,18 @@ rdf_prefix_path: _data/prefixes.sparql
     <div class="jumbotron">
       <h2 class="display-4">{{ location | rdf_property: "rdfs:label", page.language }}</h2>
 
-      <p>{% include address.html location=location %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Hier geht es zum INNSIDE</a>)</p>
+      {% assign seeAlso = location | rdf_property: "rdfs:seeAlso" %}
+      <p>{% include address.html location=location %} (<a href="{{ seeAlso }}">{% include reifiedLabel.html subject=location predicate="rdfs:seeAlso" language=page.language %}</a>)</p>
       {{ location | rdf_property: "rdfs:comment", page.language | markdownify }}
 
       {% assign mapboxDiff = 0.00223964452743 %}
+      {% if page.language == "en" %}
+      {% assign showABiggerMap = "Show a bigger Map" %}
+      {% else %}
+      {% assign showABiggerMap = "Größere Karte anzeigen" %}
+      {% endif %}
       <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
-      <p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">Größere Karte anzeigen</a></small></p>
+      <p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">{{ showABiggerMap }}</a></small></p>
     </div>
   </div>
 </div>
@@ -47,9 +53,16 @@ rdf_prefix_path: _data/prefixes.sparql
 <div class="section" id="ProgrammSection" data-anchor="Programm">
   <div class="container">
     <div class="jumbotron">
-      <h2 class="display-4">Programm</h2>
+      {% if page.language == "en" %}
+      {% assign programmLabel = "Schedule" %}
+      {% assign programmDisclaimer = "The schedule might change without notice." %}
+      {% else %}
+      {% assign programmLabel = "Programm" %}
+      {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
+      {% endif %}
+      <h2 class="display-4">{{programmLabel}}</h2>
 
-      <em>Das Programm kann sich jederzeit ohne Vorankündigung ändern.</em>
+      <em>{{ programmDisclaimer }}</em>
       <table class="table">
         <thead>
           <tr>
@@ -118,28 +131,31 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section light-theme" id="TeamSection" data-anchor="Team">
   <div class="container">
-    <h2 class="display-4">Organisationsteam</h2>
+    {% assign organizers = page.rdf | rdf_property: "schema:organizer" %}
+    <h2 class="display-4">{{ organizers | rdf_property: "rdfs:label", page.language }}</h2>
 
-    {% assign organizers = page.rdf | rdf_container: "schema:organizer" %}
+    {% assign organizerTeam = organizers | rdf_container %}
 
-    {% include organizers.html organizers=organizers %}
+    {% include organizers.html organizers=organizerTeam %}
     {% assign studentprogram = page.rdf | rdf_property: "schema:subEvent" %}
+    {% assign studentorganizers = studentprogram | rdf_property: "schema:organizer" %}
 
-    <h3 class="display-5">Organisationsteam des {{ studentprogram | rdf_property: "rdfs:label" }}</h3>
+    <h3 class="display-5">{{ studentorganizers | rdf_property: "rdfs:label", page.language }}</h3>
 
-    {% assign studentorganizers = studentprogram | rdf_container: "schema:organizer" %}
+    {% assign studentorganizersTeam = studentorganizers | rdf_container %}
 
-    {% include organizers.html organizers=studentorganizers %}
+    {% include organizers.html organizers=studentorganizersTeam %}
   </div>
 </div>
 
 
 <div class="section light-theme" id="PartnerSection" data-anchor="Partner">
   <div class="container">
-    <h2 class="display-4">Partner</h2>
-    {% assign partners = page.rdf | rdf_container: "schema:partner" %}
+    {% assign partners = page.rdf | rdf_property: "schema:partner" %}
+    <h2 class="display-4">{{ partners | rdf_property: "rdfs:label", page.language }}</h2>
+    {% assign partnersList = partners | rdf_container %}
     <div class="lswt-card-columns">
-      {% for partner in partners %}
+      {% for partner in partnersList %}
       <div class="card">
         <a href="{{ partner | rdf_property: "foaf:homepage" }}">
         <img src="{{ partner | rdf_property: "foaf:depiction" }}" class="w-100 px-3 py-3">
@@ -153,11 +169,12 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section dark-theme" id="PreviousSection" data-anchor="PreviousEvents">
   <div class="container">
-    <h2 class="display-4">Rückblick</h2>
+    {% assign previousEvents = page.rdf | rdf_property: "schema:successorOf" %}
+    <h2 class="display-4">{{ previousEvents | rdf_property: "rdfs:label", page.language }}</h2>
 
-    {% assign previousEvents = page.rdf | rdf_container: "schema:successorOf" %}
+    {% assign previousEventsList = previousEvents | rdf_container %}
     <div class="lswt-card-columns">
-    {% for prev in previousEvents %}
+    {% for prev in previousEventsList %}
     <div class="card px-3 py-3"><h5 class="card-title"><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></h5></div>
     {% endfor %}
     </div>
@@ -167,6 +184,17 @@ rdf_prefix_path: _data/prefixes.sparql
 
 <div class="section" id="ImpressumSection" data-anchor="Impressum">
   <div class="container">
+    {% if page.language == "en" %}
+    <h2 class="display-4">Technique</h2>
+    This page is build with <a href="https://github.com/AKSW/jekyll-rdf">Jekyll RDF</a> + <a href="https://getbootstrap.com/">bootstrap</a> + <a href="https://alvarotrigo.com/fullPage/">fullPage.js</a>.
+    <h2 class="display-4">Imprint</h2>
+    <ul class="nav flex-column">
+      <li><a href="https://infai.org/das-institut/impressum/">Imprint</a></li>
+      <li><a href="#Datenschutz">Privacy Policy</a></li>
+      <li><a href="https://infai.org/das-institut/kontakt/">Contact</a></li>
+      <li>Copyright {{ 'now' | date: "%Y" }} Institut für Angewandte Informatik e.V.</li>
+    </ul>
+    {% else %}
     <h2 class="display-4">Technik</h2>
     Die Seite wurde mit <a href="https://github.com/AKSW/jekyll-rdf">Jekyll RDF</a> + <a href="https://getbootstrap.com/">bootstrap</a> + <a href="https://alvarotrigo.com/fullPage/">fullPage.js</a> gebaut.
     <h2 class="display-4">Impressum</h2>
@@ -176,6 +204,7 @@ rdf_prefix_path: _data/prefixes.sparql
       <li><a href="https://infai.org/das-institut/kontakt/">Kontaktformular</a></li>
       <li>Copyright {{ 'now' | date: "%Y" }} Institut für Angewandte Informatik e.V.</li>
     </ul>
+    {% endif %}
   </div>
 </div>
 
