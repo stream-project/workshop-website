@@ -1,7 +1,7 @@
 ---
 layout: page
 title: LSWT2019
-language: de
+language: en
 type: Event
 rdf_prefix_path: _data/prefixes.sparql
 ---
@@ -13,19 +13,17 @@ rdf_prefix_path: _data/prefixes.sparql
   <div class="container">
     <div class="jumbotron">
       #LSWT2019
-      <h1 class="display-4">{{ page.rdf | rdf_property: "rdfs:label" }}</h1>
-      <p class="lead">Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
-      Diese Schwerpunkte werden im Rahmen von Vorträgen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert (<a href="#Programm">Programm</a>).
-      Falls Sie weitere Fragen haben können Sie sich auch gerne an das <a href="#Team">Organisations-Team</a> wenden.</p>
+      <h1 class="display-4">{{ page.rdf | rdf_property: "rdfs:label", page.language }}</h1>
+      {{ page.rdf | rdf_property: "rdfs:comment", page.language | markdownify }}
 
       <p><a href="{{ page.rdf | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">Anmeldung</a></p>
 
       <dl>
         <dt>Datum</dt>
-        <dd>{{ page.rdf | rdf_property: "schema:startDate" | localize: "%-d. %B %Y" }}</dd>
+        <dd>{{ page.rdf | rdf_property: "schema:startDate" | localize: "%-d. %B %Y", page.language }}</dd>
         <dt>Ort</dt>
         {% assign location = page.rdf | rdf_property: "schema:location" %}
-        <dd><a href="{{ location.page_url }}">{% include address.html %}</a></dd>
+        <dd><a href="{{ location.page_url }}">{% include address.html location=location %}</a></dd>
       </dl>
     </div>
   </div>
@@ -34,10 +32,10 @@ rdf_prefix_path: _data/prefixes.sparql
 <div class="section" id="LocationSection" data-anchor="Location">
   <div class="container">
     <div class="jumbotron">
-      <h2 class="display-4">Veranstaltungsort</h2>
+      <h2 class="display-4">{{ location | rdf_property: "rdfs:label", page.language }}</h2>
 
-      <p>{% include address.html %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Hier geht es zum INNSIDE</a>)</p>
-      <p>Das INNSIDE by Meliá Leipzig liegt im Herzen der Stadt gegenüber der Thomaskirche.</p>
+      <p>{% include address.html location=location %} (<a href="{{ location | rdf_property: "rdfs:seeAlso" }}">Hier geht es zum INNSIDE</a>)</p>
+      {{ location | rdf_property: "rdfs:comment", page.language | markdownify }}
 
       {% assign mapboxDiff = 0.00223964452743 %}
       <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
