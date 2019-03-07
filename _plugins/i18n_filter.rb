@@ -9,8 +9,8 @@ module Jekyll
     # Example:
     #   {{ post.date | localize: "%d.%m.%Y" }}
     #   {{ post.date | localize: ":short" }}
-    def localize(input, format=nil)
-      load_translations
+    def localize(input, format=nil, language=nil)
+      load_translations(language)
       format = (format =~ /^:(\w+)/) ? $1.to_sym : format
       if !input.is_a?(Date)
         input = Date.parse(input)
@@ -21,10 +21,14 @@ module Jekyll
       "error"
     end
 
-    def load_translations
+    def load_translations(language=nil)
       if I18n.backend.send(:translations).empty?
         I18n.backend.load_translations Dir[File.join(File.dirname(__FILE__),'../_locales/*.yml')]
-        I18n.locale = LOCALE
+        if language
+          I18n.locale = language
+        else
+          I18n.locale = LOCALE
+        end
       end
     end
   end

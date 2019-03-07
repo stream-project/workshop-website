@@ -1,0 +1,12 @@
+{%- assign subject = include.subject -%}
+{%- assign predicate = include.predicate | rdf_get -%}
+{%- assign language = include.language -%}
+{%- assign object = include.object -%}
+{%- unless object -%}
+{%- assign object = subject | rdf_property: include.predicate -%}
+{%- endunless -%}
+{%- capture reifiedLabelQuery -%}
+select ?label {?node rdf:subject ?resourceUri; rdf:predicate <{{predicate}}> ; rdf:object <{{ object }}> ; rdfs:label ?label . filter(lang(?label) = "{{language}}")}
+{%- endcapture -%}
+{%- assign result = subject | sparql_query: reifiedLabelQuery -%}
+{{- result[0].label -}}
