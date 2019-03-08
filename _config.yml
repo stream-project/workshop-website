@@ -5,6 +5,9 @@ description: ""
 baseurl: ""
 url: "https://lswt2019.aksw.org"
 rootResource: "<https://lswt2019.aksw.org/>"
+translations:
+  de: https://lswt2019.aksw.org/
+  en: https://lswt2019.aksw.org/en/
 twitter_username: akswgroup
 github_username:  aksw
 

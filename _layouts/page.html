@@ -2,11 +2,11 @@
 rdf_prefix_path: _data/prefixes.sparql
 ---
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.language }}">
   <head>
     {% assign rootResource = site.rootResource | rdf_get %}
-    {% assign title = rootResource | rdf_property: "rdfs:label" %}
-    {% assign description = rootResource | rdf_property: "rdfs:comment" %}
+    {% assign title = rootResource | rdf_property: "rdfs:label", page.language %}
+    {% assign description = rootResource | rdf_property: "rdfs:comment", page.language %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="/images/icon.png" type="image/png">
