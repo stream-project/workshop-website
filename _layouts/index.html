@@ -59,6 +59,7 @@ type: Event
       {% assign programmOpening = "Opening by InfAI & eccenca GmbH" %}
       {% assign coffeebreak = "Coffee Break & Poster Session" %}
       {% assign lunch = "Lunch" %}
+      {% assign beergarden = "<b>Social Event sponsored by eccenca GmbH</b></br>We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace!" %}
       {% else %}
       {% assign programmLabel = "Programm" %}
       {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
@@ -66,6 +67,8 @@ type: Event
       {% assign programmOpening = "Begrüßung durch InfAI & eccenca GmbH" %}
       {% assign coffeebreak = "Kaffeepause & Postersession" %}
       {% assign lunch = "Mittagspause" %}
+      {% assign beergarden = "<b>Social Event sponsored by eccenca GmbH</b></br>Wir freuen uns herzlich Sie zum Social Event “Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!" %}
+
       {% endif %}
       <h2 class="display-4">{{programmLabel}}</h2>
 
@@ -148,7 +151,7 @@ type: Event
           </tr>
         </tbody>
       </table>
-      ab 17.30 Uhr eccenca Semantic Beergarden (sponsored by <a href="https://www.eccenca.com/">eccenca GmbH</a>)
+      {{ beergarden }}
     </div>
   </div>
 </div>
