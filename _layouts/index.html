@@ -55,9 +55,11 @@ type: Event
       {% if page.language == "en" %}
       {% assign programmLabel = "Schedule" %}
       {% assign programmDisclaimer = "The schedule might change without notice." %}
+      {% assign mainEventType = "Presentations" %}
       {% else %}
       {% assign programmLabel = "Programm" %}
       {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
+      {% assign mainEventType = "Vorträge" %}
       {% endif %}
       <h2 class="display-4">{{programmLabel}}</h2>
 
@@ -66,7 +68,7 @@ type: Event
         <thead>
           <tr>
             <th></th>
-            <th scope="col">Vorträge</th>
+            <th scope="col">{{ mainEventType }}</th>
             <th scope="col">Tutorials</th>
             <th scope="col">Hackaton</th>
           </tr>
