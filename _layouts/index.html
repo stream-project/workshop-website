@@ -56,10 +56,12 @@ type: Event
       {% assign programmLabel = "Schedule" %}
       {% assign programmDisclaimer = "The schedule might change without notice." %}
       {% assign mainEventType = "Presentations" %}
+      {% assign programmOpening = "Opening by InfAI & eccenca GmbH" %}
       {% else %}
       {% assign programmLabel = "Programm" %}
       {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
       {% assign mainEventType = "Vorträge" %}
+      {% assign programmOpening = "Begrüßung durch InfAI & eccenca GmbH" %}
       {% endif %}
       <h2 class="display-4">{{programmLabel}}</h2>
 
@@ -82,7 +84,7 @@ type: Event
           </tr>
           <tr>
             <td>09.00 bis 09.10</td>
-            <td>Begrüßung</td>
+            <td>{{ programmOpening }}</td>
             <td></td>
             <td></td>
           </tr>
