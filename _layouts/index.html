@@ -175,7 +175,6 @@ type: Event
   </div>
 </div>
 
-
 <div class="section light-theme" id="PartnerSection" data-anchor="Partner">
   <div class="container">
     {% assign partners = rootResource | rdf_property: "schema:partner" %}
@@ -194,6 +193,12 @@ type: Event
   </div>
 </div>
 
+<div class="section light-theme" id="HackatonSection" data-anchor="Hackaton">
+  <div class="container">
+    {% include hackaton.html %}
+  </div>
+</div>
+
 <div class="section dark-theme" id="PreviousSection" data-anchor="PreviousEvents">
   <div class="container">
     {% assign previousEvents = rootResource | rdf_property: "schema:successorOf" %}
@@ -207,7 +212,6 @@ type: Event
     </div>
   </div>
 </div>
-
 
 <div class="section" id="ImpressumSection" data-anchor="Impressum">
   <div class="container">
