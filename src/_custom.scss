@@ -81,6 +81,13 @@ h4, .h4 {
   //background-image: url("/images/bg/Partner.jpg")
 }
 
+
+@include media-breakpoint-up(md) {
+  .w-md-40 {
+    width: 40%
+  }
+}
+
 //
 // Columns
 // https://github.com/twbs/bootstrap/blob/master/scss/_card.scss
