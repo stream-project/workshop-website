@@ -7,13 +7,13 @@
   <div class="row">
     <div class="col-md-4 pr-0">
       {% if depiction %}
-        <img class="w-100" src="{{ depiction }}" alt="{{ name }}">
+        <img class="mw-100 rounded" src="{{ depiction }}" alt="{{ name }}">
       {% else %}
-        <img class="w-100" src="/images/people/placeholder.svg" alt="{{ name }}">
+        <img class="mw-100 rounded" src="/images/people/placeholder.svg" alt="{{ name }}">
       {% endif %}
     </div>
     <div class="col-md-8">
-      <div class="card-block pt-2">
+      <div class="pt-mt-2">
         <h5 class="card-title">
         {% if homepage %}
           <a href="{{ homepage }}">{{ name }}</a>
@@ -27,7 +27,7 @@
           {% unless depiction %}
             {% assign depiction = affiliation | rdf_property: "foaf:depiction" %}
           {% endunless %}
-          <a href="{{ homepage }}"><img src="{{ depiction }}" alt="{{ affiliation | rdf_property: "foaf:name" }}" {% unless forloop.last and forloop.first %}style="width: 40%"{% endunless %}></a>
+          <a href="{{ homepage }}"><img src="{{ depiction }}" alt="{{ affiliation | rdf_property: "foaf:name" }}" class="mw-100 {% unless forloop.last and forloop.first %}w-md-40{% endunless %}"></a>
           {% endfor %}
         </p>
       </div>
