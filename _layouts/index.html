@@ -55,9 +55,20 @@ type: Event
       {% if page.language == "en" %}
       {% assign programmLabel = "Schedule" %}
       {% assign programmDisclaimer = "The schedule might change without notice." %}
+      {% assign mainEventType = "Presentations" %}
+      {% assign programmOpening = "Opening by InfAI & eccenca GmbH" %}
+      {% assign coffeebreak = "Coffee Break & Poster Session" %}
+      {% assign lunch = "Lunch" %}
+      {% assign beergarden = "<b>Social Event sponsored by eccenca GmbH</b></br>We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace!" %}
       {% else %}
       {% assign programmLabel = "Programm" %}
       {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
+      {% assign mainEventType = "Vorträge" %}
+      {% assign programmOpening = "Begrüßung durch InfAI & eccenca GmbH" %}
+      {% assign coffeebreak = "Kaffeepause & Postersession" %}
+      {% assign lunch = "Mittagspause" %}
+      {% assign beergarden = "<b>Social Event sponsored by eccenca GmbH</b></br>Wir freuen uns herzlich Sie zum Social Event “Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!" %}
+
       {% endif %}
       <h2 class="display-4">{{programmLabel}}</h2>
 
@@ -66,64 +77,81 @@ type: Event
         <thead>
           <tr>
             <th></th>
-            <th scope="col">Vorträge</th>
+            <th scope="col">{{ mainEventType }}</th>
             <th scope="col">Tutorials</th>
+            <th scope="col">Hackaton</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td></td>
-            <td><em>wird bekannt gegeben</em></td>
-            <td><em>wird bekannt gegeben</em></td>
+            <td><em>@Kosmos</em></td>
+            <td><em>@Tutorials</em></td>
+            <td><em>@Big Idea Space</em></td>
           </tr>
           <tr>
             <td>09.00 bis 09.10</td>
-            <td>Begrüßung</td>
+            <td>{{ programmOpening }}</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>09.10 bis 09.40</td>
-            <td>Keynote</td>
+            <td>Keynote I: TBA - Prof. Dr. Andreas Both</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>09.40 bis 11.00</td>
-            <td>wird bekannt gegeben</td>
+            <td>Session: Linked Data in Enterprise Use-Cases</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>11.00 bis 11.15</td>
-            <td>Kaffeepause</td>
+            <td>{{ coffeebreak }}</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>11.15 bis 12.15</td>
-            <td>wird bekannt gegeben</td>
+            <td>Session: Linking Research</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>12.15 bis 13.30</td>
+            <td>{{ lunch }}</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>13.30 bis 14.30</td>
-            <td>wird bekannt gegeben</td>
+            <td>Keynote II</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>14.30 bis 15.30</td>
             <td>wird bekannt gegeben</td>
             <td></td>
+            <td></td>
           </tr>
           <tr>
             <td>15.30 bis 16.00</td>
-            <td>Kaffeepause</td>
+            <td>{{ coffeebreak }}</td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
             <td>16.00 bis 17.30</td>
             <td>wird bekannt gegeben</td>
             <td></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
-      ab 17.30 Uhr eccenca Semantic Beergarden (sponsored by <a href="https://www.eccenca.com/">eccenca GmbH</a>)
+      {{ beergarden }}
     </div>
   </div>
 </div>
@@ -147,7 +175,6 @@ type: Event
   </div>
 </div>
 
-
 <div class="section light-theme" id="PartnerSection" data-anchor="Partner">
   <div class="container">
     {% assign partners = rootResource | rdf_property: "schema:partner" %}
@@ -166,6 +193,12 @@ type: Event
   </div>
 </div>
 
+<div class="section light-theme" id="HackatonSection" data-anchor="Hackaton">
+  <div class="container">
+    {% include hackaton.html %}
+  </div>
+</div>
+
 <div class="section dark-theme" id="PreviousSection" data-anchor="PreviousEvents">
   <div class="container">
     {% assign previousEvents = rootResource | rdf_property: "schema:successorOf" %}
@@ -179,7 +212,6 @@ type: Event
     </div>
   </div>
 </div>
-
 
 <div class="section" id="ImpressumSection" data-anchor="Impressum">
   <div class="container">
