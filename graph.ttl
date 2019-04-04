@@ -30,6 +30,7 @@
   schema:startDate "2019-05-22"^^xsd:date ;
   schema:endDate "2019-05-22"^^xsd:date ;
   schema:location lswt:Location ;
+  site:rooms [ rdf:_1 lswt:kosmos ; rdf:_2 lswt:tutorialraum ; rdf:_3 lswt:hackathonraum ; rdf:_4 lswt:dachterrasse ]  ;
   site:registrationPage <https://pretix.eu/infai/lswt2019/> ;
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
@@ -295,15 +296,63 @@ lswt:talkAuer a schema:Event ;
     rdfs:label "Knowledge Graphs for Scholarly Communication" .
 
 lswt:hackathon a schema:Event ;
+    site:id 300 ;
     rdfs:label "Thinktank & Hackathon – “Artificial Intelligence for Smart Agriculture”" ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
-    schema:location lswt:hackathonraum .
+    schema:location lswt:hackathonraum ;
+    dc:description """…"""@de, """…"""@en .
 
 lswt:studentProgram a schema:Event ;
   rdfs:label "LSWT2019 Student Program" ;
   schema:organizer lswt:studentProgramTeam .
 
+
+lswt:trackTutorial a schema:Event ;
+    rdfs:label "Tutorial"@de, "Tutorial"@en .
+
+
+lswt:solid a schema:Event ;
+    site:id 201 ;
+    site:track lswt:trackTutorial ;
+    schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
+    #schema:performer aksw:NatanaelArndt ;
+    schema:duration "00:45" ;
+    schema:location lswt:tutorialraum ;
+    rdfs:label "SOLID: the next distributed social networks"@de, "SOLID: the next distributed social networks"@en ;
+    dc:description """…"""@de, """…"""@en .
+
+lswt:jekyllrdf a schema:Event ;
+    site:id 202 ;
+    site:track lswt:trackTutorial ;
+    schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
+    schema:performer aksw:NatanaelArndt ;
+    schema:duration "00:45" ;
+    schema:location lswt:tutorialraum ;
+    rdfs:label "Jekyll RDF Benutzung"@de, "Using Jekyll RDF"@en ;
+    dc:description """
+<p><a href="https://jekyllrb.com/">Jekyll</a> ist ein Werkzeug zur simplen Erzeugung von statischen Webseiten oder Blogs. Durch eine große Auswahl an Plugins und Themes lassen sich auch sehr mächtige und vielseitige Webseiten erstellen. <a href="https://github.com/white-gecko/jekyll-rdf">Jekyll RDF</a> (<a href="https://rubygems.org/gems/jekyll-rdf">rubygem</a>) erweitert Jekyll um die Möglichkeit Seiten mit Daten aus einem RDF-Graphen anzureichern. Diese Möglichkeit reicht so weit, dass ganze Webseiten ihren vollständigen Inhalt aus einem RDF-Graphen erhalten. So ist Jekyll RDF ein einfaches Werkzeug, um RDF-Daten für Menschen lesbar im Web zu publizieren. (Jekyll steckt übrigens auch hinter GitHub-Pages und Ihr könnt Seiten die mit Jekyll erzeugt wurden auch auf GitHub-Pages veröffentlichen.)</p>
+<h4 id="was-lernt-ihr-im-tutorial">Was lernt Ihr im Tutorial</h4>
+<p>Im Tutorial lernt Ihr Jekyll mit seiner Template-Sprache kennen und wir erzeugen einfache Jekyll-Templates. Anschließend binden wir einen RDF-Graphen ein und erweitern die Jekyll-Templates um die RDF-spezifischen Filter. Nach dem Tutorial wisst ihr, wie man Jekyll bedient und einen RDF-Graphen anschaulich publizieren könnt.</p>
+<h4 id="voraussetzungenrequirements-1">Voraussetzungen</h4>
+<p>Bitte bringen Sie folgendes zum Tutorial mit:</p>
+<ul>
+  <li>Laptop</li>
+  <li>ruby &gt;= 2.1 mit bundler oder docker</li>
+</ul>
+    """@de, """
+<p><a href="https://jekyllrb.com/">Jekyll</a> ist ein Werkzeug zur simplen Erzeugung von statischen Webseiten oder Blogs. Durch eine große Auswahl an Plugins und Themes lassen sich auch sehr mächtige und vielseitige Webseiten erstellen. <a href="https://github.com/white-gecko/jekyll-rdf">Jekyll RDF</a> (<a href="https://rubygems.org/gems/jekyll-rdf">rubygem</a>) erweitert Jekyll um die Möglichkeit Seiten mit Daten aus einem RDF-Graphen anzureichern. Diese Möglichkeit reicht so weit, dass ganze Webseiten ihren vollständigen Inhalt aus einem RDF-Graphen erhalten. So ist Jekyll RDF ein einfaches Werkzeug, um RDF-Daten für Menschen lesbar im Web zu publizieren. (Jekyll steckt übrigens auch hinter GitHub-Pages und Ihr könnt Seiten die mit Jekyll erzeugt wurden auch auf GitHub-Pages veröffentlichen.)</p>
+<h4 id="was-lernt-ihr-im-tutorial">Was lernt Ihr im Tutorial</h4>
+<p>Im Tutorial lernt Ihr Jekyll mit seiner Template-Sprache kennen und wir erzeugen einfache Jekyll-Templates. Anschließend binden wir einen RDF-Graphen ein und erweitern die Jekyll-Templates um die RDF-spezifischen Filter. Nach dem Tutorial wisst ihr, wie man Jekyll bedient und einen RDF-Graphen anschaulich publizieren könnt.</p>
+<h4 id="voraussetzungenrequirements-1">Requirements</h4>
+<p>Please bring this to the tutorial:</p>
+<ul>
+  <li>Laptop</li>
+  <li>ruby &gt;= 2.1 with bundler or docker</li>
+</ul>
+    """@en .
 
 
 lswt:pause a schema:Event ;

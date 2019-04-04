@@ -53,12 +53,8 @@ type: Event
   <div class="container">
     <div class="jumbotron">
 
-      {% capture room_query %}
-      SELECT distinct ?room WHERE {<{{ rootResource.iri }}> schema:subEvent ?subEvent . ?subEvent schema:location ?room } ORDER BY DESC(?room)
-      {% endcapture %}
-      {%- assign room_results = rootResource | sparql_query: room_query -%}
-      {% for room_row in room_results %}
-      {% assign room = room_row.room %}
+      {%- assign rooms = rootResource | rdf_container: "site:rooms" -%}
+      {% for room in rooms %}
 
       <strong style="color: red">{{ room | rdf_property: "rdfs:label" }}</strong>
 
