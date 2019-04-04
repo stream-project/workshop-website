@@ -301,7 +301,41 @@ lswt:hackathon a schema:Event ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
     schema:location lswt:hackathonraum ;
-    dc:description """…"""@de, """…"""@en .
+    dc:description """
+    <p>Der Thinktank und Hackathon <em>“Artificial Intelligence for Smart Agriculture”</em> ist Teil vom Leipziger Semantic Web Tag (LSWT) am 22. Mai 2019. Die Veranstaltung wird durch die Projekte<a href="https://infai.org/databio/">DataBio</a>, Bridge2Era sowie <a href="https://www.pnoconsultants.com/it/">CIAOTECH/PNO</a> unterstützt. Ziel des Thinktank &amp; Hackathon ist es, neue Ideen und Werkzeuge zu entwickeln, die den Einsatz von Künstlicher Intelligenz (KI) im landwirtschaftlichen Bereich und für eine nachhaltige Bioökonomie demonstrieren können. Einen besonderen Stellenwert wird das Thema “Verwendung und Auswirkung von verknüpften Daten für KI-Komponenten” im Programm einnehmen. Hacks werden vorrangig in Teams organisiert. Diese Teams werden gebildet, indem die Hauptideen zuerst von den "Ideengebern" vorgestellt werden, danach können sich die TeilnehmerInnen den verschiedenen Teams anschließen. Weiterhin werden kleinere Workshops die Vernetzung und teamübergreifende Zusammenarbeit unterstützen. Weiterhin werden Diskussionen über zukünftige Kooperationen und Ideen für die Zukunft der KI-basierten Smart Agriculture stattfinden. Der zweite Teil des Hackathons wird dann am 23. Mai 2019 am <a href=”https://www.mediencampus-villa-ida.de/de/campus/>Mediencampus Villa Ida</a>.stattfinden.</p>
+
+    <p><em>Kurz zusammengefasst</em>: Die Veranstaltung umfasst Hacking vor Ort, Workshops sowie die Präsentation der Ergebnisse. Alle Interessierten sind herzlich eingeladen am 22. Mai 2019 am Hackathon in Leipzig teilzunehmen und ihre Projekte zu präsentieren. <strong>Ideen für den Thinktank und Hackathon können <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXD4_shiDkiHrMSwtEbEzl746oAd-GAAmDiZex_2AUTiyDnw/viewform?usp=sf_link">hier</a></strong> eingereicht werden.</p>
+    <p>Diese Ideen wurden bereits eingereicht: </p>
+    <ul>
+    <li><a href=https://www.spacelabel.be/">Spacelabel</a> [Belgien]</li>
+    <ul>
+    <li>Linking Information between EO (satellite) metadata (e.g. GeoDCAP-AP) and other Linked Data sources (FOODIE, DBpedia, Thesauri)</li>
+    </ul>
+    <li><a href="http://www.lesprojekt.cz/en">Lesprojekt</a> [Tschechische Republik]</li>
+    <li><a href= “http://www.man.poznan.pl/online/en/”>PSNC</a> [Polen]</li>
+    <li>AI for FOODIE Cloud?</li>
+    <li><a href= ”http://infai.org”>InfAI e.V.</a> [Deutschland]</li>
+    <ul>
+    <li>Expanding Albatross – AI for Agriculture? Scenarios and Future Work</li>
+    </ul>
+    </ul>"""@de,
+    """
+    <p>The Thinktank and Hackathon <em>“Artificial Intelligence for Smart Agriculture”</em> is part of the Leipzig Semantic Web Day (LSWT) on 22nd May 2019. The activity is supported by the projects <a href="https://infai.org/databio/">DataBio</a>, Bridge2Era as well as <a href="https://www.pnoconsultants.com/it/">CIAOTECH/PNO</a>. The goal of the thinktank &amp; hackathon is to build new ideas and small tools, which are able to demonstrate the use of AI within the agricultural domain and a sustainable bioeconomy. Especially, the use and impact of linked data for AI components will be one part of the event. Hacks will be organized in teams. Team building will be encouraged by pitching the main ideas by “idea-bringers” and find participants for the team. Small workshops and hand-offs will support networking and cross-team collaboration. Further discussions about future collaborations and ideas of the future of AI-based Smart Agriculture will be held. The second part of the hackathon will take place on 23 May 2019 at <a href=”https://www.mediencampus-villa-ida.de/de/campus/>Mediencampus Villa Ida</a>.</p>
+    <p>In a nutshell: The event includes on-site hacking, workshops as well as presentation of results. All participating teams are invited to join and present their projects. <strong>Please submit your ideas and projects <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXD4_shiDkiHrMSwtEbEzl746oAd-GAAmDiZex_2AUTiyDnw/viewform?usp=sf_link">here</a>.</strong></p>
+    <p>First registrations and ideas from:</p>
+    <ul>
+    <li><a href=https://www.spacelabel.be/">Spacelabel</a> [Belgien]</li>
+    <ul>
+    <li>Linking Information between EO (satellite) metadata (e.g. GeoDCAP-AP) and other Linked Data sources (FOODIE, DBpedia, Thesauri)</li>
+    </ul>
+    <li><a href="http://www.lesprojekt.cz/en">Lesprojekt</a>[Czech Republic]</li>
+    <li><a href= “http://www.man.poznan.pl/online/en/”>PSNC</a> [Poland]</li>
+    <li>AI for FOODIE Cloud?</li>
+    <li><a href= ”http://infai.org”>InfAI e.V.</a> [Germany]</li>
+    <ul>
+    <li>Expanding Albatross – AI for Agriculture? Scenarios and Future Work</li>
+    </ul>
+    </ul>"""@en .
 
 lswt:studentProgram a schema:Event ;
   rdfs:label "LSWT2019 Student Program" ;
