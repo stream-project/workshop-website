@@ -50,22 +50,34 @@ type: Event
 </div>
 
 <div class="section" id="ProgrammSection" data-anchor="Programm">
-      {% if page.language == "en" %}
-      {% assign programmLabel = "Schedule" %}
-      {% assign programmDisclaimer = "The schedule might change without notice." %}
-      {% else %}
-      {% assign programmLabel = "Programm" %}
-      {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
-      {% endif %}
+  {% if page.language == "en" %}
+  {% assign programmLabel = "Schedule" %}
+  {% assign programmDisclaimer = "The schedule might change without notice." %}
+  {% else %}
+  {% assign programmLabel = "Programm" %}
+  {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
+  {% endif %}
 
-      {%- assign rooms = rootResource | rdf_container: "site:rooms" -%}
-      {% for room in rooms %}
-      <div class="slide">
-        <div class="container">
-          <div class="jumbotron">
-          <strong>{{programmLabel}}</strong>
-          <h2 class="display-4">{{ room | rdf_property: "rdfs:label" }}</h2>
-          <em>{{ programmDisclaimer }}</em>
+  {%- assign rooms = rootResource | rdf_container: "site:rooms" -%}
+  {% for room in rooms %}
+  <div class="slide" data-anchor="{{ room | split: "#" | last }}">
+    <div class="container">
+      <div class="jumbotron jumbotron-program">
+      <strong>{{programmLabel}}</strong>
+      <em>{{ programmDisclaimer }}</em>
+      <div>
+      {%- assign roomsNav = rootResource | rdf_container: "site:rooms" -%}
+      {% for roomNav in roomsNav %}
+      {% if roomNav == room %}
+      <h2 class="display-4" style="display: inline">{{ roomNav | rdf_property: "rdfs:label", page.language }}</h2>
+      {% else %}
+      <span><a href="#Programm/{{ roomNav | split: "#" | last }}">{{ roomNav | rdf_property: "rdfs:label", page.language }}</a></span>
+      {% endif %}
+      {% unless forloop.last %}
+      •
+      {% endunless %}
+      {% endfor %}
+      </div>
 
       {% capture events_query %}
       SELECT ?event WHERE {
@@ -79,32 +91,20 @@ type: Event
       {%- assign event = events_row.event -%}
       {%- assign start = event | rdf_property: "schema:startDate" | date: "%H.%M" -%}
       {%- assign end = event | rdf_property: "schema:endDate" | date: "%H.%M" -%}
-      {%- assign performers = event | rdf_property: "schema:performer", nil, true -%}
-      {%- assign persons = "" | split: " " -%}
-      {%- for performer in performers -%}
-      {% assign description = performer | rdf_property: "dc:description" %}
-      {% assign homepage = performer | rdf_property: "foaf:homepage" %}
-      {% if description or homepage %}
-      {% capture person %}
-      <a href="{{ homepage }}">{{ performer | rdf_property: "foaf:name" }}</a>{{ description | markdownify | remove: "<p>" | remove: "</p>" | prepend: ", " }}{% endcapture %}
-      {% else %}
-      {% capture person %}
-      {{ performer | rdf_property: "foaf:name" }}{% endcapture %}
-      {% endif %}
-      {%- assign persons = person | concat: persons -%}
-      {% endfor %}
 
       {% assign track = event | rdf_property: "site:track" %}
       {% assign pause = "lswt:pause" | rdf_get %}
       {% if track == pause %}
-      <h3 style="color: grey; font-size: 1.1em; font-style: italic">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label" }}</h3>
+      <h3 class="pause">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label", page.language }}</h3>
       {% else %}
-      <h3 id="{{ event | split: "#" | last }}">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label" }}</h3>
+      <h3 id="{{ event | split: "#" | last }}">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label", page.language }}</h3>
       {% endif %}
-      <p>{{ persons | join: "; "}}</p>
+      {% include performer.html event=event join="; " paragraph=true %}
 
-      <p>{{ event | rdf_property: "dc:description" }}</p>
-
+      {% assign description = event | rdf_property: "dc:description", page.language %}
+      {% if description %}
+      <p>{{ description }}</p>
+      {% endif %}
 
       {% capture subEvents_query %}
       SELECT ?event WHERE {
@@ -119,21 +119,7 @@ type: Event
       {% for subEvent_row in subEvents %}
       {% assign subEvent = subEvent_row.event %}
 
-      {%- assign performers = subEvent | rdf_property: "schema:performer", nil, true -%}
-      {%- assign persons = "" | split: " " -%}
-      {%- for performer in performers -%}
-      {% assign description = performer | rdf_property: "dc:description" %}
-      {% assign homepage = performer | rdf_property: "foaf:homepage" %}
-      {% if description or homepage %}
-      {% capture person %}
-      <a href="{{ homepage }}">{{ performer | rdf_property: "foaf:name" }}</a>{{ description | markdownify | remove: "<p>" | remove: "</p>" | prepend: ", " }}{% endcapture %}
-      {% else %}
-      {% capture person %}
-      {{ performer | rdf_property: "foaf:name" }}{% endcapture %}
-      {% endif %}
-          {%- assign persons = person | concat: persons -%}
-      {% endfor %}
-      <li><a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“ – {{ persons | join: ", " }}</li>
+      <li><a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“ – {% include performer.html event=subEvent join=", " %}</li>
       {% endfor %}
       </ul>
       {% endfor %}

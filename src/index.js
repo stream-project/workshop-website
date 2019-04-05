@@ -8,7 +8,7 @@ var fullPageInstance = new fullpage('#fullpage', {
   licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
   anchors: ['Home', 'Date', 'Location', 'Programm', 'Team', 'Partner', 'Hackaton', 'PreviousEvents', 'Impressum', 'Datenschutz'],
   navigation: true,
-  slidesNavigation: true,
+  slidesNavigation: false,
   navigationPosition: 'right',
   navigationTooltips: ['Home', 'Über', 'Veranstaltungsort', 'Programm', 'Organisationsteam', 'Partner', 'Hackaton', 'Rückblick', 'Impressum', 'Datenschutz'],
   scrollOverflow: true,
