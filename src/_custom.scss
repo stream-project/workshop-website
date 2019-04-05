@@ -10,30 +10,25 @@ h4, .h4 {
   color: #e8ebed;
 }
 
-.dark-theme a {
-  color: #8bc3ff;
+a {
+  // color: #215063;
+  color: #3887a7;
 }
 
-.dark-theme a:hover {
-  color: #71b5ff;
+.btn-success {
+  background-color: #b72c37;
+  border-color: #b72c37;
 }
 
-.bluebg-theme a {
-  color: #8bc3ff;
+.jumbotron {
+  background-color: #fff;
 }
 
-.bluebg-theme a:hover {
-  color: #71b5ff;
+.jumbotron-program {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-
-.light-theme a {
-  color: #0056b3;
-}
-
-.light-theme a:hover {
-  color: #003d80;
-}
 
 #HomeSection {
   background-size: cover;
@@ -96,11 +91,6 @@ h4, .h4 {
 .fp-controlArrow {
   margin-right: 3rem;
   margin-left: 3rem;
-}
-
-.jumbotron-program {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 
