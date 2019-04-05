@@ -63,8 +63,7 @@ type: Event
   <div class="slide" data-anchor="{{ room | split: "#" | last }}">
     <div class="container">
       <div class="jumbotron jumbotron-program">
-      <strong>{{programmLabel}}</strong>
-      <em>{{ programmDisclaimer }}</em>
+      <strong>{{programmLabel}}</strong> – <em>{{ programmDisclaimer }}</em>
       <div>
       {%- assign roomsNav = rootResource | rdf_container: "site:rooms" -%}
       {% for roomNav in roomsNav %}

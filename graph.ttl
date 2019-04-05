@@ -35,10 +35,12 @@
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
   schema:subEvent lswt:begruessung,
-        lswt:keynoteBoth, lswt:keynoteLehmann,
-        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks, lswt:hackathon, lswt:studentProgram,
+        lswt:keynoteBoth, lswt:keynote2,
+        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks,
+        lswt:hackathon, lswt:studentProgram,
         lswt:solid, lswt:jekyllrdf,
         lswt:ersteKaffeePause, lswt:MittagsPause, lswt:zweiteKaffeePause,
+        lswt:closing,
         lswt:beergarden ;
   schema:successorOf lswt:PreviousEvents .
 
@@ -157,6 +159,7 @@ htwk: foaf:name "HTWK Leipzig";
 aksw:NatanaelArndt foaf:name "Natanael Arndt" ;
   foaf:homepage aksw:NatanaelArndt ;
   foaf:depiction "/images/people/NatanaelArndt.png" ;
+  dc:description "[AKSW](http://aksw.org/)/[InfAI Management GmbH](https://infai.org/)" ;
   schema:affiliation aksw:Group , infai: .
 
 aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
@@ -167,7 +170,7 @@ aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
 aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
   foaf:homepage aksw:SebastianTramp ;
   foaf:depiction "/images/people/SebastianTramp.png" ;
-  dc:description "CTO@[eccenca GmbH](https://www.eccenca.com/)" ;
+  dc:description "CTO, [eccenca GmbH](https://www.eccenca.com/)" ;
   schema:affiliation ecc: .
 
 aksw:JuliaHolze foaf:name "Julia Holze" ;
@@ -177,6 +180,7 @@ aksw:JuliaHolze foaf:name "Julia Holze" ;
 
 aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
     foaf:homepage aksw:SebastianHellmann ;
+    dc:description "[DBpedia Association](https://dbpedia.org/)" ;
     schema:affiliation dbpedia: .
 
 aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
@@ -200,12 +204,12 @@ aksw:EdgardMarx foaf:name "Edgard Marx" ;
 
 lswt:HansChristianBrockmann foaf:name "Hans-Christian Brockmann";
     foaf:homepage <https://www.xing.com/profile/HansChristian_Brockmann> ;
-    dc:description "Geschäftsführer@[eccenca GmbH](https://www.eccenca.com/)".
+    dc:description "Geschäftsführer, [eccenca GmbH](https://www.eccenca.com/)".
 
 lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
     foaf:homepage <https://nz.linkedin.com/in/andreas-heinecke-55791283> ;
     schema:affiliation infai: ;
-    dc:description "Geschäftsführer@[InfAI Management GmbH](http://infai.org/)" .
+    dc:description "Geschäftsführer, [InfAI Management GmbH](http://infai.org/)" .
 
 lswt:AndreasBoth foaf:name "Professor Dr. Andreas Both" ;
     foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
@@ -224,11 +228,11 @@ aksw:JensLehmann foaf:name "Professor Dr. Jens Lehmann" ;
 
 aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
     foaf:homepage aksw:MarkusFreudenberg ;
-    dc:description "[eccenca GmbH](https://www.eccenca.com/) and [DBpedia Community](https://dbpedia.org/)".
+    dc:description "[eccenca GmbH](https://www.eccenca.com/)".
 
 aksw:SoerenAuer foaf:name "Professor Dr. Sören Auer" ;
     foaf:homepage <https://de.wikipedia.org/wiki/S%C3%B6ren_Auer> ;
-    dc:description "Direktor@[Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
+    dc:description "[Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
 
 ### Sub Events
 
@@ -252,18 +256,17 @@ lswt:keynoteBoth a schema:Event ;
     schema:endDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
     schema:location lswt:kosmos ;
-    rdfs:label "Keynote “TBA”"@en, "Keynote „wird bekannt gegeben“"@de ;
+    rdfs:label "Keynote"@en, "Keynote"@de ;
     dc:description "…" .
 
-lswt:keynoteLehmann a schema:Event ;
+lswt:keynote2 a schema:Event ;
     site:id 103 ;
     site:track lswt:trackKeynote ;
-    schema:performer aksw:JensLehmann ;
     schema:startDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
     schema:location lswt:kosmos ;
-    rdfs:label "Keynote “TBA”"@en, "Keynote „wird bekannt gegeben“"@de ;
+    rdfs:label "Keynote"@en, "Keynote"@de ;
     dc:description """…""" .
 
 lswt:trackLDEnterprise a schema:Event ;
@@ -413,11 +416,9 @@ lswt:solid a schema:Event ;
     site:track lswt:trackTutorial ;
     schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
-    #schema:performer aksw:NatanaelArndt ;
     schema:duration "00:45" ;
     schema:location lswt:tutorialraum ;
-    rdfs:label "SOLID: the next distributed social networks"@de, "SOLID: the next distributed social networks"@en ;
-    dc:description """…"""@de, """…"""@en .
+    rdfs:label "SOLID: the next distributed social networks"@de, "SOLID: the next distributed social networks"@en .
 
 lswt:jekyllrdf a schema:Event ;
     site:id 202 ;
@@ -450,6 +451,16 @@ lswt:jekyllrdf a schema:Event ;
 </ul>
     """@en .
 
+
+lswt:closing a schema:Event ;
+    site:id 1227 ;
+    schema:funder lswt:eccenca ;
+    schema:startDate "2019-05-22T17:30+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T18:00+02:00"^^xsd:dateTime ;
+    schema:duration "00:30" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Poster Winner and Closing"@en, "Poster Gewinner und Abschluss"@de .
+
 lswt:beergarden a schema:Event ;
     site:id 1337 ;
     schema:funder lswt:eccenca ;
@@ -457,7 +468,9 @@ lswt:beergarden a schema:Event ;
     schema:endDate "2019-05-22T22:00+02:00"^^xsd:dateTime ;
     schema:duration "04:00" ;
     schema:location lswt:dachterrasse ;
-    rdfs:label "Social Event sponsored by eccenca GmbH"@en, "Social Event sponsored by eccenca GmbH"@de.
+    rdfs:label "Social Event sponsored by eccenca GmbH"@en, "Social Event sponsored by eccenca GmbH"@de ;
+    dc:description "Wir freuen uns herzlich Sie zum Social Event „Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!"@de,
+                   "We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace! "@en.
 
 lswt:pause a schema:Event ;
     rdfs:label "Pause"@de, "Break"@en .
@@ -468,7 +481,7 @@ lswt:ersteKaffeePause a schema:Event ;
     schema:startDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
     schema:duration "00:15" ;
-    schema:location lswt:kosmos, lswt:tutorialraum, lswt:hackathonraum, lswt:dachterrasse ;
+    schema:location lswt:kosmos, lswt:tutorialraum ;
     rdfs:label "Kaffeepause"@de, "Coffee Break"@en .
 
 lswt:MittagsPause a schema:Event ;
@@ -477,7 +490,7 @@ lswt:MittagsPause a schema:Event ;
     schema:startDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:duration "01:15" ;
-    schema:location lswt:kosmos, lswt:tutorialraum, lswt:hackathonraum, lswt:dachterrasse ;
+    schema:location lswt:kosmos, lswt:tutorialraum ;
     rdfs:label "Mittagspause"@de, "Lunch Break"@en .
 
 lswt:zweiteKaffeePause a schema:Event ;
@@ -486,5 +499,5 @@ lswt:zweiteKaffeePause a schema:Event ;
     schema:startDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
     schema:duration "00:45" ;
-    schema:location lswt:kosmos, lswt:tutorialraum, lswt:hackathonraum, lswt:dachterrasse ;
+    schema:location lswt:kosmos, lswt:tutorialraum ;
     rdfs:label "Kaffeepause und Postersession"@de, "Coffee Break and Postersession"@en .
