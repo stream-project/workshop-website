@@ -6,7 +6,7 @@ import fullpage from 'fullpage.js';
 
 var fullPageInstance = new fullpage('#fullpage', {
   licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-  anchors: ['Home', 'Date', 'Location', 'Programm', 'Team', 'Partner', 'Hackaton', 'PreviousEvents', 'Impressum', 'Datenschutz'],
+  anchors: ['Home', 'Date', 'Location', 'Programm', 'Team', 'Partner', 'PreviousEvents', 'Impressum', 'Datenschutz'],
   navigation: true,
   slidesNavigation: false,
   navigationPosition: 'right',
