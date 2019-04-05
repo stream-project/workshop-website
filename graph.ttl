@@ -30,19 +30,23 @@
   schema:startDate "2019-05-22"^^xsd:date ;
   schema:endDate "2019-05-22"^^xsd:date ;
   schema:location lswt:Location ;
+  site:rooms [ rdf:_1 lswt:kosmos ; rdf:_2 lswt:tutorialraum ; rdf:_3 lswt:hackathonraum ; rdf:_4 lswt:dachterrasse ]  ;
   site:registrationPage <https://pretix.eu/infai/lswt2019/> ;
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
-  schema:subEvent lswt:StudentProgram ;
+  schema:subEvent lswt:begruessung,
+        lswt:keynoteBoth, lswt:keynote2,
+        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks,
+        lswt:hackathon, lswt:studentProgram,
+        lswt:solid, lswt:jekyllrdf,
+        lswt:ersteKaffeePause, lswt:MittagsPause, lswt:zweiteKaffeePause,
+        lswt:closing,
+        lswt:beergarden ;
   schema:successorOf lswt:PreviousEvents .
 
 schema:startDate rdfs:label "Datum"@de, "Date"@en .
 schema:location rdfs:label "Ort"@de, "Place"@en .
 site:registrationPage rdfs:label "Anmeldung"@de, "Registration"@en .
-
-lswt:StudentProgram a schema:Event ;
-  rdfs:label "LSWT2019 Student Program" ;
-  schema:organizer lswt:StudentProgramTeam .
 
 lswt:Location a schema:PostalAddress ;
   rdfs:label "Veranstaltungsort"@de, "Venue"@en ;
@@ -63,6 +67,18 @@ lswt:LocationSeeAlsoLabel
   rdf:object <https://www.melia.com/de/hotels/deutschland/leipzig/innside-leipzig/index.htm> ;
   rdfs:label "Hier geht es zum INNSIDE"@de, "To the homepage of the INNSIDE"@en .
 
+lswt:kosmos a schema:Place ;
+    rdfs:label "Kosmos"@de, "Kosmos"@en .
+
+lswt:tutorialraum a schema:Place ;
+    rdfs:label "Tutorials"@de, "Tutorials"@en .
+
+lswt:hackathonraum a schema:Place ;
+    rdfs:label "Big Idea Space"@de, "Big Idea Space"@en .
+
+lswt:dachterrasse a schema:Place ;
+    rdfs:label "Dachterrasse"@de, "Roof Garden"@en .
+
 lswt:Partner
   rdfs:label "Partner"@de, "Partners"@en ;
   rdf:_1 dbpedia: ;
@@ -79,11 +95,13 @@ lswt:Team a foaf:Group ;
   rdf:_5 lswt:NievesSande ;
   rdf:_6 aksw:SebastianTramp .
 
-lswt:StudentProgramTeam a foaf:Group ;
+lswt:studentProgramTeam a foaf:Group ;
   rdfs:label "Organisationsteam des Studentenprogramms"@de, "Organisation Team of the Student Program"@en ;
   foaf:member aksw:ThomasRiechert, aksw:EdgardMarx ;
   rdf:_1 aksw:ThomasRiechert ;
   rdf:_2 aksw:EdgardMarx .
+
+### Previous Events
 
 lswt:PreviousEvents a schema:EventSeries ;
   rdfs:label "Rückblick"@de, "Previous Events"@en ;
@@ -97,7 +115,6 @@ lswt:PreviousEvents a schema:EventSeries ;
   rdf:_8 <https://web.archive.org/web/20131219160129/http://wiki.aksw.org/Events/2010/LeipzigerSemanticWebDay> ;
   rdf:_9 <https://web.archive.org/web/20150808075745/http://wiki.aksw.org:80/Events/2009/LeipzigerSemanticWebDay> .
 
-
 <https://web.archive.org/web/20190118125843/https://www.leds-projekt.de/lswt2018.html> rdfs:label "LSWT2018" .
 <https://informatik2017.de/ws29-ledsplay17/> rdfs:label "LEDSPLaY17" .
 <https://2016.semantics.cc/> rdfs:label "SEMANTiCS Leipzig 2016" .
@@ -107,6 +124,8 @@ lswt:PreviousEvents a schema:EventSeries ;
 <https://web.archive.org/web/20120926225119/http://aksw.org/Events/2011/LeipzigerSemanticWebDay> rdfs:label "LSWT2011" .
 <https://web.archive.org/web/20131219160129/http://wiki.aksw.org/Events/2010/LeipzigerSemanticWebDay> rdfs:label "LSWT2010" .
 <https://web.archive.org/web/20150808075745/http://wiki.aksw.org:80/Events/2009/LeipzigerSemanticWebDay> rdfs:label "LSWT2009" .
+
+### Groups
 
 aksw:Group foaf:name "AKSW";
   site:small_depiction "/images/partner/AKSW_Logo_small.svg" ;
@@ -135,11 +154,12 @@ htwk: foaf:name "HTWK Leipzig";
   foaf:depiction "/images/partner/logo-htwk.svg" ;
   foaf:homepage htwk: .
 
-
+### People
 
 aksw:NatanaelArndt foaf:name "Natanael Arndt" ;
   foaf:homepage aksw:NatanaelArndt ;
   foaf:depiction "/images/people/NatanaelArndt.png" ;
+  dc:description "[AKSW](http://aksw.org/)/[InfAI Management GmbH](https://infai.org/)" ;
   schema:affiliation aksw:Group , infai: .
 
 aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
@@ -150,6 +170,7 @@ aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
 aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
   foaf:homepage aksw:SebastianTramp ;
   foaf:depiction "/images/people/SebastianTramp.png" ;
+  dc:description "CTO, [eccenca GmbH](https://www.eccenca.com/)" ;
   schema:affiliation ecc: .
 
 aksw:JuliaHolze foaf:name "Julia Holze" ;
@@ -159,6 +180,7 @@ aksw:JuliaHolze foaf:name "Julia Holze" ;
 
 aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
     foaf:homepage aksw:SebastianHellmann ;
+    dc:description "[DBpedia Association](https://dbpedia.org/)" ;
     schema:affiliation dbpedia: .
 
 aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
@@ -179,3 +201,303 @@ aksw:EdgardMarx foaf:name "Edgard Marx" ;
     foaf:homepage aksw:EdgardMarx ;
     foaf:depiction "/images/people/EdgardMarx.png" ;
     schema:affiliation aksw:Group, htwk: .
+
+lswt:HansChristianBrockmann foaf:name "Hans-Christian Brockmann";
+    foaf:homepage <https://www.xing.com/profile/HansChristian_Brockmann> ;
+    dc:description "Geschäftsführer, [eccenca GmbH](https://www.eccenca.com/)".
+
+lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
+    foaf:homepage <https://nz.linkedin.com/in/andreas-heinecke-55791283> ;
+    schema:affiliation infai: ;
+    dc:description "Geschäftsführer, [InfAI Management GmbH](http://infai.org/)" .
+
+lswt:AndreasBoth foaf:name "Professor Dr. Andreas Both" ;
+    foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
+    dc:description "Hochschule Anhalt".
+
+lswt:BirgittaKoenigRies  foaf:name "Professor Dr. Birgitta König-Ries" ;
+    foaf:homepage <https://www.fmi.uni-jena.de/Fakult%C3%A4t/Aktivit%C3%A4ten+der+Fakult%C3%A4t/Veranstaltungen/Data+Science+Day+Jena/Data+Science+Day+2017/Referenten/K%C3%B6nig_Ries_+Birgitta+%28FSU+Jena%29-p-124565.html> ;
+    dc:description "[Uni Jena](https://www.uni-jena.de/)".
+
+lswt:StefanWolff foaf:name "Stefan Wolff" ;
+    dc:description "SLUB Dresden (FID move)".
+
+aksw:JensLehmann foaf:name "Professor Dr. Jens Lehmann" ;
+    foaf:homepage <http://jens-lehmann.org/> ;
+    dc:description "Fraunhofer IAIS".
+
+aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
+    foaf:homepage aksw:MarkusFreudenberg ;
+    dc:description "[eccenca GmbH](https://www.eccenca.com/)".
+
+aksw:SoerenAuer foaf:name "Professor Dr. Sören Auer" ;
+    foaf:homepage <https://de.wikipedia.org/wiki/S%C3%B6ren_Auer> ;
+    dc:description "[Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
+
+### Sub Events
+
+lswt:begruessung a schema:Event ;
+    site:id 101 ;
+    schema:performer aksw:SebastianTramp, lswt:AndreasHeinecke ;
+    schema:startDate "2019-05-22T09:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T09:10+02:00"^^xsd:dateTime ;
+    schema:duration "00:10" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Begrüßung"@de, "Welcome"@en .
+
+lswt:trackKeynote a schema:Event ;
+    rdfs:label "Keynote"@de, "Keynote"@en .
+
+lswt:keynoteBoth a schema:Event ;
+    site:id 102 ;
+    site:track lswt:trackKeynote ;
+    schema:performer lswt:AndreasBoth ;
+    schema:startDate "2019-05-22T09:10+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
+    schema:duration "00:30" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Keynote"@en, "Keynote"@de ;
+    dc:description "…" .
+
+lswt:keynote2 a schema:Event ;
+    site:id 103 ;
+    site:track lswt:trackKeynote ;
+    schema:startDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
+    schema:duration "00:30" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Keynote"@en, "Keynote"@de ;
+    dc:description """…""" .
+
+lswt:trackLDEnterprise a schema:Event ;
+    rdfs:label "Linked Data in Enterprise Use-Cases"@en, "Linked Data in Enterprise Use-Cases"@de ;
+    schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
+    schema:location lswt:kosmos ;
+    schema:subEvent lswt:talkFreudenberg, lswt:talkHellmann, lswt:talkSeebi .
+
+lswt:talkFreudenberg a schema:Event ;
+    site:id 111 ;
+    site:track lswt:trackLDEnterprise ;
+    schema:performer aksw:MarkusFreudenberg ;
+    schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T10:00+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "xCOR - a Value Chain Framework Ontology" .
+
+lswt:talkHellmann a schema:Event ;
+    site:id 112 ;
+    site:track lswt:trackLDEnterprise ;
+    schema:performer aksw:SebastianHellmann ;
+    schema:startDate "2019-05-22T10:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "The DBpedia databus" .
+
+lswt:talkSeebi a schema:Event ;
+    site:id 113 ;
+    site:track lswt:trackLDEnterprise ;
+    schema:performer aksw:SebastianTramp ;
+    schema:startDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T10:40+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Das LIMBO Projekt: Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
+
+lswt:trackLDResearch a schema:Event ;
+    rdfs:label "Linking Research"@de, "Linking Research"@en ;
+    schema:startDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
+    schema:location lswt:kosmos ;
+    schema:subEvent lswt:talkAuer, lswt:talkKoenigRies, lswt:talkWolff .
+
+lswt:talkAuer a schema:Event ;
+    site:id 121 ;
+    site:track lswt:trackLDResearch ;
+    schema:performer aksw:SoerenAuer ;
+    schema:startDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T11:35+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Knowledge Graphs for Scholarly Communication" .
+
+lswt:talkKoenigRies a schema:Event ;
+    site:id 122 ;
+    site:track lswt:trackLDResearch ;
+    schema:performer lswt:BirgittaKoenigRies ;
+    schema:startDate "2019-05-22T11:35+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T11:55+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "BEXIS2" .
+
+lswt:talkWolff a schema:Event ;
+    site:id 123 ;
+    site:track lswt:trackLDResearch ;
+    schema:performer lswt:StefanWolff ;
+    schema:startDate "2019-05-22T11:55+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Forschungskompass" .
+
+lswt:trackDataNetworks a schema:Event ;
+    rdfs:label "Data Networks"@de, "Data Networks"@en ;
+    schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
+    schema:location lswt:kosmos ;
+    schema:subEvent lswt:talkArndt .
+
+lswt:talkArndt a schema:Event ;
+    site:id 132 ;
+    site:track lswt:trackDataNetworks ;
+    schema:performer aksw:NatanaelArndt ;
+    schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T15:20+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "PlatonaM: Plattform-Ökosystem for innovative maintenance management through predictive maintenance" .
+
+lswt:hackathon a schema:Event ;
+    site:id 300 ;
+    rdfs:label "Thinktank & Hackathon – “Artificial Intelligence for Smart Agriculture”"@en, "Thinktank & Hackathon – “Artificial Intelligence for Smart Agriculture”"@de ;
+    schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
+    schema:location lswt:hackathonraum ;
+    dc:description """
+    <p>Der Thinktank und Hackathon <em>“Artificial Intelligence for Smart Agriculture”</em> ist Teil vom Leipziger Semantic Web Tag (LSWT) am 22. Mai 2019. Die Veranstaltung wird durch die Projekte <a href="https://infai.org/databio/">DataBio</a>, Bridge2Era sowie <a href="https://www.pnoconsultants.com/it/">CIAOTECH/PNO</a> unterstützt. Ziel des Thinktank &amp; Hackathon ist es, neue Ideen und Werkzeuge zu entwickeln, die den Einsatz von Künstlicher Intelligenz (KI) im landwirtschaftlichen Bereich und für eine nachhaltige Bioökonomie demonstrieren können. Einen besonderen Stellenwert wird das Thema “Verwendung und Auswirkung von verknüpften Daten für KI-Komponenten” im Programm einnehmen. Hacks werden vorrangig in Teams organisiert. Diese Teams werden gebildet, indem die Hauptideen zuerst von den "Ideengebern" vorgestellt werden, danach können sich die TeilnehmerInnen den verschiedenen Teams anschließen. Weiterhin werden kleinere Workshops die Vernetzung und teamübergreifende Zusammenarbeit unterstützen. Weiterhin werden Diskussionen über zukünftige Kooperationen und Ideen für die Zukunft der KI-basierten Smart Agriculture stattfinden. Der zweite Teil des Hackathons wird dann am 23. Mai 2019 am <a href=”https://www.mediencampus-villa-ida.de/de/campus/>Mediencampus Villa Ida</a>.stattfinden.</p>
+
+    <p><em>Kurz zusammengefasst</em>: Die Veranstaltung umfasst Hacking vor Ort, Workshops sowie die Präsentation der Ergebnisse. Alle Interessierten sind herzlich eingeladen am 22. Mai 2019 am Hackathon in Leipzig teilzunehmen und ihre Projekte zu präsentieren. <strong>Ideen für den Thinktank und Hackathon können <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXD4_shiDkiHrMSwtEbEzl746oAd-GAAmDiZex_2AUTiyDnw/viewform?usp=sf_link">hier</a></strong> eingereicht werden.</p>
+    <p>Diese Ideen wurden bereits eingereicht: </p>
+    <ul>
+    <li><a href=https://www.spacelabel.be/">Spacelabel</a> [Belgien]</li>
+    <ul>
+    <li>Linking Information between EO (satellite) metadata (e.g. GeoDCAP-AP) and other Linked Data sources (FOODIE, DBpedia, Thesauri)</li>
+    </ul>
+    <li><a href="http://www.lesprojekt.cz/en">Lesprojekt</a> [Tschechische Republik]</li>
+    <li><a href= “http://www.man.poznan.pl/online/en/”>PSNC</a> [Polen]</li>
+    <li>AI for FOODIE Cloud?</li>
+    <li><a href= ”http://infai.org”>InfAI e.V.</a> [Deutschland]</li>
+    <ul>
+    <li>Expanding Albatross – AI for Agriculture? Scenarios and Future Work</li>
+    </ul>
+    </ul>"""@de,
+    """
+    <p>The Thinktank and Hackathon <em>“Artificial Intelligence for Smart Agriculture”</em> is part of the Leipzig Semantic Web Day (LSWT) on 22nd May 2019. The activity is supported by the projects <a href="https://infai.org/databio/">DataBio</a>, Bridge2Era as well as <a href="https://www.pnoconsultants.com/it/">CIAOTECH/PNO</a>. The goal of the thinktank &amp; hackathon is to build new ideas and small tools, which are able to demonstrate the use of AI within the agricultural domain and a sustainable bioeconomy. Especially, the use and impact of linked data for AI components will be one part of the event. Hacks will be organized in teams. Team building will be encouraged by pitching the main ideas by “idea-bringers” and find participants for the team. Small workshops and hand-offs will support networking and cross-team collaboration. Further discussions about future collaborations and ideas of the future of AI-based Smart Agriculture will be held. The second part of the hackathon will take place on 23 May 2019 at <a href=”https://www.mediencampus-villa-ida.de/de/campus/>Mediencampus Villa Ida</a>.</p>
+    <p>In a nutshell: The event includes on-site hacking, workshops as well as presentation of results. All participating teams are invited to join and present their projects. <strong>Please submit your ideas and projects <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXD4_shiDkiHrMSwtEbEzl746oAd-GAAmDiZex_2AUTiyDnw/viewform?usp=sf_link">here</a>.</strong></p>
+    <p>First registrations and ideas from:</p>
+    <ul>
+    <li><a href=https://www.spacelabel.be/">Spacelabel</a> [Belgien]</li>
+    <ul>
+    <li>Linking Information between EO (satellite) metadata (e.g. GeoDCAP-AP) and other Linked Data sources (FOODIE, DBpedia, Thesauri)</li>
+    </ul>
+    <li><a href="http://www.lesprojekt.cz/en">Lesprojekt</a>[Czech Republic]</li>
+    <li><a href= “http://www.man.poznan.pl/online/en/”>PSNC</a> [Poland]</li>
+    <li>AI for FOODIE Cloud?</li>
+    <li><a href= ”http://infai.org”>InfAI e.V.</a> [Germany]</li>
+    <ul>
+    <li>Expanding Albatross – AI for Agriculture? Scenarios and Future Work</li>
+    </ul>
+    </ul>"""@en .
+
+lswt:studentProgram a schema:Event ;
+  rdfs:label "LSWT2019 Studenten Programm"@de, "LSWT2019 Student Program"@en ;
+  schema:organizer lswt:studentProgramTeam .
+
+
+lswt:trackTutorial a schema:Event ;
+    rdfs:label "Tutorial"@de, "Tutorial"@en .
+
+
+lswt:solid a schema:Event ;
+    site:id 201 ;
+    site:track lswt:trackTutorial ;
+    schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
+    schema:duration "00:45" ;
+    schema:location lswt:tutorialraum ;
+    rdfs:label "SOLID: the next distributed social networks"@de, "SOLID: the next distributed social networks"@en .
+
+lswt:jekyllrdf a schema:Event ;
+    site:id 202 ;
+    site:track lswt:trackTutorial ;
+    schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
+    schema:performer aksw:NatanaelArndt ;
+    schema:duration "00:45" ;
+    schema:location lswt:tutorialraum ;
+    rdfs:label "Jekyll RDF Benutzung"@de, "Using Jekyll RDF"@en ;
+    dc:description """
+<p><a href="https://jekyllrb.com/">Jekyll</a> ist ein Werkzeug zur simplen Erzeugung von statischen Webseiten oder Blogs. Durch eine große Auswahl an Plugins und Themes lassen sich auch sehr mächtige und vielseitige Webseiten erstellen. <a href="https://github.com/white-gecko/jekyll-rdf">Jekyll RDF</a> (<a href="https://rubygems.org/gems/jekyll-rdf">rubygem</a>) erweitert Jekyll um die Möglichkeit Seiten mit Daten aus einem RDF-Graphen anzureichern. Diese Möglichkeit reicht so weit, dass ganze Webseiten ihren vollständigen Inhalt aus einem RDF-Graphen erhalten. So ist Jekyll RDF ein einfaches Werkzeug, um RDF-Daten für Menschen lesbar im Web zu publizieren. (Jekyll steckt übrigens auch hinter GitHub-Pages und Ihr könnt Seiten die mit Jekyll erzeugt wurden auch auf GitHub-Pages veröffentlichen.)</p>
+<h4 id="was-lernt-ihr-im-tutorial">Was lernt Ihr im Tutorial</h4>
+<p>Im Tutorial lernt Ihr Jekyll mit seiner Template-Sprache kennen und wir erzeugen einfache Jekyll-Templates. Anschließend binden wir einen RDF-Graphen ein und erweitern die Jekyll-Templates um die RDF-spezifischen Filter. Nach dem Tutorial wisst ihr, wie man Jekyll bedient und einen RDF-Graphen anschaulich publizieren könnt.</p>
+<h4 id="voraussetzungenrequirements-1">Voraussetzungen</h4>
+<p>Bitte bringen Sie folgendes zum Tutorial mit:</p>
+<ul>
+  <li>Laptop</li>
+  <li>ruby &gt;= 2.1 mit bundler oder docker</li>
+</ul>
+    """@de, """
+<p><a href="https://jekyllrb.com/">Jekyll</a> ist ein Werkzeug zur simplen Erzeugung von statischen Webseiten oder Blogs. Durch eine große Auswahl an Plugins und Themes lassen sich auch sehr mächtige und vielseitige Webseiten erstellen. <a href="https://github.com/white-gecko/jekyll-rdf">Jekyll RDF</a> (<a href="https://rubygems.org/gems/jekyll-rdf">rubygem</a>) erweitert Jekyll um die Möglichkeit Seiten mit Daten aus einem RDF-Graphen anzureichern. Diese Möglichkeit reicht so weit, dass ganze Webseiten ihren vollständigen Inhalt aus einem RDF-Graphen erhalten. So ist Jekyll RDF ein einfaches Werkzeug, um RDF-Daten für Menschen lesbar im Web zu publizieren. (Jekyll steckt übrigens auch hinter GitHub-Pages und Ihr könnt Seiten die mit Jekyll erzeugt wurden auch auf GitHub-Pages veröffentlichen.)</p>
+<h4 id="was-lernt-ihr-im-tutorial">Was lernt Ihr im Tutorial</h4>
+<p>Im Tutorial lernt Ihr Jekyll mit seiner Template-Sprache kennen und wir erzeugen einfache Jekyll-Templates. Anschließend binden wir einen RDF-Graphen ein und erweitern die Jekyll-Templates um die RDF-spezifischen Filter. Nach dem Tutorial wisst ihr, wie man Jekyll bedient und einen RDF-Graphen anschaulich publizieren könnt.</p>
+<h4 id="voraussetzungenrequirements-1">Requirements</h4>
+<p>Please bring this to the tutorial:</p>
+<ul>
+  <li>Laptop</li>
+  <li>ruby &gt;= 2.1 with bundler or docker</li>
+</ul>
+    """@en .
+
+
+lswt:closing a schema:Event ;
+    site:id 1227 ;
+    schema:funder lswt:eccenca ;
+    schema:startDate "2019-05-22T17:30+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T18:00+02:00"^^xsd:dateTime ;
+    schema:duration "00:30" ;
+    schema:location lswt:kosmos ;
+    rdfs:label "Poster Winner and Closing"@en, "Poster Gewinner und Abschluss"@de .
+
+lswt:beergarden a schema:Event ;
+    site:id 1337 ;
+    schema:funder lswt:eccenca ;
+    schema:startDate "2019-05-22T18:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T22:00+02:00"^^xsd:dateTime ;
+    schema:duration "04:00" ;
+    schema:location lswt:dachterrasse ;
+    rdfs:label "Social Event sponsored by eccenca GmbH"@en, "Social Event sponsored by eccenca GmbH"@de ;
+    dc:description "Wir freuen uns herzlich Sie zum Social Event „Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!"@de,
+                   "We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace! "@en.
+
+lswt:pause a schema:Event ;
+    rdfs:label "Pause"@de, "Break"@en .
+
+lswt:ersteKaffeePause a schema:Event ;
+    site:id 997 ;
+    site:track lswt:pause ;
+    schema:startDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
+    schema:duration "00:15" ;
+    schema:location lswt:kosmos, lswt:tutorialraum ;
+    rdfs:label "Kaffeepause"@de, "Coffee Break"@en .
+
+lswt:MittagsPause a schema:Event ;
+    site:id 998 ;
+    site:track lswt:pause ;
+    schema:startDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
+    schema:duration "01:15" ;
+    schema:location lswt:kosmos, lswt:tutorialraum ;
+    rdfs:label "Mittagspause"@de, "Lunch Break"@en .
+
+lswt:zweiteKaffeePause a schema:Event ;
+    site:id 999 ;
+    site:track lswt:pause ;
+    schema:startDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:duration "00:45" ;
+    schema:location lswt:kosmos, lswt:tutorialraum ;
+    rdfs:label "Kaffeepause und Postersession"@de, "Coffee Break and Postersession"@en .

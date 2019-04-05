@@ -50,110 +50,82 @@ type: Event
 </div>
 
 <div class="section" id="ProgrammSection" data-anchor="Programm">
-  <div class="container">
-    <div class="jumbotron">
-      {% if page.language == "en" %}
-      {% assign programmLabel = "Schedule" %}
-      {% assign programmDisclaimer = "The schedule might change without notice." %}
-      {% assign mainEventType = "Presentations" %}
-      {% assign programmOpening = "Opening by InfAI & eccenca GmbH" %}
-      {% assign coffeebreak = "Coffee Break & Poster Session" %}
-      {% assign lunch = "Lunch" %}
-      {% assign beergarden = "<b>Social Event sponsored by eccenca GmbH</b></br>We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace!" %}
+  {% if page.language == "en" %}
+  {% assign programmLabel = "Schedule" %}
+  {% assign programmDisclaimer = "The schedule might change without notice." %}
+  {% else %}
+  {% assign programmLabel = "Programm" %}
+  {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
+  {% endif %}
+
+  {%- assign rooms = rootResource | rdf_container: "site:rooms" -%}
+  {% for room in rooms %}
+  <div class="slide" data-anchor="{{ room | split: "#" | last }}">
+    <div class="container">
+      <div class="jumbotron jumbotron-program">
+      <strong>{{programmLabel}}</strong> – <em>{{ programmDisclaimer }}</em>
+      <div>
+      {%- assign roomsNav = rootResource | rdf_container: "site:rooms" -%}
+      {% for roomNav in roomsNav %}
+      {% if roomNav == room %}
+      <h2 class="display-4" style="display: inline">{{ roomNav | rdf_property: "rdfs:label", page.language }}</h2>
       {% else %}
-      {% assign programmLabel = "Programm" %}
-      {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
-      {% assign mainEventType = "Vorträge" %}
-      {% assign programmOpening = "Begrüßung durch InfAI & eccenca GmbH" %}
-      {% assign coffeebreak = "Kaffeepause & Postersession" %}
-      {% assign lunch = "Mittagspause" %}
-      {% assign beergarden = "<b>Social Event sponsored by eccenca GmbH</b></br>Wir freuen uns herzlich Sie zum Social Event “Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!" %}
-
+      <span><a href="#Programm/{{ roomNav | split: "#" | last }}">{{ roomNav | rdf_property: "rdfs:label", page.language }}</a></span>
       {% endif %}
-      <h2 class="display-4">{{programmLabel}}</h2>
+      {% unless forloop.last %}
+      •
+      {% endunless %}
+      {% endfor %}
+      </div>
 
-      <em>{{ programmDisclaimer }}</em>
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th scope="col">{{ mainEventType }}</th>
-            <th scope="col">Tutorials</th>
-            <th scope="col">Hackaton</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td><em>@Kosmos</em></td>
-            <td><em>@Tutorials</em></td>
-            <td><em>@Big Idea Space</em></td>
-          </tr>
-          <tr>
-            <td>09.00 bis 09.10</td>
-            <td>{{ programmOpening }}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>09.10 bis 09.40</td>
-            <td>Keynote I: TBA - Prof. Dr. Andreas Both</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>09.40 bis 11.00</td>
-            <td>Session: Linked Data in Enterprise Use-Cases</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>11.00 bis 11.15</td>
-            <td>{{ coffeebreak }}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>11.15 bis 12.15</td>
-            <td>Session: Linking Research</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>12.15 bis 13.30</td>
-            <td>{{ lunch }}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>13.30 bis 14.30</td>
-            <td>Keynote II</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>14.30 bis 15.30</td>
-            <td>wird bekannt gegeben</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>15.30 bis 16.00</td>
-            <td>{{ coffeebreak }}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>16.00 bis 17.30</td>
-            <td>wird bekannt gegeben</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      {{ beergarden }}
+      {% capture events_query %}
+      SELECT ?event WHERE {
+        ?event schema:location <{{ room.iri }}>; schema:startDate ?date .
+        <{{ rootResource.iri }}> schema:subEvent ?event .
+      } ORDER BY ASC(?date)
+      {% endcapture %}
+
+      {% assign events = room | sparql_query: events_query %}
+      {%- for events_row in events -%}
+      {%- assign event = events_row.event -%}
+      {%- assign start = event | rdf_property: "schema:startDate" | date: "%H.%M" -%}
+      {%- assign end = event | rdf_property: "schema:endDate" | date: "%H.%M" -%}
+
+      {% assign track = event | rdf_property: "site:track" %}
+      {% assign pause = "lswt:pause" | rdf_get %}
+      {% if track == pause %}
+      <h3 class="pause">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label", page.language }}</h3>
+      {% else %}
+      <h3 id="{{ event | split: "#" | last }}">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label", page.language }}</h3>
+      {% endif %}
+      {% include performer.html event=event join="; " paragraph=true %}
+
+      {% assign description = event | rdf_property: "dc:description", page.language %}
+      {% if description %}
+      <p>{{ description }}</p>
+      {% endif %}
+
+      {% capture subEvents_query %}
+      SELECT ?event WHERE {
+        <{{ event.iri }}> schema:subEvent ?event .
+        ?event schema:startDate ?date .
+      } ORDER BY ASC(?date)
+      {% endcapture %}
+
+      {% assign subEvents = event | sparql_query: subEvents_query  %}
+
+      <ul>
+      {% for subEvent_row in subEvents %}
+      {% assign subEvent = subEvent_row.event %}
+
+      <li><a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“ – {% include performer.html event=subEvent join=", " %}</li>
+      {% endfor %}
+      </ul>
+      {% endfor %}
+      </div>
     </div>
   </div>
+      {% endfor %}
 </div>
 
 <div class="section light-theme" id="TeamSection" data-anchor="Team">
@@ -164,14 +136,15 @@ type: Event
     {% assign organizerTeam = organizers | rdf_container %}
 
     {% include organizers.html organizers=organizerTeam %}
-    {% assign studentprogram = rootResource | rdf_property: "schema:subEvent" %}
-    {% assign studentorganizers = studentprogram | rdf_property: "schema:organizer" %}
-
-    <h3 class="display-5">{{ studentorganizers | rdf_property: "rdfs:label", page.language }}</h3>
-
-    {% assign studentorganizersTeam = studentorganizers | rdf_container %}
-
-    {% include organizers.html organizers=studentorganizersTeam %}
+    {% assign subEvents = rootResource | rdf_property: "schema:subEvent", nil, true %}
+    {% for subEvent in subEvents %}
+    {% assign subOrganizers = subEvent | rdf_property: "schema:organizer" %}
+    {% if subOrganizers %}
+    <h3 class="display-5">{{ subOrganizers | rdf_property: "rdfs:label", page.language }}</h3>
+    {% assign subOrganizersTeam = subOrganizers | rdf_container %}
+    {% include organizers.html organizers=subOrganizersTeam %}
+    {% endif %}
+    {% endfor %}
   </div>
 </div>
 
@@ -190,12 +163,6 @@ type: Event
     {% endfor %}
     </div>
 
-  </div>
-</div>
-
-<div class="section light-theme" id="HackatonSection" data-anchor="Hackaton">
-  <div class="container">
-    {% include hackaton.html %}
   </div>
 </div>
 
