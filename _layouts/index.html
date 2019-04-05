@@ -137,14 +137,15 @@ type: Event
     {% assign organizerTeam = organizers | rdf_container %}
 
     {% include organizers.html organizers=organizerTeam %}
-    {% assign studentprogram = rootResource | rdf_property: "schema:subEvent" %}
-    {% assign studentorganizers = studentprogram | rdf_property: "schema:organizer" %}
-
-    <h3 class="display-5">{{ studentorganizers | rdf_property: "rdfs:label", page.language }}</h3>
-
-    {% assign studentorganizersTeam = studentorganizers | rdf_container %}
-
-    {% include organizers.html organizers=studentorganizersTeam %}
+    {% assign subEvents = rootResource | rdf_property: "schema:subEvent", nil, true %}
+    {% for subEvent in subEvents %}
+    {% assign subOrganizers = subEvent | rdf_property: "schema:organizer" %}
+    {% if subOrganizers %}
+    <h3 class="display-5">{{ subOrganizers | rdf_property: "rdfs:label", page.language }}</h3>
+    {% assign subOrganizersTeam = subOrganizers | rdf_container %}
+    {% include organizers.html organizers=subOrganizersTeam %}
+    {% endif %}
+    {% endfor %}
   </div>
 </div>
 
@@ -163,12 +164,6 @@ type: Event
     {% endfor %}
     </div>
 
-  </div>
-</div>
-
-<div class="section light-theme" id="HackatonSection" data-anchor="Hackaton">
-  <div class="container">
-    {% include hackaton.html %}
   </div>
 </div>
 
