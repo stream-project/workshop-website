@@ -6,7 +6,7 @@ rdf_prefix_path: _data/prefixes.sparql
 <schedule>
     <version>{{ "now" | date: "%Y-%m-%d_%H-%M" }}</version>
     <conference>
-        {%- assign lswt = site.eventurl | rdf_get -%}
+        {%- assign lswt = site.rootResource | rdf_get -%}
         <title>{{ lswt | rdf_property: "rdfs:label" }}</title>
         <acronym>{{ lswt | rdf_property: "site:abbrevation" }}</acronym>
         <start>{{ lswt | rdf_property: "schema:startDate" }}</start>
@@ -32,7 +32,7 @@ rdf_prefix_path: _data/prefixes.sparql
               {% assign track = event | rdf_property: "schema:location" | rdf_property: "rdfs:label" %}
             {% endunless %}
             <event id="{{ event | rdf_property: "site:id" }}">
-                <title>{{ event | rdf_property: "rdfs:label" }}</title>
+                <title>{{ event | rdf_property: "rdfs:label" | escape }}</title>
                 <date>{{ event | rdf_property: "schema:startDate" | date: "%Y-%m-%dT%H:%M:%SZ" }}</date>
                 <start>{{ event | rdf_property: "schema:startDate" | date: "%H:%M" }}</start>
                 <duration>{{ event | rdf_property: "schema:duration" }}</duration>
