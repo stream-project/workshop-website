@@ -64,11 +64,11 @@ type: Event
     <div class="container">
       <div class="jumbotron jumbotron-program">
       <strong>{{programmLabel}}</strong> – <em>{{ programmDisclaimer }}</em>
-      <div>
+      <div class="programNav">
       {%- assign roomsNav = rootResource | rdf_container: "site:rooms" -%}
       {% for roomNav in roomsNav %}
       {% if roomNav == room %}
-      <h2 class="display-4" style="display: inline">{{ roomNav | rdf_property: "rdfs:label", page.language }}</h2>
+      <h2 style="display: inline">{{ roomNav | rdf_property: "rdfs:label", page.language }}</h2>
       {% else %}
       <span><a href="#Programm/{{ roomNav | split: "#" | last }}">{{ roomNav | rdf_property: "rdfs:label", page.language }}</a></span>
       {% endif %}
