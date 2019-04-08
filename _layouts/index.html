@@ -15,7 +15,10 @@ type: Event
       <h1 class="display-4">{{ rootResource | rdf_property: "rdfs:label", page.language }}</h1>
       {{ rootResource | rdf_property: "rdfs:comment", page.language | markdownify }}
 
-      <p><a href="{{ rootResource | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a></p>
+      <p>
+        <a href="{{ rootResource | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a>
+        <a href="{{ rootResource | rdf_property: "site:cfp" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:cfp" | rdf_property: "rdfs:label", page.language }}</a>
+      </p>
 
       <dl>
         <dt>{{ "schema:startDate" | rdf_property: "rdfs:label", page.language }}</dt>
