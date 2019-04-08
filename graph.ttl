@@ -30,7 +30,7 @@
   schema:startDate "2019-05-22"^^xsd:date ;
   schema:endDate "2019-05-22"^^xsd:date ;
   schema:location lswt:Location ;
-  site:rooms [ rdf:_1 lswt:kosmos ; rdf:_2 lswt:tutorialraum ; rdf:_3 lswt:hackathonraum ; rdf:_4 lswt:dachterrasse ]  ;
+  site:rooms [ rdf:_1 lswt:vortragsraum ; rdf:_2 lswt:tutorialraum ; rdf:_3 lswt:hackathonraum ; rdf:_4 lswt:dachterrasse ]  ;
   site:registrationPage <https://pretix.eu/infai/lswt2019/> ;
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
@@ -67,14 +67,14 @@ lswt:LocationSeeAlsoLabel
   rdf:object <https://www.melia.com/de/hotels/deutschland/leipzig/innside-leipzig/index.htm> ;
   rdfs:label "Hier geht es zum INNSIDE"@de, "To the homepage of the INNSIDE"@en .
 
-lswt:kosmos a schema:Place ;
-    rdfs:label "Kosmos"@de, "Kosmos"@en .
+lswt:vortragsraum a schema:Place ;
+    rdfs:label "Vorträge"@de, "Main Track"@en .
 
 lswt:tutorialraum a schema:Place ;
     rdfs:label "Tutorials"@de, "Tutorials"@en .
 
 lswt:hackathonraum a schema:Place ;
-    rdfs:label "Big Idea Space"@de, "Big Idea Space"@en .
+    rdfs:label "Hackathon"@de, "Hackathon"@en .
 
 lswt:dachterrasse a schema:Place ;
     rdfs:label "Dachterrasse"@de, "Roof Garden"@en .
@@ -242,7 +242,7 @@ lswt:begruessung a schema:Event ;
     schema:startDate "2019-05-22T09:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T09:10+02:00"^^xsd:dateTime ;
     schema:duration "00:10" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Begrüßung"@de, "Welcome"@en .
 
 lswt:trackKeynote a schema:Event ;
@@ -255,7 +255,7 @@ lswt:keynoteBoth a schema:Event ;
     schema:startDate "2019-05-22T09:10+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Keynote"@en, "Keynote"@de ;
     dc:description "…" .
 
@@ -265,7 +265,7 @@ lswt:keynote2 a schema:Event ;
     schema:startDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Keynote"@en, "Keynote"@de ;
     dc:description """…""" .
 
@@ -273,7 +273,7 @@ lswt:trackLDEnterprise a schema:Event ;
     rdfs:label "Linked Data in Enterprise Use-Cases"@en, "Linked Data in Enterprise Use-Cases"@de ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     schema:subEvent lswt:talkFreudenberg, lswt:talkHellmann, lswt:talkSeebi .
 
 lswt:talkFreudenberg a schema:Event ;
@@ -283,7 +283,7 @@ lswt:talkFreudenberg a schema:Event ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T10:00+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "xCOR - a Value Chain Framework Ontology" .
 
 lswt:talkHellmann a schema:Event ;
@@ -293,7 +293,7 @@ lswt:talkHellmann a schema:Event ;
     schema:startDate "2019-05-22T10:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "The DBpedia databus" .
 
 lswt:talkSeebi a schema:Event ;
@@ -303,14 +303,14 @@ lswt:talkSeebi a schema:Event ;
     schema:startDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T10:40+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Das LIMBO Projekt: Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
 
 lswt:trackLDResearch a schema:Event ;
     rdfs:label "Linking Research"@de, "Linking Research"@en ;
     schema:startDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     schema:subEvent lswt:talkAuer, lswt:talkKoenigRies, lswt:talkWolff .
 
 lswt:talkAuer a schema:Event ;
@@ -320,7 +320,7 @@ lswt:talkAuer a schema:Event ;
     schema:startDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:35+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Knowledge Graphs for Scholarly Communication" .
 
 lswt:talkKoenigRies a schema:Event ;
@@ -330,7 +330,7 @@ lswt:talkKoenigRies a schema:Event ;
     schema:startDate "2019-05-22T11:35+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:55+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "BEXIS2" .
 
 lswt:talkWolff a schema:Event ;
@@ -340,14 +340,14 @@ lswt:talkWolff a schema:Event ;
     schema:startDate "2019-05-22T11:55+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Forschungskompass" .
 
 lswt:trackDataNetworks a schema:Event ;
     rdfs:label "Data Networks"@de, "Data Networks"@en ;
     schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     schema:subEvent lswt:talkArndt .
 
 lswt:talkArndt a schema:Event ;
@@ -357,7 +357,7 @@ lswt:talkArndt a schema:Event ;
     schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T15:20+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "PlatonaM: Plattform-Ökosystem for innovative maintenance management through predictive maintenance" .
 
 lswt:hackathon a schema:Event ;
@@ -458,7 +458,7 @@ lswt:closing a schema:Event ;
     schema:startDate "2019-05-22T17:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T18:00+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
-    schema:location lswt:kosmos ;
+    schema:location lswt:vortragsraum ;
     rdfs:label "Poster Winner and Closing"@en, "Poster Gewinner und Abschluss"@de .
 
 lswt:beergarden a schema:Event ;
@@ -481,7 +481,7 @@ lswt:ersteKaffeePause a schema:Event ;
     schema:startDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
     schema:duration "00:15" ;
-    schema:location lswt:kosmos, lswt:tutorialraum ;
+    schema:location lswt:vortragsraum, lswt:tutorialraum ;
     rdfs:label "Kaffeepause"@de, "Coffee Break"@en .
 
 lswt:MittagsPause a schema:Event ;
@@ -490,7 +490,7 @@ lswt:MittagsPause a schema:Event ;
     schema:startDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:duration "01:15" ;
-    schema:location lswt:kosmos, lswt:tutorialraum ;
+    schema:location lswt:vortragsraum, lswt:tutorialraum ;
     rdfs:label "Mittagspause"@de, "Lunch Break"@en .
 
 lswt:zweiteKaffeePause a schema:Event ;
@@ -499,5 +499,5 @@ lswt:zweiteKaffeePause a schema:Event ;
     schema:startDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
     schema:duration "00:45" ;
-    schema:location lswt:kosmos, lswt:tutorialraum ;
+    schema:location lswt:vortragsraum, lswt:tutorialraum ;
     rdfs:label "Kaffeepause und Postersession"@de, "Coffee Break and Postersession"@en .
