@@ -18,6 +18,8 @@ type: Event
       <p>
         <a href="{{ rootResource | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:cfp" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:cfp" | rdf_property: "rdfs:label", page.language }}</a>
+        <a href="{{ rootResource | rdf_property: "site:invitation" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:invitation" | rdf_property: "rdfs:label", page.language }}</a>
+        <a href="{{ rootResource | rdf_property: "site:flyer" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:flyer" | rdf_property: "rdfs:label", page.language }}</a>
       </p>
 
       <dl>

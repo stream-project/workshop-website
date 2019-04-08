@@ -31,6 +31,8 @@
   schema:endDate "2019-05-22"^^xsd:date ;
   schema:location lswt:Location ;
   site:cfp </CFP-LSWT2019.pdf> ;
+  site:invitation </Einladung-LSWT2019.pdf> ;
+  site:flyer </Flyer.pdf> ;
   site:rooms [ rdf:_1 lswt:vortragsraum ; rdf:_2 lswt:tutorialraum ; rdf:_3 lswt:hackathonraum ; rdf:_4 lswt:dachterrasse ]  ;
   site:registrationPage <https://pretix.eu/infai/lswt2019/> ;
   schema:organizer lswt:Team ;
@@ -49,6 +51,8 @@ schema:startDate rdfs:label "Datum"@de, "Date"@en .
 schema:location rdfs:label "Ort"@de, "Place"@en .
 <https://pretix.eu/infai/lswt2019/> rdfs:label "Anmeldung"@de, "Registration"@en .
 </CFP-LSWT2019.pdf>  rdfs:label "Call for Participation"@de, "Call for Participation"@en .
+</Einladung-LSWT2019.pdf>  rdfs:label "Einladung"@de, "Invitation"@en .
+</Flyer.pdf>  rdfs:label "Flyer"@de, "Flyer"@en .
 
 lswt:Location a schema:PostalAddress ;
   rdfs:label "Veranstaltungsort"@de, "Venue"@en ;
