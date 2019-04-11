@@ -83,7 +83,7 @@ lswt:hackathonraum a schema:Place ;
     rdfs:label "Hackathon"@de, "Hackathon"@en .
 
 lswt:dachterrasse a schema:Place ;
-    rdfs:label "Dachterrasse"@de, "Roof Garden"@en .
+    rdfs:label "Social Event"@de, "Social Event"@en .
 
 lswt:Partner
   rdfs:label "Partner"@de, "Partners"@en ;
