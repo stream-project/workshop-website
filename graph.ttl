@@ -483,7 +483,7 @@ lswt:beergarden a schema:Event ;
 
 <p>eccenca GmbH verknüpft und vernetzt Daten, um innovative, datengesteuert und agile Anwendungsfälle und Unternehmensnetzwerke zu ermöglichen. Dieses junge deutsche KMU bietet Technologien für Entwicklung, Vermarktung und Support von Software sowie den Betrieb von Anwendungssoftware als Dienstleistung für Dritte seit 2013.</p>
 
-<p>Finden Sie weitere Information von eccenca GmbH auf unser Webseite: <a href="https://www.eccenca.com/>www.eccenca.com</a></p>
+<p>Finden Sie weitere Information von eccenca GmbH auf unser Webseite: <a href="https://www.eccenca.com/">www.eccenca.com</a></p>
 """@de,
                    "We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace! "@en.
 
