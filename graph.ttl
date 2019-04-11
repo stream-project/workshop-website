@@ -475,7 +475,16 @@ lswt:beergarden a schema:Event ;
     schema:duration "04:00" ;
     schema:location lswt:dachterrasse ;
     rdfs:label "Social Event sponsored by eccenca GmbH"@en, "Social Event sponsored by eccenca GmbH"@de ;
-    dc:description "Wir freuen uns herzlich Sie zum Social Event „Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!"@de,
+    dc:description """
+<p>Auch 2019 unterstützt die eccenca GmbH den Leipziger Semantic Web Tag und lädt die Teilnehmer gerne zum Social Event <strong>Semantic Beergarden</strong> ein!</p>
+
+<p>Genießen Sie interessante Gespräche am Abend bei einem Bier auf der Dachterrasse des wunderschönen INNSIDE Hotels. eccenca möchte zusammen mit Ihnen diesen großartigen Moment des Jahres erleben. Sie sind dann herzlich eingeladen.</p>
+
+
+<p>eccenca GmbH verknüpft und vernetzt Daten, um innovative, datengesteuert und agile Anwendungsfälle und Unternehmensnetzwerke zu ermöglichen. Dieses junge deutsche KMU bietet Technologien für Entwicklung, Vermarktung und Support von Software sowie den Betrieb von Anwendungssoftware als Dienstleistung für Dritte seit 2013.</p>
+
+<p>Finden Sie weitere Information von eccenca GmbH auf unser Webseite: [www.eccenca.com](https://www.eccenca.com/)</p>
+"""@de,
                    "We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace! "@en.
 
 lswt:pause a schema:Event ;
