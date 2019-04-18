@@ -215,7 +215,7 @@ lswt:HansChristianBrockmann foaf:name "Hans-Christian Brockmann";
 lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
     foaf:homepage <https://nz.linkedin.com/in/andreas-heinecke-55791283> ;
     schema:affiliation infai: ;
-    dc:description "Geschäftsführer @ [InfAI Management GmbH](http://infai.org/)" .
+    dc:description "CEO @ [InfAI Management GmbH](http://infai.org/)" .
 
 lswt:AndreasBoth foaf:name "Prof. Dr. Andreas Both" ;
     foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
@@ -291,7 +291,7 @@ lswt:trackLDEnterprise a schema:Event ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
-    schema:subEvent lswt:talkFreudenberg, lswt:talkHellmann, lswt:talkSeebi .
+    schema:subEvent lswt:talkFreudenberg, lswt:talkSeebi .
 
 lswt:talkFreudenberg a schema:Event ;
     site:id 111 ;
@@ -303,22 +303,12 @@ lswt:talkFreudenberg a schema:Event ;
     schema:location lswt:vortragsraum ;
     rdfs:label "xCOR - a Value Chain Framework Ontology" .
 
-lswt:talkHellmann a schema:Event ;
+lswt:talkSeebi a schema:Event ;
     site:id 112 ;
     site:track lswt:trackLDEnterprise ;
-    schema:performer aksw:SebastianHellmann ;
+    schema:performer aksw:SebastianTramp ;
     schema:startDate "2019-05-22T10:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
-    schema:duration "00:20" ;
-    schema:location lswt:vortragsraum ;
-    rdfs:label "The DBpedia databus" .
-
-lswt:talkSeebi a schema:Event ;
-    site:id 113 ;
-    site:track lswt:trackLDEnterprise ;
-    schema:performer aksw:SebastianTramp ;
-    schema:startDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
-    schema:endDate "2019-05-22T10:40+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "Das LIMBO Projekt: Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
@@ -365,14 +355,24 @@ lswt:trackDataNetworks a schema:Event ;
     schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
-    schema:subEvent lswt:talkArndt .
+    schema:subEvent lswt:talkArndt, lswt:talkHellmann .
+
+lswt:talkHellmann a schema:Event ;
+    site:id 131 ;
+    site:track lswt:trackDataNetworks ;
+    schema:performer aksw:SebastianHellmann ;
+    schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T14:20+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:vortragsraum ;
+    rdfs:label "The DBpedia databus" .
 
 lswt:talkArndt a schema:Event ;
     site:id 132 ;
     site:track lswt:trackDataNetworks ;
     schema:performer aksw:NatanaelArndt ;
-    schema:startDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
-    schema:endDate "2019-05-22T15:20+02:00"^^xsd:dateTime ;
+    schema:startDate "2019-05-22T14:20+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T14:40+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "PlatonaM: Plattform-Ökosystem for innovative maintenance management through predictive maintenance" .
