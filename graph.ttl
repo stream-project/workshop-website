@@ -278,7 +278,7 @@ Er ist Autor vielfältiger Präsentationen und Publikationen im Bereich Web Engi
 lswt:keynoteLehmann a schema:Event ;
     site:id 103 ;
     site:track lswt:trackKeynote ;
-    schema:performer lswt:JensLehmann ;
+    schema:performer aksw:JensLehmann ;
     schema:startDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
