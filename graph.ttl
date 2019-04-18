@@ -226,7 +226,7 @@ lswt:BirgittaKoenigRies  foaf:name "Prof. Dr. Birgitta König-Ries" ;
     dc:description "[Uni Jena](https://www.uni-jena.de/)".
 
 lswt:StefanWolff foaf:name "Stefan Wolff" ;
-    dc:description "SLUB Dresden (FID move)".
+    dc:description "[Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden (SLUB)](https://www.slub-dresden.de/startseite/), [FID move](https://projects.tib.eu/fid-move/startseite/)".
 
 aksw:JensLehmann foaf:name "Prof. Dr. Jens Lehmann" ;
     foaf:homepage <http://jens-lehmann.org/> ;
@@ -347,7 +347,7 @@ lswt:talkWolff a schema:Event ;
     schema:endDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Forschungskompass" .
+    rdfs:label "Forschungskompass: Transparenz für interdisziplinäre Forschungsnetzwerke" .
 
 lswt:trackDataNetworks a schema:Event ;
     rdfs:label "Data Networks"@de, "Data Networks"@en ;
