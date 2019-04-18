@@ -83,7 +83,7 @@ lswt:hackathonraum a schema:Place ;
     rdfs:label "Hackathon"@de, "Hackathon"@en .
 
 lswt:dachterrasse a schema:Place ;
-    rdfs:label "Dachterrasse"@de, "Roof Garden"@en .
+    rdfs:label "Social Event"@de, "Social Event"@en .
 
 lswt:Partner
   rdfs:label "Partner"@de, "Partners"@en ;
@@ -165,7 +165,7 @@ htwk: foaf:name "HTWK Leipzig";
 aksw:NatanaelArndt foaf:name "Natanael Arndt" ;
   foaf:homepage aksw:NatanaelArndt ;
   foaf:depiction "/images/people/NatanaelArndt.png" ;
-  dc:description "[AKSW](http://aksw.org/)/[InfAI Management GmbH](https://infai.org/)" ;
+  dc:description "Projektleiter @ [AKSW](http://aksw.org/)/[InfAI Management GmbH](https://infai.org/)" ;
   schema:affiliation aksw:Group , infai: .
 
 aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
@@ -176,7 +176,7 @@ aksw:SandraBartsch foaf:name "Sandra Bartsch" ;
 aksw:SebastianTramp foaf:name "Dr. Sebastian Tramp" ;
   foaf:homepage aksw:SebastianTramp ;
   foaf:depiction "/images/people/SebastianTramp.png" ;
-  dc:description "CTO, [eccenca GmbH](https://www.eccenca.com/)" ;
+  dc:description "CTO @ [eccenca GmbH](https://www.eccenca.com/)" ;
   schema:affiliation ecc: .
 
 aksw:JuliaHolze foaf:name "Julia Holze" ;
@@ -186,7 +186,7 @@ aksw:JuliaHolze foaf:name "Julia Holze" ;
 
 aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
     foaf:homepage aksw:SebastianHellmann ;
-    dc:description "[DBpedia Association](https://dbpedia.org/)" ;
+    dc:description "Director @ [DBpedia Association](https://dbpedia.org/)" ;
     schema:affiliation dbpedia: .
 
 aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
@@ -194,7 +194,7 @@ aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
     foaf:depiction "/images/people/MichaelMartin.png" ;
     schema:affiliation aksw:Group, infai: .
 
-aksw:ThomasRiechert foaf:name "Professor Dr. Thomas Riechert" ;
+aksw:ThomasRiechert foaf:name "Prof. Dr. Thomas Riechert" ;
     foaf:homepage aksw:ThomasRiechert ;
     foaf:depiction "/images/people/ThomasRiechert.png" ;
     schema:affiliation aksw:Group, htwk: .
@@ -210,35 +210,35 @@ aksw:EdgardMarx foaf:name "Edgard Marx" ;
 
 lswt:HansChristianBrockmann foaf:name "Hans-Christian Brockmann";
     foaf:homepage <https://www.xing.com/profile/HansChristian_Brockmann> ;
-    dc:description "Geschäftsführer, [eccenca GmbH](https://www.eccenca.com/)".
+    dc:description "Geschäftsführer @ [eccenca GmbH](https://www.eccenca.com/)".
 
 lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
     foaf:homepage <https://nz.linkedin.com/in/andreas-heinecke-55791283> ;
     schema:affiliation infai: ;
-    dc:description "Geschäftsführer, [InfAI Management GmbH](http://infai.org/)" .
+    dc:description "Geschäftsführer @ [InfAI Management GmbH](http://infai.org/)" .
 
-lswt:AndreasBoth foaf:name "Professor Dr. Andreas Both" ;
+lswt:AndreasBoth foaf:name "Prof. Dr. Andreas Both" ;
     foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
     dc:description "Hochschule Anhalt".
 
-lswt:BirgittaKoenigRies  foaf:name "Professor Dr. Birgitta König-Ries" ;
+lswt:BirgittaKoenigRies  foaf:name "Prof. Dr. Birgitta König-Ries" ;
     foaf:homepage <https://www.fmi.uni-jena.de/Fakult%C3%A4t/Aktivit%C3%A4ten+der+Fakult%C3%A4t/Veranstaltungen/Data+Science+Day+Jena/Data+Science+Day+2017/Referenten/K%C3%B6nig_Ries_+Birgitta+%28FSU+Jena%29-p-124565.html> ;
     dc:description "[Uni Jena](https://www.uni-jena.de/)".
 
 lswt:StefanWolff foaf:name "Stefan Wolff" ;
     dc:description "SLUB Dresden (FID move)".
 
-aksw:JensLehmann foaf:name "Professor Dr. Jens Lehmann" ;
+aksw:JensLehmann foaf:name "Prof. Dr. Jens Lehmann" ;
     foaf:homepage <http://jens-lehmann.org/> ;
-    dc:description "Fraunhofer IAIS".
+    dc:description "Lead Scientist @ Fraunhofer IAIS".
 
 aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
     foaf:homepage aksw:MarkusFreudenberg ;
-    dc:description "[eccenca GmbH](https://www.eccenca.com/)".
+    dc:description "Ontology Engineer @ [eccenca GmbH](https://www.eccenca.com/)".
 
-aksw:SoerenAuer foaf:name "Professor Dr. Sören Auer" ;
+aksw:SoerenAuer foaf:name "Prof. Dr. Sören Auer" ;
     foaf:homepage <https://de.wikipedia.org/wiki/S%C3%B6ren_Auer> ;
-    dc:description "[Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
+    dc:description "Direktor @ [Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
 
 ### Sub Events
 
@@ -475,7 +475,16 @@ lswt:beergarden a schema:Event ;
     schema:duration "04:00" ;
     schema:location lswt:dachterrasse ;
     rdfs:label "Social Event sponsored by eccenca GmbH"@en, "Social Event sponsored by eccenca GmbH"@de ;
-    dc:description "Wir freuen uns herzlich Sie zum Social Event „Semantic Biergarten“ im INNSIDE Hotel auf der Dachterrasse einzuladen!"@de,
+    dc:description """
+<p>Auch 2019 unterstützt die eccenca GmbH den Leipziger Semantic Web Tag und lädt die Teilnehmer gerne zum Social Event <strong>Semantic Beergarden</strong> ein!</p>
+
+<p>Genießen Sie interessante Gespräche am Abend bei einem Bier auf der Dachterrasse des wunderschönen INNSIDE Hotels. eccenca möchte zusammen mit Ihnen diesen großartigen Moment des Jahres erleben. Sie sind dann herzlich eingeladen.</p>
+
+
+<p>eccenca GmbH verknüpft und vernetzt Daten, um innovative, datengesteuert und agile Anwendungsfälle und Unternehmensnetzwerke zu ermöglichen. Dieses junge deutsche KMU bietet Technologien für Entwicklung, Vermarktung und Support von Software sowie den Betrieb von Anwendungssoftware als Dienstleistung für Dritte seit 2013.</p>
+
+<p>Finden Sie weitere Information von eccenca GmbH auf unser Webseite: <a href="https://www.eccenca.com/">www.eccenca.com</a></p>
+"""@de,
                    "We are happy to invite you to the social event “Semantic Beer Garden” in the INNSIDE Hotel on the roof terrace! "@en.
 
 lswt:pause a schema:Event ;
