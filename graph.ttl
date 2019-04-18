@@ -219,7 +219,7 @@ lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
 
 lswt:AndreasBoth foaf:name "Prof. Dr. Andreas Both" ;
     foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
-    dc:description "Hochschule Anhalt".
+    dc:description " Head of Research @ [DATEV eG](https://www.datev.de)/[Hochschule Anhalt](https://www.hs-anhalt.de)".
 
 lswt:BirgittaKoenigRies  foaf:name "Prof. Dr. Birgitta König-Ries" ;
     foaf:homepage <https://www.fmi.uni-jena.de/Fakult%C3%A4t/Aktivit%C3%A4ten+der+Fakult%C3%A4t/Veranstaltungen/Data+Science+Day+Jena/Data+Science+Day+2017/Referenten/K%C3%B6nig_Ries_+Birgitta+%28FSU+Jena%29-p-124565.html> ;
@@ -262,8 +262,14 @@ lswt:keynoteBoth a schema:Event ;
     schema:endDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Keynote"@en, "Keynote"@de ;
-    dc:description "…" .
+    rdfs:label "Towards a productive Linked Data environment within Enterprises"@en, "Towards a productive Linked Data environment within Enterprises"@de ;
+    dc:description """Short CV:
+Prof. Dr. Andreas Both studierte Informatik an der Martin-Luther-Universität und promovierte ebendort im Forschungsfeld Software Engineering.
+In leitender Position war in verschiedenen Unternehmen in den Felder e-Commerce und Business Software tätig und verantwortete Technologie orientierte Innovationen in Eigenentwicklung, mit Partnern sowie in zahlreichen (internationalen) F&E-Projekten.
+Zuletzt bekleidete er bei der DATEV eG als Teil der CTO-Organisation die Rolle des Head of Architecture, Web Technologies & IT Research.
+Andreas Both ist Professor für Web Engineering an der Hochschule Anhalt und zusätzlich Head of Research bei der DATEV eG.
+Er widmet seine Forschungsarbeiten der Schnittstelle zwischen Software Engineering und Daten Science.
+Er ist Autor vielfältiger Präsentationen und Publikationen im Bereich Web Engineering, Question Answering und Data-driven bzw. Big Data Applications.""" .
 
 lswt:keynote2 a schema:Event ;
     site:id 103 ;
