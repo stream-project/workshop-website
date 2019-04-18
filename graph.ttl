@@ -197,6 +197,7 @@ aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
 aksw:ThomasRiechert foaf:name "Prof. Dr. Thomas Riechert" ;
     foaf:homepage aksw:ThomasRiechert ;
     foaf:depiction "/images/people/ThomasRiechert.png" ;
+    dc:description "[Institut für Informatik/HTWK Leipzig](https://www.htwk-leipzig.de/)" ;
     schema:affiliation aksw:Group, htwk: .
 
 lswt:NievesSande foaf:name "Nieves Sande" ;
@@ -390,7 +391,7 @@ lswt:track4 a schema:Event ;
     schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T17:30+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
-    schema:subEvent lswt:talkPalma, lswt:talkQrowd .
+    schema:subEvent lswt:talkPalma, lswt:talkQrowd, lswt:talkRiechert .
 
 lswt:talkPalma a schema:Event ;
     site:id 142 ;
@@ -407,10 +408,20 @@ lswt:talkQrowd a schema:Event ;
     site:track lswt:track4 ;
     schema:performer aksw:PatrickWestphal, aksw:SimonBin ;
     schema:startDate "2019-05-22T16:35+02:00"^^xsd:dateTime ;
-    schema:endDate "2019-05-22T16:55+02:00"^^xsd:dateTime ;
-    schema:duration "00:20" ;
+    schema:endDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
+    schema:duration "00:25" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "Das QROWD-Projekt: Because Big Data Integration is Humanly Possible" .
+
+lswt:talkRiechert a schema:Event ;
+    site:id 144 ;
+    site:track lswt:track4 ;
+    schema:performer aksw:ThomasRiechert ;
+    schema:startDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:20+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:vortragsraum ;
+    rdfs:label "Semantic Web in the Digital Humanities" .
 
 lswt:hackathon a schema:Event ;
     site:id 300 ;
