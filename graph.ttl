@@ -39,7 +39,7 @@
   schema:partner lswt:Partner ;
   schema:subEvent lswt:begruessung,
         lswt:keynoteBoth, lswt:keynoteLehmann,
-        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks,
+        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks, lswt:track4,
         lswt:hackathon, lswt:studentProgram,
         lswt:solid, lswt:jekyllrdf,
         lswt:ersteKaffeePause, lswt:MittagsPause, lswt:zweiteKaffeePause,
@@ -240,6 +240,10 @@ aksw:SoerenAuer foaf:name "Prof. Dr. Sören Auer" ;
     foaf:homepage <https://de.wikipedia.org/wiki/S%C3%B6ren_Auer> ;
     dc:description "Direktor @ [Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
 
+lswt:RaulPalma foaf:name "Raul Palma" ;
+    foaf:homepage <https://www.slideshare.net/rapw3k> ;
+    dc:description "[Poznan Supercomputing and Networking Center](http://www.man.poznan.pl/online/en/) (PSNC)".
+
 ### Sub Events
 
 lswt:begruessung a schema:Event ;
@@ -372,6 +376,23 @@ lswt:talkArndt a schema:Event ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "PlatonaM: Plattform-Ökosystem for innovative maintenance management through predictive maintenance" .
+
+lswt:track4 a schema:Event ;
+    rdfs:label ""@de, ""@en ;
+    schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:30+02:00"^^xsd:dateTime ;
+    schema:location lswt:vortragsraum ;
+    schema:subEvent lswt:talkPalma .
+
+lswt:talkPalma a schema:Event ;
+    site:id 142 ;
+    site:track lswt:track4 ;
+    schema:performer lswt:RaulPalma ;
+    schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T16:35+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:vortragsraum ;
+    rdfs:label "Linked data publication pipelines for agri-related use cases" .
 
 lswt:hackathon a schema:Event ;
     site:id 300 ;
