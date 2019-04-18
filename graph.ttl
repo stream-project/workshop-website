@@ -38,8 +38,8 @@
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
   schema:subEvent lswt:begruessung,
-        lswt:keynoteBoth, lswt:keynote2,
-        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks,
+        lswt:keynoteBoth, lswt:keynoteLehmann,
+        lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks, lswt:track4,
         lswt:hackathon, lswt:studentProgram,
         lswt:solid, lswt:jekyllrdf,
         lswt:ersteKaffeePause, lswt:MittagsPause, lswt:zweiteKaffeePause,
@@ -219,18 +219,18 @@ lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
 
 lswt:AndreasBoth foaf:name "Prof. Dr. Andreas Both" ;
     foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
-    dc:description "Hochschule Anhalt".
+    dc:description " Head of Research @ [DATEV eG](https://www.datev.de)/[Hochschule Anhalt](https://www.hs-anhalt.de)".
 
 lswt:BirgittaKoenigRies  foaf:name "Prof. Dr. Birgitta König-Ries" ;
     foaf:homepage <https://www.fmi.uni-jena.de/Fakult%C3%A4t/Aktivit%C3%A4ten+der+Fakult%C3%A4t/Veranstaltungen/Data+Science+Day+Jena/Data+Science+Day+2017/Referenten/K%C3%B6nig_Ries_+Birgitta+%28FSU+Jena%29-p-124565.html> ;
     dc:description "[Uni Jena](https://www.uni-jena.de/)".
 
 lswt:StefanWolff foaf:name "Stefan Wolff" ;
-    dc:description "SLUB Dresden (FID move)".
+    dc:description "[Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden (SLUB)](https://www.slub-dresden.de/startseite/), [FID move](https://projects.tib.eu/fid-move/startseite/)".
 
 aksw:JensLehmann foaf:name "Prof. Dr. Jens Lehmann" ;
-    foaf:homepage <http://jens-lehmann.org/> ;
-    dc:description "Lead Scientist @ Fraunhofer IAIS".
+    foaf:homepage <https://www.iais.fraunhofer.de/de/institut/mitarbeiterprofile/jens-lehmann.html> ;
+    dc:description "Standortleiter Dresden @ [Fraunhofer IAIS](https://www.iais.fraunhofer.de/de/institut/dresden.html)".
 
 aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
     foaf:homepage aksw:MarkusFreudenberg ;
@@ -239,6 +239,10 @@ aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
 aksw:SoerenAuer foaf:name "Prof. Dr. Sören Auer" ;
     foaf:homepage <https://de.wikipedia.org/wiki/S%C3%B6ren_Auer> ;
     dc:description "Direktor @ [Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
+
+lswt:RaulPalma foaf:name "Raul Palma" ;
+    foaf:homepage <https://www.slideshare.net/rapw3k> ;
+    dc:description "[Poznan Supercomputing and Networking Center](http://www.man.poznan.pl/online/en/) (PSNC)".
 
 ### Sub Events
 
@@ -262,17 +266,24 @@ lswt:keynoteBoth a schema:Event ;
     schema:endDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Keynote"@en, "Keynote"@de ;
-    dc:description "…" .
+    rdfs:label "Towards a productive Linked Data environment within Enterprises"@en, "Towards a productive Linked Data environment within Enterprises"@de ;
+    dc:description """Short CV:
+Prof. Dr. Andreas Both studierte Informatik an der Martin-Luther-Universität und promovierte ebendort im Forschungsfeld Software Engineering.
+In leitender Position war in verschiedenen Unternehmen in den Felder e-Commerce und Business Software tätig und verantwortete Technologie orientierte Innovationen in Eigenentwicklung, mit Partnern sowie in zahlreichen (internationalen) F&E-Projekten.
+Zuletzt bekleidete er bei der DATEV eG als Teil der CTO-Organisation die Rolle des Head of Architecture, Web Technologies & IT Research.
+Andreas Both ist Professor für Web Engineering an der Hochschule Anhalt und zusätzlich Head of Research bei der DATEV eG.
+Er widmet seine Forschungsarbeiten der Schnittstelle zwischen Software Engineering und Daten Science.
+Er ist Autor vielfältiger Präsentationen und Publikationen im Bereich Web Engineering, Question Answering und Data-driven bzw. Big Data Applications.""" .
 
-lswt:keynote2 a schema:Event ;
+lswt:keynoteLehmann a schema:Event ;
     site:id 103 ;
     site:track lswt:trackKeynote ;
+    schema:performer aksw:JensLehmann ;
     schema:startDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Keynote"@en, "Keynote"@de ;
+    rdfs:label "Conversational AI"@en, "Conversational AI"@de ;
     dc:description """…""" .
 
 lswt:trackLDEnterprise a schema:Event ;
@@ -347,7 +358,7 @@ lswt:talkWolff a schema:Event ;
     schema:endDate "2019-05-22T12:15+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Forschungskompass" .
+    rdfs:label "Forschungskompass: Transparenz für interdisziplinäre Forschungsnetzwerke" .
 
 lswt:trackDataNetworks a schema:Event ;
     rdfs:label "Data Networks"@de, "Data Networks"@en ;
@@ -365,6 +376,23 @@ lswt:talkArndt a schema:Event ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "PlatonaM: Plattform-Ökosystem for innovative maintenance management through predictive maintenance" .
+
+lswt:track4 a schema:Event ;
+    rdfs:label ""@de, ""@en ;
+    schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:30+02:00"^^xsd:dateTime ;
+    schema:location lswt:vortragsraum ;
+    schema:subEvent lswt:talkPalma .
+
+lswt:talkPalma a schema:Event ;
+    site:id 142 ;
+    site:track lswt:track4 ;
+    schema:performer lswt:RaulPalma ;
+    schema:startDate "2019-05-22T16:15+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T16:35+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:vortragsraum ;
+    rdfs:label "Linked data publication pipelines for agri-related use cases" .
 
 lswt:hackathon a schema:Event ;
     site:id 300 ;
