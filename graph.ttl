@@ -197,6 +197,7 @@ aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
 aksw:ThomasRiechert foaf:name "Prof. Dr. Thomas Riechert" ;
     foaf:homepage aksw:ThomasRiechert ;
     foaf:depiction "/images/people/ThomasRiechert.png" ;
+    dc:description "[Institut für Informatik/HTWK Leipzig](https://www.htwk-leipzig.de/)" ;
     schema:affiliation aksw:Group, htwk: .
 
 lswt:NievesSande foaf:name "Nieves Sande" ;
