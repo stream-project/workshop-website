@@ -38,7 +38,7 @@
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
   schema:subEvent lswt:begruessung,
-        lswt:keynoteBoth, lswt:keynote2,
+        lswt:keynoteBoth, lswt:keynoteLehmann,
         lswt:trackLDEnterprise, lswt:trackLDResearch, lswt:trackDataNetworks,
         lswt:hackathon, lswt:studentProgram,
         lswt:solid, lswt:jekyllrdf,
@@ -229,8 +229,8 @@ lswt:StefanWolff foaf:name "Stefan Wolff" ;
     dc:description "[Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden (SLUB)](https://www.slub-dresden.de/startseite/), [FID move](https://projects.tib.eu/fid-move/startseite/)".
 
 aksw:JensLehmann foaf:name "Prof. Dr. Jens Lehmann" ;
-    foaf:homepage <http://jens-lehmann.org/> ;
-    dc:description "Lead Scientist @ Fraunhofer IAIS".
+    foaf:homepage <https://www.iais.fraunhofer.de/de/institut/mitarbeiterprofile/jens-lehmann.html> ;
+    dc:description "Standortleiter Dresden @ [Fraunhofer IAIS](https://www.iais.fraunhofer.de/de/institut/dresden.html)".
 
 aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
     foaf:homepage aksw:MarkusFreudenberg ;
@@ -271,14 +271,15 @@ Andreas Both ist Professor für Web Engineering an der Hochschule Anhalt und zus
 Er widmet seine Forschungsarbeiten der Schnittstelle zwischen Software Engineering und Daten Science.
 Er ist Autor vielfältiger Präsentationen und Publikationen im Bereich Web Engineering, Question Answering und Data-driven bzw. Big Data Applications.""" .
 
-lswt:keynote2 a schema:Event ;
+lswt:keynoteLehmann a schema:Event ;
     site:id 103 ;
     site:track lswt:trackKeynote ;
+    schema:performer lswt:JensLehmann ;
     schema:startDate "2019-05-22T13:30+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T14:00+02:00"^^xsd:dateTime ;
     schema:duration "00:30" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Keynote"@en, "Keynote"@de ;
+    rdfs:label "Conversational AI"@en, "Conversational AI"@de ;
     dc:description """…""" .
 
 lswt:trackLDEnterprise a schema:Event ;
