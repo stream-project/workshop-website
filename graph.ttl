@@ -237,6 +237,10 @@ aksw:MarkusFreudenberg foaf:name "Markus Freudenberg" ;
     foaf:homepage aksw:MarkusFreudenberg ;
     dc:description "Ontology Engineer @ [eccenca GmbH](https://www.eccenca.com/)".
 
+aksw:MagnusKnuth foaf:name "Magnus Knuth" ;
+    foaf:homepage aksw:MagnusKnuth ;
+    dc:description "Senior Linked Data Consultant @ [eccenca GmbH](https://www.eccenca.com/)".
+
 aksw:SoerenAuer foaf:name "Prof. Dr. Sören Auer" ;
     foaf:homepage <https://de.wikipedia.org/wiki/S%C3%B6ren_Auer> ;
     dc:description "Direktor @ [Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
@@ -320,7 +324,17 @@ lswt:talkLIMBO a schema:Event ;
     schema:endDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "Das LIMBO Projekt: Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
+    rdfs:label "Das LIMBO Projekt - Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
+
+lswt:talkLIMBO a schema:Event ;
+    site:id 113 ;
+    site:track lswt:trackLDEnterprise ;
+    schema:performer aksw:MagnusKnuth ;
+    schema:startDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T10:40+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:vortragsraum ;
+    rdfs:label "GeniusTex - a Smart Textiles innovation platform with semantic technologies inside" .
 
 lswt:trackLDResearch a schema:Event ;
     rdfs:label "Linking Research"@de, "Linking Research"@en ;
