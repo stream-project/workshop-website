@@ -192,6 +192,7 @@ aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
 aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
     foaf:homepage aksw:MichaelMartin ;
     foaf:depiction "/images/people/MichaelMartin.png" ;
+    dc:description "Leiter Kompetenzzentrum @ [AKSW](http://aksw.org/)/[InfAI e.V.](https://infai.org/)" ;
     schema:affiliation aksw:Group, infai: .
 
 aksw:ThomasRiechert foaf:name "Prof. Dr. Thomas Riechert" ;
@@ -304,9 +305,9 @@ lswt:trackLDEnterprise a schema:Event ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
-    schema:subEvent lswt:talkFreudenberg, lswt:talkLIMBO .
+    schema:subEvent lswt:talkXCOR, lswt:talkLIMBO, lswt:talkGeniusTex .
 
-lswt:talkFreudenberg a schema:Event ;
+lswt:talkXCOR a schema:Event ;
     site:id 111 ;
     site:track lswt:trackLDEnterprise ;
     schema:performer aksw:MarkusFreudenberg ;
@@ -326,7 +327,7 @@ lswt:talkLIMBO a schema:Event ;
     schema:location lswt:vortragsraum ;
     rdfs:label "Das LIMBO Projekt - Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
 
-lswt:talkLIMBO a schema:Event ;
+lswt:talkGeniusTex a schema:Event ;
     site:id 113 ;
     site:track lswt:trackLDEnterprise ;
     schema:performer aksw:MagnusKnuth ;
