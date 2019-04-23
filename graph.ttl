@@ -300,7 +300,7 @@ lswt:trackLDEnterprise a schema:Event ;
     schema:startDate "2019-05-22T09:40+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
-    schema:subEvent lswt:talkFreudenberg, lswt:talkSeebi .
+    schema:subEvent lswt:talkFreudenberg, lswt:talkLIMBO .
 
 lswt:talkFreudenberg a schema:Event ;
     site:id 111 ;
@@ -312,10 +312,10 @@ lswt:talkFreudenberg a schema:Event ;
     schema:location lswt:vortragsraum ;
     rdfs:label "xCOR - a Value Chain Framework Ontology" .
 
-lswt:talkSeebi a schema:Event ;
+lswt:talkLIMBO a schema:Event ;
     site:id 112 ;
     site:track lswt:trackLDEnterprise ;
-    schema:performer aksw:SebastianTramp ;
+    schema:performer aksw:MichaelMartin ;
     schema:startDate "2019-05-22T10:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T10:20+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
