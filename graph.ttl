@@ -347,7 +347,7 @@ lswt:talkGeniusTex a schema:Event ;
 
 lswt:trackLDResearch a schema:Event ;
     rdfs:label "Linking Research"@de, "Linking Research"@en ;
-    schema:startDate "2019-05-22T11:15+02:00"^^xsd:dateTime ;
+    schema:startDate "2019-05-22T11:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T12:20+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
     schema:subEvent lswt:talkAuer, lswt:talkKoenigRies, lswt:talkWolff, lswt:talkSNIK .
