@@ -20,10 +20,10 @@
 
 <> a foaf:Document, schema:Event ;
   rdfs:label "7. Leipziger Semantic Web Tag"@de, "7th Leipzig Semantic Web Day"@en ;
-  rdfs:comment """Der Leipziger Semantic Web Tag (LSWT) bietet seit 2009 WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
+  rdfs:comment """Der Leipziger Semantic Web Tag (LSWT) bietet [seit 2009](#PreviousEvents) WissenschaftlernInnen, Unternehmen und Organisationen die Möglichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.
   Diese Schwerpunkte werden im Rahmen von Vorträgen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert ([Programm](#Programm)).
   Falls Sie weitere Fragen haben können Sie sich auch gerne an das [Organisations-Team](#Team) wenden. Das InfAI organisiert und unterstützt rundum den LSWT weitere Events. Verpassen Sie nicht die [Language, Data and Knowledge (LDK) Konferenz](http://2019.ldk-conf.org/) (20.- 22. Mai) an der Universität Leipzig oder das [13. DBpedia Community Meeting](https://wiki.dbpedia.org/meetings/Leipzig2019) am 23. Mai 2019 am Mediencampus Villa Ida. """@de,
-    """Since 2009, the Leipzig Semantic Web Day (LSWT) is an opportunity for scientists, enterprises, and organisations to discuss topics in the field of Semantic Technology.
+    """[Since 2009](#PreviousEvents), the Leipzig Semantic Web Day (LSWT) is an opportunity for scientists, enterprises, and organisations to discuss topics in the field of Semantic Technology.
   These emphases are demonstrated in presentations by experts from industry and science ([Schedule](#Programm)).
   If you have any further questions don't hesitate to contact the [organisation team](#Team). The InfAI organizes and supports further events around the LSWT. Don't miss the [Language, Data and Knowledge (LDK) conference](http://2019.ldk-conf.org/) (20-22 May) at the University of Leipzig or the [13th DBpedia Community Meeting](https://wiki.dbpedia.org/meetings/Leipzig2019) on 23 May 2019 at the media campus Villa Ida."""@en;
   schema:logo </images/logo.png> ;
