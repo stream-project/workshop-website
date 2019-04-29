@@ -219,7 +219,7 @@ lswt:HansChristianBrockmann foaf:name "Hans-Christian Brockmann";
 lswt:AndreasHeinecke foaf:name "Andreas Heinecke" ;
     foaf:homepage <https://nz.linkedin.com/in/andreas-heinecke-55791283> ;
     schema:affiliation infai: ;
-    dc:description "CEO @ [InfAI Management GmbH](http://infai.org/)" .
+    dc:description "Geschäftsführer @ [Institut für Angewandte Informatik (InfAI)](http://infai.org/)" .
 
 lswt:AndreasBoth foaf:name "Prof. Dr. Andreas Both" ;
     foaf:homepage <https://www.hs-anhalt.de/en/university/service/directory-of-people/dr-andreas-both.html> ;
