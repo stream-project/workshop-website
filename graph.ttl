@@ -376,7 +376,7 @@ lswt:talkKoenigRies a schema:Event ;
     schema:endDate "2019-05-22T11:40+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
-    rdfs:label "BEXIS2" .
+    rdfs:label "BEXIS2 - Semantic Web Techniques in Research Data Management" .
 
 lswt:talkSeiji a schema:Event ;
     site:id 123 ;
