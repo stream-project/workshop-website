@@ -16,7 +16,7 @@ type: Event
       {{ rootResource | rdf_property: "rdfs:comment", page.language | markdownify }}
 
       <p>
-        <a href="{{ rootResource | rdf_property: "site:programm" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:programm" | rdf_property: "rdfs:label", page.language }}</a>
+        <a href="#Programm" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:programm" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:cfp" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:cfp" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:invitation" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:invitation" | rdf_property: "rdfs:label", page.language }}</a>
