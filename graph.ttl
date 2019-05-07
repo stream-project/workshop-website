@@ -254,7 +254,7 @@ lswt:MarcinKrystek foaf:name "Marcin Krystek" ;
 
 lswt:SeijiIsotani foaf:name "Seiji Isotani" ;
     foaf:homepage <http://isotani.caed-lab.com/> ;
-    dc:description "Associate Professor @ [University of São Paulo](http://www.usp.br/)".
+    dc:description "Professor @ [University of São Paulo](http://www.usp.br/)".
 
 aksw:PatrickWestphal foaf:name "Patrick Westphal" ;
     foaf:homepage aksw:PatrickWestphal ;
