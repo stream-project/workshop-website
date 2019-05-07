@@ -250,7 +250,7 @@ aksw:SoerenAuer foaf:name "Prof. Dr. Sören Auer" ;
     dc:description "Direktor @ [Technischen Informationsbibliothek (TIB)](https://www.tib.eu/)".
 
 lswt:MarcinKrystek foaf:name "Marcin Krystek" ;
-    dc:description "[Poznan Supercomputing and Networking Center](http://www.man.poznan.pl/online/en/) (PSNC)".
+    dc:description "Computer Systems Architect @ [Poznan Supercomputing and Networking Center](http://www.man.poznan.pl/online/en/) (PSNC)".
 
 lswt:SeijiIsotani foaf:name "Seiji Isotani" ;
     foaf:homepage <http://isotani.caed-lab.com/> ;
