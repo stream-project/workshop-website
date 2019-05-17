@@ -124,7 +124,7 @@ type: Event
       {% for subEvent_row in subEvents %}
       {% assign subEvent = subEvent_row.event %}
 
-      <li><a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“ – {% include performer.html event=subEvent join=", " %}</li>
+      <li><a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“ – {% include performer.html event=subEvent join="; " %}</li>
       {% endfor %}
       </ul>
       {% endfor %}
