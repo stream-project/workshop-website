@@ -192,6 +192,10 @@ aksw:SebastianHellmann foaf:name "Dr.-Ing. Sebastian Hellmann" ;
     dc:description "Director @ [DBpedia Association](https://dbpedia.org/)" ;
     schema:affiliation dbpedia: .
 
+aksw:RoyMeissner foaf:name "Roy Meissner" ;
+    foaf:homepage aksw:RoyMeissner ;
+    dc:description "[AKSW](http://aksw.org/)/[Universität Leipzig](http://www.uni-leipzig.de/)" .
+
 aksw:MichaelMartin foaf:name "Dr. Michael Martin" ;
     foaf:homepage aksw:MichaelMartin ;
     foaf:depiction "/images/people/MichaelMartin.png" ;
@@ -283,6 +287,10 @@ lswt:HansGertGraebe foaf:name "Prof. Dr. Hans-Gert Gräbe" ;
 sda:MichaelGalkin foaf:name "Dr. Michael Galkin" ;
     foaf:homepage sda:MichaelGalkin ;
     dc:description "[Smart Data Analytics](http://sda.tech/), Fraunhofer IAIS".
+
+lswt:AndreasThor foaf:name "Prof. Dr. Andreas Thor" ;
+    foaf:homepage <https://dbs.uni-leipzig.de/de/person/andreas_thor> ;
+    dc:description "[HfTL](https://www.hft-leipzig.de/)" .
 
 ### Sub Events
 
@@ -487,7 +495,7 @@ lswt:trackDataNetworks a schema:Event ;
     schema:startDate "2019-05-22T16:00+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T17:45+02:00"^^xsd:dateTime ;
     schema:location lswt:vortragsraum ;
-    schema:subEvent lswt:talkWolff, lswt:talkHellmann, lswt:talkKrystek, lswt:talkGalkin .
+    schema:subEvent lswt:talkWolff, lswt:talkRoy, lswt:talkHellmann, lswt:talkKrystek, lswt:talkGalkin .
 
 lswt:talkWolff a schema:Event ;
     site:id 161 ;
@@ -499,32 +507,42 @@ lswt:talkWolff a schema:Event ;
     schema:location lswt:vortragsraum ;
     rdfs:label "Forschungskompass - Transparenz für interdisziplinäre Forschungsnetzwerke" .
 
-lswt:talkHellmann a schema:Event ;
+lswt:talkRoy a schema:Event ;
     site:id 162 ;
     site:track lswt:trackDataNetworks ;
-    schema:performer aksw:SebastianHellmann ;
+    schema:performer aksw:RoyMeissner, lswt:AndreasThor ;
     schema:startDate "2019-05-22T16:20+02:00"^^xsd:dateTime ;
     schema:endDate "2019-05-22T16:40+02:00"^^xsd:dateTime ;
+    schema:duration "00:20" ;
+    schema:location lswt:vortragsraum ;
+    rdfs:label "tech4comp - Kompetenzmessung durch Datenanalyse für E-Assessment" .
+
+lswt:talkHellmann a schema:Event ;
+    site:id 163 ;
+    site:track lswt:trackDataNetworks ;
+    schema:performer aksw:SebastianHellmann ;
+    schema:startDate "2019-05-22T16:40+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "The DBpedia databus" .
 
 lswt:talkKrystek a schema:Event ;
-    site:id 163 ;
+    site:id 164 ;
     site:track lswt:trackDataNetworks ;
     schema:performer lswt:MarcinKrystek ;
-    schema:startDate "2019-05-22T16:40+02:00"^^xsd:dateTime ;
-    schema:endDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
+    schema:startDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:20+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "Linked data publication pipelines for agri-related use cases" .
 
 lswt:talkGalkin a schema:Event ;
-    site:id 164 ;
+    site:id 165 ;
     site:track lswt:trackDataNetworks ;
     schema:performer sda:MichaelGalkin ;
-    schema:startDate "2019-05-22T17:00+02:00"^^xsd:dateTime ;
-    schema:endDate "2019-05-22T17:20+02:00"^^xsd:dateTime ;
+    schema:startDate "2019-05-22T17:20+02:00"^^xsd:dateTime ;
+    schema:endDate "2019-05-22T17:40+02:00"^^xsd:dateTime ;
     schema:duration "00:20" ;
     schema:location lswt:vortragsraum ;
     rdfs:label "Mushroom Effect or Why You Need Knowledge Graphs for Dialogue Systems" .
