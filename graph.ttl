@@ -558,7 +558,31 @@ lswt:solid a schema:Event ;
     schema:endDate "2019-05-22T15:30+02:00"^^xsd:dateTime ;
     schema:duration "00:45" ;
     schema:location lswt:tutorialraum ;
-    rdfs:label "SOLID: the next distributed social networks"@de, "SOLID: the next distributed social networks"@en .
+    rdfs:label "SOLID: the next distributed social networks"@de, "SOLID: the next distributed social networks"@en ;
+    dc:description """
+<p>Social Linked Data, Distributed Data</p>
+
+<ol>
+<li>What is SOLID (Introduction)</li>
+<li>Solid Use case (Benefits & Current trend)</li>
+<li>Solid Applications</li>
+<li>Our Project based on Solid Framework</li>
+</ol>
+
+<p>Organized by Students from the Web Engineering course at the TU Chemnitz with a demonstration of the project results.</p>
+    """@en, """
+<p>Social Linked Data, Distributed Data</p>
+
+<ol>
+<li>Was ist SOLID (Einführung)</li>
+<li>Solid Use case (Vorteile & aktueller Trend)</li>
+<li>Solid Anwendungen</li>
+<li>User Projekt basierend auf dem Solid Framework</li>
+</ol>
+
+<p>Organisiert von Studenten des Web Engineering Kurses an der TU Chemnitz mit einer Demonstration der Projektergebnisse.</p>
+<p>(Englisch)</p>
+"""@de.
 
 lswt:jekyllrdf a schema:Event ;
     site:id 202 ;
