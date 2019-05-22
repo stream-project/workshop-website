@@ -39,6 +39,7 @@
   site:registrationPage <https://pretix.eu/infai/lswt2019/> ;
   schema:organizer lswt:Team ;
   schema:partner lswt:Partner ;
+  schema:sponsor lswt:Sponsors ;
   schema:subEvent lswt:begruessung,
         lswt:keynoteBoth,
         lswt:trackLDResearch1, lswt:trackLDResearch2, lswt:trackLDEnterprise, lswt:trackDataNetworks, lswt:track4,
@@ -93,6 +94,12 @@ lswt:Partner
   rdf:_1 dbpedia: ;
   rdf:_2 ecc: ;
   rdf:_3 infai: .
+
+lswt:Sponsors
+  rdfs:label "Sponsoren"@de, "Sponsors"@en ;
+  rdf:_1 lswt:datev ;
+  rdf:_2 lswt:dfg ;
+  rdf:_3 ecc: .
 
 lswt:Team a foaf:Group ;
   rdfs:label "Organisationsteam"@de, "Organisation Team"@en ;
@@ -162,6 +169,18 @@ dbpedia: foaf:name "DBpedia Association";
 htwk: foaf:name "HTWK Leipzig";
   foaf:depiction "/images/partner/logo-htwk.svg" ;
   foaf:homepage htwk: .
+
+### Sponsors
+
+lswt:dfg foaf:name "DFG Deutsche Forschungsgemeinschaft";
+  site:small_depiction "/images/partner/dfg.jpg" ;
+  foaf:depiction "/images/partner/dfg.jpg" ;
+  foaf:homepage <http://dfg.de/> .
+
+lswt:datev foaf:name "DATEV";
+  site:small_depiction "/images/partner/DATEV.jpg" ;
+  foaf:depiction "/images/partner/DATEV.jpg" ;
+  foaf:homepage <https://www.datev.de/> .
 
 ### People
 
