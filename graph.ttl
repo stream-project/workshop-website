@@ -98,7 +98,8 @@ lswt:Partner
 lswt:Sponsors
   rdfs:label "Sponsoren"@de, "Sponsors"@en ;
   rdf:_1 lswt:datev ;
-  rdf:_2 lswt:dfg .
+  rdf:_2 lswt:dfg ;
+  rdf:_3 ecc: .
 
 lswt:Team a foaf:Group ;
   rdfs:label "Organisationsteam"@de, "Organisation Team"@en ;
