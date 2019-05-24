@@ -258,7 +258,7 @@ lswt:BirgittaKoenigRies  foaf:name "Prof. Dr. Birgitta König-Ries" ;
     dc:description "[Uni Jena](https://www.uni-jena.de/)".
 
 lswt:StefanWolff foaf:name "Stefan Wolff" ;
-    dc:description "[Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden (SLUB)](https://www.slub-dresden.de/startseite/), [FID move](https://projects.tib.eu/fid-move/startseite/)".
+    dc:description "[Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden (SLUB)](https://www.slub-dresden.de/startseite/), [FID move](http://www.fid-move.de/)/[Forschungskompass](http://www.forschungskompass.de/)".
 
 aksw:JensLehmann foaf:name "Prof. Dr. Jens Lehmann" ;
     foaf:homepage <https://www.iais.fraunhofer.de/de/institut/mitarbeiterprofile/jens-lehmann.html> ;
