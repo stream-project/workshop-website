@@ -130,7 +130,7 @@ type: Event
         <a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“
       {% endif %}
          – {% include performer.html event=subEvent join="; " %}
-         <li>
+         </li>
       {% endfor %}
       </ul>
       {% endfor %}
