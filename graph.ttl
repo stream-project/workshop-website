@@ -326,6 +326,7 @@ lswt:trackKeynote a schema:Event ;
     rdfs:label "Keynote"@de, "Keynote"@en .
 
 lswt:keynoteBoth a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/towards-a-productive-linked-data-environment-within-enterprises-151944661>;
     site:id 102 ;
     site:track lswt:trackKeynote ;
     schema:performer lswt:AndreasBoth ;
@@ -351,6 +352,7 @@ lswt:trackLDResearch1 a schema:Event ;
     schema:subEvent lswt:talkAuer, lswt:talkKoenigRies, lswt:talkSeiji .
 
 lswt:talkAuer a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/knowledge-graphs-for-scholarly-communication>;
     site:id 111 ;
     site:track lswt:trackLDResearch ;
     schema:performer aksw:SoerenAuer ;
@@ -361,6 +363,7 @@ lswt:talkAuer a schema:Event ;
     rdfs:label "Knowledge Graphs for Scholarly Communication" .
 
 lswt:talkKoenigRies a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/bexis-2-semantic-web-techniques-in-research-data-management> ;
     site:id 112 ;
     site:track lswt:trackLDResearch ;
     schema:performer lswt:BirgittaKoenigRies ;
@@ -371,6 +374,7 @@ lswt:talkKoenigRies a schema:Event ;
     rdfs:label "BEXIS2 - Semantic Web Techniques in Research Data Management" .
 
 lswt:talkSeiji a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/an-ontology-engineering-approach-to-support-personalized-gamification-of-cscl> ;
     site:id 113 ;
     site:track lswt:trackLDResearch ;
     schema:performer lswt:SeijiIsotani ;
@@ -391,6 +395,7 @@ lswt:studentProgram a schema:Event ;
     schema:organizer lswt:studentProgramTeam .
 
 lswt:studentProgramTeaching a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/prsentation-der-semantic-web-lehrkonzepte-an-der-th-brandenburg> ;
     site:id 1011 ;
     site:track lswt:trackLDResearch ;
     schema:performer lswt:AndreasBoth, aksw:ThomasRiechert, lswt:VeraMeister ;
@@ -418,6 +423,7 @@ lswt:trackLDResearch2 a schema:Event ;
     schema:subEvent lswt:talkSNIK, lswt:talkRiechert, lswt:talkGraebe, lswt:talkQrowd .
 
 lswt:talkQrowd a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/das-qrowdprojekt-because-big-data-integration-is-humanly-possible> ;
     site:id 121 ;
     site:track lswt:trackLDResearch ;
     schema:performer aksw:PatrickWestphal, aksw:SimonBin ;
@@ -428,6 +434,7 @@ lswt:talkQrowd a schema:Event ;
     rdfs:label "Das QROWD-Projekt - Because Big Data Integration is Humanly Possible" .
 
 lswt:talkRiechert a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/semantic-web-in-the-digital-humanities> ;
     site:id 122 ;
     site:track lswt:trackLDResearch ;
     schema:performer aksw:ThomasRiechert ;
@@ -438,6 +445,7 @@ lswt:talkRiechert a schema:Event ;
     rdfs:label "Semantic Web in the Digital Humanities" .
 
 lswt:talkGraebe a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/the-wumm-project-semantic-data-and-innovation-management> ;
     site:id 123 ;
     site:track lswt:trackLDResearch ;
     schema:performer lswt:HansGertGraebe ;
@@ -448,6 +456,7 @@ lswt:talkGraebe a schema:Event ;
     rdfs:label "Das WUMM-Projekt - Semantic Data im Innovationsmanagement" .
 
 lswt:talkSNIK a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/snik-an-ontology-of-information-management-in-hospitals> ;
     site:id 124 ;
     site:track lswt:trackLDResearch ;
     schema:performer aksw:KonradHoeffner ;
@@ -467,6 +476,7 @@ lswt:trackLDEnterprise a schema:Event ;
     schema:subEvent lswt:talkXCOR, lswt:talkLIMBO, lswt:talkGeniusTex, lswt:talkArndt .
 
 lswt:talkXCOR a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/xcor-a-value-chain-framework-ontology> ;
     site:id 151 ;
     site:track lswt:trackLDEnterprise ;
     schema:performer aksw:MarkusFreudenberg ;
@@ -477,6 +487,7 @@ lswt:talkXCOR a schema:Event ;
     rdfs:label "xCOR - a Value Chain Framework Ontology" .
 
 lswt:talkLIMBO a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/das-limbo-projekt-linked-data-enterprise-usecases-unter-verwendung-der-daten-des-bundes> ;
     site:id 152 ;
     site:track lswt:trackLDEnterprise ;
     schema:performer aksw:LisaWenige ;
@@ -487,6 +498,7 @@ lswt:talkLIMBO a schema:Event ;
     rdfs:label "Das LIMBO Projekt - Linked Data Enterprise Use-Cases unter Verwendung der Daten des Bundes" .
 
 lswt:talkGeniusTex a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/geniustex-a-smart-textiles-innovation-platform-with-semantic-technologies-inside> ;
     site:id 153 ;
     site:track lswt:trackLDEnterprise ;
     schema:performer aksw:MagnusKnuth ;
@@ -497,6 +509,7 @@ lswt:talkGeniusTex a schema:Event ;
     rdfs:label "GeniusTex - a Smart Textiles innovation platform with semantic technologies inside" .
 
 lswt:talkArndt a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/platonam-plattformkosystem-for-innovative-maintenance-management-through-predictive-maintenance> ;
     site:id 154 ;
     site:track lswt:trackLDEnterprise ;
     schema:performer aksw:NatanaelArndt ;
@@ -517,6 +530,7 @@ lswt:trackDataNetworks a schema:Event ;
     schema:subEvent lswt:talkWolff, lswt:talkRoy, lswt:talkHellmann, lswt:talkKrystek, lswt:talkGalkin .
 
 lswt:talkWolff a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/forschungskompass-transparenz-fr-interdisziplinre-forschungsnetzwerke> ;
     site:id 161 ;
     site:track lswt:trackDataNetworks ;
     schema:performer lswt:StefanWolff ;
@@ -527,6 +541,7 @@ lswt:talkWolff a schema:Event ;
     rdfs:label "Forschungskompass - Transparenz für interdisziplinäre Forschungsnetzwerke" .
 
 lswt:talkRoy a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/tech4comp-kompetenzmessung-durch-datenanalyse-fr-eassessment> ;
     site:id 162 ;
     site:track lswt:trackDataNetworks ;
     schema:performer aksw:RoyMeissner, lswt:AndreasThor ;
@@ -537,6 +552,7 @@ lswt:talkRoy a schema:Event ;
     rdfs:label "tech4comp - Kompetenzmessung durch Datenanalyse für E-Assessment" .
 
 lswt:talkHellmann a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/the-dbpedia-databus> ;
     site:id 163 ;
     site:track lswt:trackDataNetworks ;
     schema:performer aksw:SebastianHellmann ;
@@ -547,6 +563,7 @@ lswt:talkHellmann a schema:Event ;
     rdfs:label "The DBpedia databus" .
 
 lswt:talkKrystek a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/linked-data-publication-pipelines-for-agrirelated-use-cases-151944725> ;
     site:id 164 ;
     site:track lswt:trackDataNetworks ;
     schema:performer lswt:MarcinKrystek ;
@@ -557,6 +574,7 @@ lswt:talkKrystek a schema:Event ;
     rdfs:label "Linked data publication pipelines for agri-related use cases" .
 
 lswt:talkGalkin a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/mushroom-effect-or-why-you-need-knowledge-graphs-for-dialogue-systems> ;
     site:id 165 ;
     site:track lswt:trackDataNetworks ;
     schema:performer sda:MichaelGalkin ;
@@ -604,6 +622,7 @@ lswt:solid a schema:Event ;
 """@de.
 
 lswt:jekyllrdf a schema:Event ;
+    schema:recordedIn <https://www.slideshare.net/lswt/jekyll-rdf> ;
     site:id 202 ;
     site:track lswt:trackTutorial ;
     schema:startDate "2019-05-22T16:00+02:00"^^xsd:dateTime ;
