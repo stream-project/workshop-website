@@ -122,8 +122,15 @@ type: Event
       <ul>
       {% for subEvent_row in subEvents %}
       {% assign subEvent = subEvent_row.event %}
-
-      <li><a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“ – {% include performer.html event=subEvent join="; " %}</li>
+      {% assign slideLink = subEvent | rdf_property: "schema:recordedIn" %}
+        <li>
+      {% if slideLink %}
+        „<a id="{{ subEvent | split: "#" | last }}" href="{{ subEvent | rdf_property: "schema:recordedIn" }}">{{ subEvent | rdf_property: "rdfs:label" }}</a>“
+      {% else %}
+        <a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“
+      {% endif %}
+         – {% include performer.html event=subEvent join="; " %}
+         <li>
       {% endfor %}
       </ul>
       {% endfor %}
