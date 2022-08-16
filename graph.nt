@@ -4,20 +4,20 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3> <https://lswt2019.aksw.
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4> <https://lswt2019.aksw.org/#dachterrasse> .
 <https://lswt2019.aksw.org/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Document> .
 <https://lswt2019.aksw.org/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Event> .
-<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#label> "7. Leipziger Semantic Web Tag"@de .
-<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#label> "7th Leipzig Semantic Web Day"@en .
-<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#comment> "Der Leipziger Semantic Web Tag (LSWT) bietet [seit 2009](#PreviousEvents) WissenschaftlernInnen, Unternehmen und Organisationen die M\u00F6glichkeit, sich zu Themen im Bereich semantischer Technologien auszutauschen.\n  Diese Schwerpunkte werden im Rahmen von Vortr\u00E4gen durch ExpertenInnen aus Industrie und Wissenschaft demonstriert ([Programm](#Programm)).\n  Falls Sie weitere Fragen haben k\u00F6nnen Sie sich auch gerne an das [Organisations-Team](#Team) wenden. Das InfAI organisiert und unterst\u00FCtzt rundum den LSWT weitere Events. Verpassen Sie nicht die [Language, Data and Knowledge (LDK) Konferenz](http://2019.ldk-conf.org/) (20.- 22. Mai) an der Universit\u00E4t Leipzig oder das [13. DBpedia Community Meeting](https://wiki.dbpedia.org/meetings/Leipzig2019) am 23. Mai 2019 am Mediencampus Villa Ida. "@de .
-<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#comment> "[Since 2009](#PreviousEvents), the Leipzig Semantic Web Day (LSWT) is an opportunity for scientists, enterprises, and organisations to discuss topics in the field of Semantic Technology.\n  These emphases are demonstrated in presentations by experts from industry and science ([Schedule](#Programm)).\n  If you have any further questions don't hesitate to contact the [organisation team](#Team). The InfAI organizes and supports further events around the LSWT. Don't miss the [Language, Data and Knowledge (LDK) conference](http://2019.ldk-conf.org/) (20-22 May) at the University of Leipzig or the [13th DBpedia Community Meeting](https://wiki.dbpedia.org/meetings/Leipzig2019) on 23 May 2019 at the media campus Villa Ida."@en .
+<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#label> "Gemeinschaftsseminar Materialdaten"@de .
+<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#label> "Community Workshop for material data"@en .
+<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#comment> "Die Partner des BMBF-Projekt STREAM laden im Vorfeld des MSE-Kongresses interessierte Wissenschaftler*innen und Entwickler*innen zu einem eintägigen Workshop ein. Thema des Workshops ist die Kuratierung dezentraler Datenrepositorien auf Basis eines zentralen Kuratierungssystems. Es werden neu erarbeitete Kuratierungskonzepte und -ansätze erörtert und mögliche Erweiterung der Methoden im Rahmen zukünftiger Entwicklungen diskutiert.\n\n Materialwissenschaftliche Daten sind auch heute noch - wie in den meisten Forschungsbereichen - in vielen lokalen Datensilos abgelegt. Dieser Schatz an Daten ist dadurch für die wissenschaftliche Gemeinschaft faktisch unzugänglich. Dies hindert den Fortschritt, insbesondere da diese Daten die Basis für die moderne, datenbasierte Materialwissenschaft und deren Analysen und Lösungsansätze wie u.a. Methoden der künstlichen Intelligenz oder des digitalen Zwillings darstellen. \n\n Auf dem Workshop wird aufgezeigt wie bereits vorhandene, nach außen geschlossene Datensilos und -repositorien ertüchtigt werden können, so dass sie die für die Digitalisierung erforderlichen FAIR-Prinzipien nachträglich erfüllen. Bestehende Wissensquellen werden hierdurch für Big Data Methoden geöffnet und stehen so für vergleichsweise neue Methoden in der Materialwissenschaft wie Data Science und Machine Learning zur Verfügung.\n\n Die präsentierten und diskutierten Methoden wurden im BMBF-geförderten Projekt STREAM, kurz für »Semantische Repräsentation, Vernetzung und Kuratierung von qualitätsgesicherten Materialdaten«, erarbeitet, um Grundlagen für die anschließende Digitalisierung zu legen. Unser Workshop stellt die im Projekt entwickelten und umgesetzten Konzepte für die Kuratierung von Materialdaten in dezentralen Datenrepositorien vor, gegliedert nach Grundlagen, Methoden und Lösungskonzepten.\n\n Der Workshop richtet sich an interessierte WissenschaftlerInnen und EntwicklerInnen aus dem weiten Feld der Materialwissenschaften, der Data Sciences, der Physik und der Chemie. Für den Hands-On-Teil ist ein eigener Laptop notwendig."@de .
+<https://lswt2019.aksw.org/> <http://www.w3.org/2000/01/rdf-schema#comment> "Description"@en .
 <https://lswt2019.aksw.org/> <http://schema.org/logo> <https://lswt2019.aksw.org/images/logo.png> .
-<https://lswt2019.aksw.org/> <http://schema.org/startDate> "2019-05-22"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://lswt2019.aksw.org/> <http://schema.org/endDate> "2019-05-22"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://lswt2019.aksw.org/> <http://schema.org/startDate> "2022-09-26"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://lswt2019.aksw.org/> <http://schema.org/endDate> "2022-09-26"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://lswt2019.aksw.org/> <http://schema.org/location> <https://lswt2019.aksw.org/#Location> .
 <https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/cfp> <https://lswt2019.aksw.org/CFP-LSWT2019.pdf> .
-<https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/programm> <https://lswt2019.aksw.org/#Programm> .
+<https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/programm> <https://www.iwm.fraunhofer.de/de/ueber-uns/veranstaltungen/workshop-kuratierung-dezentraler-datenrepositorien-auf-basis-ein.html#Programm> .
 <https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/invitation> <https://lswt2019.aksw.org/Einladung-LSWT2019.pdf> .
 <https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/flyer> <https://lswt2019.aksw.org/Flyer.pdf> .
 <https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/rooms> _:genid1 .
-<https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/registrationPage> <https://pretix.eu/infai/lswt2019/> .
+<https://lswt2019.aksw.org/> <http://ns.ontowiki.net/SysOnt/Site/registrationPage> <https://www.iwm.fraunhofer.de/de/ueber-uns/veranstaltungen/workshop-kuratierung-dezentraler-datenrepositorien-auf-basis-ein.html#Registrierung> .
 <https://lswt2019.aksw.org/> <http://schema.org/organizer> <https://lswt2019.aksw.org/#Team> .
 <https://lswt2019.aksw.org/> <http://schema.org/partner> <https://lswt2019.aksw.org/#Partner> .
 <https://lswt2019.aksw.org/> <http://schema.org/sponsor> <https://lswt2019.aksw.org/#Sponsors> .
@@ -42,35 +42,38 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4> <https://lswt2019.aksw.
 <http://schema.org/startDate> <http://www.w3.org/2000/01/rdf-schema#label> "Date"@en .
 <http://schema.org/location> <http://www.w3.org/2000/01/rdf-schema#label> "Ort"@de .
 <http://schema.org/location> <http://www.w3.org/2000/01/rdf-schema#label> "Place"@en .
-<https://pretix.eu/infai/lswt2019/> <http://www.w3.org/2000/01/rdf-schema#label> "Anmeldung"@de .
-<https://pretix.eu/infai/lswt2019/> <http://www.w3.org/2000/01/rdf-schema#label> "Registration"@en .
-<https://lswt2019.aksw.org/#Programm> <http://www.w3.org/2000/01/rdf-schema#label> "Programm"@de .
-<https://lswt2019.aksw.org/#Programm> <http://www.w3.org/2000/01/rdf-schema#label> "Programm"@en .
+<https://www.iwm.fraunhofer.de/de/ueber-uns/veranstaltungen/workshop-kuratierung-dezentraler-datenrepositorien-auf-basis-ein.html#Registrierung> <http://www.w3.org/2000/01/rdf-schema#label> "Anmeldung"@de .
+<https://www.iwm.fraunhofer.de/de/ueber-uns/veranstaltungen/workshop-kuratierung-dezentraler-datenrepositorien-auf-basis-ein.html#Registrierung> <http://www.w3.org/2000/01/rdf-schema#label> "Registration"@en .
+<https://www.iwm.fraunhofer.de/de/ueber-uns/veranstaltungen/workshop-kuratierung-dezentraler-datenrepositorien-auf-basis-ein.html#Programm> <http://www.w3.org/2000/01/rdf-schema#label> "Programm"@de .
+<https://www.iwm.fraunhofer.de/de/ueber-uns/veranstaltungen/workshop-kuratierung-dezentraler-datenrepositorien-auf-basis-ein.html#Programm> <http://www.w3.org/2000/01/rdf-schema#label> "Programm"@en .
 <https://lswt2019.aksw.org/CFP-LSWT2019.pdf> <http://www.w3.org/2000/01/rdf-schema#label> "Call for Participation"@de .
 <https://lswt2019.aksw.org/CFP-LSWT2019.pdf> <http://www.w3.org/2000/01/rdf-schema#label> "Call for Participation"@en .
 <https://lswt2019.aksw.org/Einladung-LSWT2019.pdf> <http://www.w3.org/2000/01/rdf-schema#label> "Einladung"@de .
 <https://lswt2019.aksw.org/Einladung-LSWT2019.pdf> <http://www.w3.org/2000/01/rdf-schema#label> "Invitation"@en .
 <https://lswt2019.aksw.org/Flyer.pdf> <http://www.w3.org/2000/01/rdf-schema#label> "Flyer"@de .
 <https://lswt2019.aksw.org/Flyer.pdf> <http://www.w3.org/2000/01/rdf-schema#label> "Flyer"@en .
+
 <https://lswt2019.aksw.org/#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/PostalAddress> .
 <https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Veranstaltungsort"@de .
 <https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Venue"@en .
-<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Das INNSIDE by Meli\u00E1 Leipzig liegt im Herzen der Stadt gegen\u00FCber der Thomaskirche."@de .
-<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "The INNSIDE by Meli\u00E1 Leipzig is at the heard of the city just opposite to famous Thomaskirche."@en .
-<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.melia.com/de/hotels/deutschland/leipzig/innside-leipzig/index.htm> .
-<https://lswt2019.aksw.org/#Location> <http://schema.org/name> "INNSIDE Hotel Leipzig" .
-<https://lswt2019.aksw.org/#Location> <http://schema.org/streetAddress> "Gottschedstra\u00DFe 1" .
-<https://lswt2019.aksw.org/#Location> <http://schema.org/postalCode> "04109" .
-<https://lswt2019.aksw.org/#Location> <http://schema.org/addressLocality> "Leipzig" .
+<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Seminarraum S1|03, 113"@de .
+<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Room S1|03, 113"@en .
+<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.tu-darmstadt.de/> .
+<https://lswt2019.aksw.org/#Location> <http://schema.org/name> "Hochschule Darmstadt" .
+<https://lswt2019.aksw.org/#Location> <http://schema.org/streetAddress> "Karolinenpl. 5" .
+<https://lswt2019.aksw.org/#Location> <http://schema.org/postalCode> "64295" .
+<https://lswt2019.aksw.org/#Location> <http://schema.org/addressLocality> "Darmstadt" .
 <https://lswt2019.aksw.org/#Location> <http://schema.org/addressCountry> "Germany" .
-<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2003/01/geo/wgs84_pos#geometry> "POINT(12.3707470 51.3397239)" .
-<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "51.3397239"^^<http://www.w3.org/2001/XMLSchema#float> .
-<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "12.3707470"^^<http://www.w3.org/2001/XMLSchema#float> .
+<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2003/01/geo/wgs84_pos#geometry> "POINT(8.656163 49.874875)" .
+<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "49.874875"^^<http://www.w3.org/2001/XMLSchema#float> .
+<https://lswt2019.aksw.org/#Location> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "8.656163"^^<http://www.w3.org/2001/XMLSchema#float> .
+
 <https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <https://lswt2019.aksw.org/#Location> .
 <https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
-<https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <https://www.melia.com/de/hotels/deutschland/leipzig/innside-leipzig/index.htm> .
-<https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/2000/01/rdf-schema#label> "Hier geht es zum INNSIDE"@de .
-<https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/2000/01/rdf-schema#label> "To the homepage of the INNSIDE"@en .
+<https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <https://www.tu-darmstadt.de/> .
+<https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/2000/01/rdf-schema#label> "Hier geht es zum Treffort"@de .
+<https://lswt2019.aksw.org/#LocationSeeAlsoLabel> <http://www.w3.org/2000/01/rdf-schema#label> "To the homepage of the meeting point"@en .
+
 <https://lswt2019.aksw.org/#vortragsraum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Place> .
 <https://lswt2019.aksw.org/#vortragsraum> <http://www.w3.org/2000/01/rdf-schema#label> "Vortr\u00E4ge"@de .
 <https://lswt2019.aksw.org/#vortragsraum> <http://www.w3.org/2000/01/rdf-schema#label> "Main Track"@en .
@@ -83,11 +86,15 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4> <https://lswt2019.aksw.
 <https://lswt2019.aksw.org/#dachterrasse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Place> .
 <https://lswt2019.aksw.org/#dachterrasse> <http://www.w3.org/2000/01/rdf-schema#label> "Social Event"@de .
 <https://lswt2019.aksw.org/#dachterrasse> <http://www.w3.org/2000/01/rdf-schema#label> "Social Event"@en .
+
 <https://lswt2019.aksw.org/#Partner> <http://www.w3.org/2000/01/rdf-schema#label> "Partner"@de .
 <https://lswt2019.aksw.org/#Partner> <http://www.w3.org/2000/01/rdf-schema#label> "Partners"@en .
-<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <https://dbpedia.org/> .
-<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> <https://www.eccenca.com/> .
-<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3> <https://infai.org/> .
+<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4> <https://www.iwm.fraunhofer.de/> .
+<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_5> <https://infai.org/> .
+<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3> <https://www.kit.edu/index.php> .
+<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2> <https://www.tib.eu/de/> .
+<https://lswt2019.aksw.org/#Partner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <https://www.fhi.mpg.de/de> .
+
 <https://lswt2019.aksw.org/#Sponsors> <http://www.w3.org/2000/01/rdf-schema#label> "Sponsoren"@de .
 <https://lswt2019.aksw.org/#Sponsors> <http://www.w3.org/2000/01/rdf-schema#label> "Sponsors"@en .
 <https://lswt2019.aksw.org/#Sponsors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> <https://lswt2019.aksw.org/#datev> .
@@ -139,6 +146,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4> <https://lswt2019.aksw.
 <http://aksw.org/Group> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/AKSW_Logo_small.svg" .
 <http://aksw.org/Group> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/AKSW_Logo.svg" .
 <http://aksw.org/Group> <http://xmlns.com/foaf/0.1/homepage> <http://aksw.org/> .
+
 <https://infai.org/> <http://xmlns.com/foaf/0.1/name> "InfAI" .
 <https://infai.org/> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/InfAI_small.svg" .
 <https://infai.org/> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/InfAI_h.svg" .
@@ -149,10 +157,27 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4> <https://lswt2019.aksw.
 <https://www.eccenca.com/> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/eccenca_w.svg" .
 <https://www.eccenca.com/> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/eccenca_h.svg" .
 <https://www.eccenca.com/> <http://xmlns.com/foaf/0.1/homepage> <https://www.eccenca.com/> .
-<https://dbpedia.org/> <http://xmlns.com/foaf/0.1/name> "DBpedia Association" .
-<https://dbpedia.org/> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/DBpediaLogo.svg" .
-<https://dbpedia.org/> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/DBpediaLogo_sq.svg" .
-<https://dbpedia.org/> <http://xmlns.com/foaf/0.1/homepage> <https://dbpedia.org/> .
+
+<https://www.iwm.fraunhofer.de/> <http://xmlns.com/foaf/0.1/name> "Fraunhofer-Institut für Werkstoffmechanik IWM" .
+<https://www.iwm.fraunhofer.de/> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/IWM.jpg" .
+<https://www.iwm.fraunhofer.de/> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/IWM.jpg" .
+<https://www.iwm.fraunhofer.de/> <http://xmlns.com/foaf/0.1/homepage> <https://www.iwm.fraunhofer.de/> .
+
+<https://www.kit.edu/index.php> <http://xmlns.com/foaf/0.1/name> "Karlsruher Institut für Technologie" .
+<https://www.kit.edu/index.php> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/KIT.png" .
+<https://www.kit.edu/index.php> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/KIT.png" .
+<https://www.kit.edu/index.php> <http://xmlns.com/foaf/0.1/homepage> <https://www.kit.edu/index.php> .
+
+<https://www.tib.eu/de/> <http://xmlns.com/foaf/0.1/name> "Leibniz-Informationszentrum Technik und Naturwissenschaften und Universitätsbibliothek" .
+<https://www.tib.eu/de/> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/TIB.png" .
+<https://www.tib.eu/de/> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/TIB.png" .
+<https://www.tib.eu/de/> <http://xmlns.com/foaf/0.1/homepage> <https://www.tib.eu/de/> .
+
+<https://www.fhi.mpg.de/de> <http://xmlns.com/foaf/0.1/name> "Fritz-Haber-Institut der Max-Planck-Gesellschaft" .
+<https://www.fhi.mpg.de/de> <http://ns.ontowiki.net/SysOnt/Site/small_depiction> "/images/partner/FHI.png" .
+<https://www.fhi.mpg.de/de> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/FHI.png" .
+<https://www.fhi.mpg.de/de> <http://xmlns.com/foaf/0.1/homepage> <https://www.fhi.mpg.de/de> .
+
 <https://htwk-leipzig.de/> <http://xmlns.com/foaf/0.1/name> "HTWK Leipzig" .
 <https://htwk-leipzig.de/> <http://xmlns.com/foaf/0.1/depiction> "/images/partner/logo-htwk.svg" .
 <https://htwk-leipzig.de/> <http://xmlns.com/foaf/0.1/homepage> <https://htwk-leipzig.de/> .

@@ -5,20 +5,15 @@ type: Event
 ---
 {% assign rootResource = site.rootResource | rdf_get %}
 
-<div class="section" id="HomeSection" data-anchor="Home">
-</div>
-
-<div class="section" id="DateSection" data-anchor="Date">
+<div class="section" id="DateSection" data-anchor="Home">
   <div class="container">
     <div class="jumbotron">
-      #LSWT2019
       <h1 class="display-4">{{ rootResource | rdf_property: "rdfs:label", page.language }}</h1>
       {{ rootResource | rdf_property: "rdfs:comment", page.language | markdownify }}
 
       <p>
-        <a href="#Programm" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:programm" | rdf_property: "rdfs:label", page.language }}</a>
+        <a href="{{ rootResource | rdf_property: "site:programm" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:programm" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a>
-        <a href="{{ rootResource | rdf_property: "site:invitation" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:invitation" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:flyer" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:flyer" | rdf_property: "rdfs:label", page.language }}</a>
       </p>
 
@@ -28,9 +23,12 @@ type: Event
         <dt>{{ "schema:location" | rdf_property: "rdfs:label", page.language }}</dt>
         {% assign location = rootResource | rdf_property: "schema:location" %}
         <dd><a href="{{ location.page_url }}">{% include address.html location=location %}</a></dd>
+        <div class="tiny">
+          © Simon Waldherr / https://commons.wikimedia.org/wiki/User:SimonWaldherr / CC BY-SA 4.0
+        </div>
       </dl>
     </div>
-  </div>
+</div>
 </div>
 
 <div class="section" id="LocationSection" data-anchor="Location">
@@ -50,120 +48,14 @@ type: Event
       {% endif %}
       <iframe frameborder="0" height="350" marginheight="0" marginwidth="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox={{ location | rdf_property: "geo:long" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | minus: mapboxDiff }}%2C{{ location | rdf_property: "geo:long" | plus: mapboxDiff }}%2C{{ location | rdf_property: "geo:lat" | plus: mapboxDiff }}&amp;layer=mapnik&amp;marker={{ location | rdf_property: "geo:lat" }}%2C{{ location | rdf_property: "geo:long" }}" style="border: 1px solid black" width="100%"></iframe>
       <p><small><a href="https://www.openstreetmap.org/?mlat={{ location | rdf_property: "geo:lat" }}&amp;mlon={{ location | rdf_property: "geo:long" }}#map=19/{{ location | rdf_property: "geo:lat" }}/{{ location | rdf_property: "geo:long" }}">{{ showABiggerMap }}</a></small></p>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="ProgrammSection" data-anchor="Programm">
-  {% if page.language == "en" %}
-  {% assign programmLabel = "Schedule" %}
-  {% assign programmDisclaimer = "The schedule might change without notice." %}
-  {% else %}
-  {% assign programmLabel = "Programm" %}
-  {% assign programmDisclaimer = "Das Programm kann sich jederzeit ohne Vorankündigung ändern." %}
-  {% endif %}
-
-  {%- assign rooms = rootResource | rdf_container: "site:rooms" -%}
-  {% for room in rooms %}
-  <div class="slide" data-anchor="{{ room | split: "#" | last }}">
-    <div class="container">
-      <div class="jumbotron jumbotron-program">
-      <strong>{{programmLabel}}</strong> – <em>{{ programmDisclaimer }}</em>
-      <div class="programNav">
-      {%- assign roomsNav = rootResource | rdf_container: "site:rooms" -%}
-      {% for roomNav in roomsNav %}
-      {% if roomNav == room %}
-      <h2 style="display: inline">{{ roomNav | rdf_property: "rdfs:label", page.language }}</h2>
-      {% else %}
-      <span><a href="#Programm/{{ roomNav | split: "#" | last }}">{{ roomNav | rdf_property: "rdfs:label", page.language }}</a></span>
-      {% endif %}
-      {% unless forloop.last %}
-      •
-      {% endunless %}
-      {% endfor %}
       </div>
-
-      {% capture events_query %}
-      SELECT ?event WHERE {
-        ?event schema:location <{{ room.iri }}>; schema:startDate ?date .
-        <{{ rootResource.iri }}> schema:subEvent ?event .
-      } ORDER BY ASC(?date)
-      {% endcapture %}
-
-      {% assign events = room | sparql_query: events_query %}
-      {%- for events_row in events -%}
-      {%- assign event = events_row.event -%}
-      {%- assign start = event | rdf_property: "schema:startDate" | date: "%H.%M" -%}
-      {%- assign end = event | rdf_property: "schema:endDate" | date: "%H.%M" -%}
-
-      {% assign track = event | rdf_property: "site:track" %}
-      {% assign pause = "lswt:pause" | rdf_get %}
-      {% if track == pause %}
-      <h3 class="pause">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label", page.language }}</h3>
-      {% else %}
-      <h3 id="{{ event | split: "#" | last }}">{{start}} bis {{end}}: {{ event | rdf_property: "rdfs:label", page.language }}</h3>
-      {% endif %}
-      {% include performer.html event=event join="; " paragraph=true %}
-
-      {% assign description = event | rdf_property: "dc:description", page.language %}
-      {% if description %}
-      <p>{{ description }}</p>
-      {% endif %}
-
-      {% capture subEvents_query %}
-      SELECT ?event WHERE {
-        <{{ event.iri }}> schema:subEvent ?event .
-        ?event schema:startDate ?date .
-      } ORDER BY ASC(?date)
-      {% endcapture %}
-
-      {% assign subEvents = event | sparql_query: subEvents_query  %}
-
-      <ul>
-      {% for subEvent_row in subEvents %}
-      {% assign subEvent = subEvent_row.event %}
-      {% assign slideLink = subEvent | rdf_property: "schema:recordedIn" %}
-        <li>
-      {% if slideLink %}
-        „<a id="{{ subEvent | split: "#" | last }}" href="{{ subEvent | rdf_property: "schema:recordedIn" }}">{{ subEvent | rdf_property: "rdfs:label" }}</a>“
-      {% else %}
-        <a id="{{ subEvent | split: "#" | last }}"></a>„{{ subEvent | rdf_property: "rdfs:label" }}“
-      {% endif %}
-         – {% include performer.html event=subEvent join="; " %}
-         </li>
-      {% endfor %}
-      </ul>
-      {% endfor %}
-      </div>
-    </div>
-  </div>
-      {% endfor %}
-</div>
-
-<div class="section light-theme" id="TeamSection" data-anchor="Team">
-  <div class="container">
-    {% assign organizers = rootResource | rdf_property: "schema:organizer" %}
-    <h2 class="display-4">{{ organizers | rdf_property: "rdfs:label", page.language }}</h2>
-
-    {% assign organizerTeam = organizers | rdf_container %}
-
-    {% include organizers.html organizers=organizerTeam %}
-    {% assign subEvents = rootResource | rdf_property: "schema:subEvent", nil, true %}
-    {% for subEvent in subEvents %}
-    {% assign subOrganizers = subEvent | rdf_property: "schema:organizer" %}
-    {% if subOrganizers %}
-    <h3 class="display-5">{{ subOrganizers | rdf_property: "rdfs:label", page.language }}</h3>
-    {% assign subOrganizersTeam = subOrganizers | rdf_container %}
-    {% include organizers.html organizers=subOrganizersTeam %}
-    {% endif %}
-    {% endfor %}
   </div>
 </div>
 
 <div class="section light-theme" id="PartnerSection" data-anchor="Partner">
   <div class="container">
     {% assign partners = rootResource | rdf_property: "schema:partner" %}
-    <h2 class="display-4">{{ partners | rdf_property: "rdfs:label", page.language }}</h2>
+    <h2 class="display-4 white">{{ partners | rdf_property: "rdfs:label", page.language }}</h2>
     {% assign partnersList = partners | rdf_container %}
     <div class="lswt-card-columns">
       {% for partner in partnersList %}
@@ -173,32 +65,9 @@ type: Event
         </a>
       </div>
     {% endfor %}
+    <div class="tiny white">
+      Christoph Wagener / https://de.wikipedia.org/wiki/Benutzer:Cwagener / copyleft
     </div>
-    {% assign sponsors = rootResource | rdf_property: "schema:sponsor" %}
-    <h2 class="display-4">{{ sponsors | rdf_property: "rdfs:label", page.language }}</h2>
-    {% assign sponsorsList = sponsors | rdf_container %}
-    <div class="lswt-card-columns">
-      {% for sponsor in sponsorsList %}
-      <div class="card">
-        <a href="{{ sponsor | rdf_property: "foaf:homepage" }}">
-        <img src="{{ sponsor | rdf_property: "foaf:depiction" }}" class="w-100 px-3 py-3">
-        </a>
-      </div>
-    {% endfor %}
-    </div>
-  </div>
-</div>
-
-<div class="section dark-theme" id="PreviousSection" data-anchor="PreviousEvents">
-  <div class="container">
-    {% assign previousEvents = rootResource | rdf_property: "schema:successorOf" %}
-    <h2 class="display-4">{{ previousEvents | rdf_property: "rdfs:label", page.language }}</h2>
-
-    {% assign previousEventsList = previousEvents | rdf_container %}
-    <div class="lswt-card-columns">
-    {% for prev in previousEventsList %}
-    <div class="card px-3 py-3"><h5 class="card-title"><a href="{{ prev.iri }}">{{ prev | rdf_property: "rdfs:label" }}</a></h5></div>
-    {% endfor %}
     </div>
   </div>
 </div>
@@ -208,30 +77,25 @@ type: Event
     {% if page.language == "en" %}
     <h2 class="display-4">Technique</h2>
     This page is build with <a href="https://github.com/AKSW/jekyll-rdf">Jekyll RDF</a> + <a href="https://getbootstrap.com/">bootstrap</a> + <a href="https://alvarotrigo.com/fullPage/">fullPage.js</a>.
+    Fork of the <a href="https://github.com/AKSW/lswt2019.aksw.org">LSWT19</a> website.
     <h2 class="display-4">Imprint</h2>
     <ul class="nav flex-column">
-      <li><a href="https://infai.org/das-institut/impressum/">Imprint</a></li>
-      <li><a href="#Datenschutz">Privacy Policy</a></li>
+      <li><a href="https://www.iwm.fraunhofer.de/de/impressum.html">Imprint</a></li>
+      <li><a href="https://www.iwm.fraunhofer.de/de/datenschutzerklaerung.html">Privacy Policy</a></li>
       <li><a href="https://infai.org/das-institut/kontakt/">Contact</a></li>
-      <li>Copyright {{ 'now' | date: "%Y" }} Institut für Angewandte Informatik e.V.</li>
+      <li>Copyright {{ 'now' | date: "%Y" }} Fraunhofer-Institut für Werkstoffmechanik IWM</li>
     </ul>
     {% else %}
     <h2 class="display-4">Technik</h2>
     Die Seite wurde mit <a href="https://github.com/AKSW/jekyll-rdf">Jekyll RDF</a> + <a href="https://getbootstrap.com/">bootstrap</a> + <a href="https://alvarotrigo.com/fullPage/">fullPage.js</a> gebaut.
+    Fork der <a href="https://github.com/AKSW/lswt2019.aksw.org">LSWT19</a> Seite.
     <h2 class="display-4">Impressum</h2>
     <ul class="nav flex-column">
-      <li><a href="https://infai.org/das-institut/impressum/">Impressum</a></li>
-      <li><a href="#Datenschutz">Datenschutzerklärung</a></li>
+      <li><a href="https://www.iwm.fraunhofer.de/de/impressum.html">Impressum</a></li>
+      <li><a href="https://www.iwm.fraunhofer.de/de/datenschutzerklaerung.html">Datenschutzerklärung</a></li>
       <li><a href="https://infai.org/das-institut/kontakt/">Kontaktformular</a></li>
-      <li>Copyright {{ 'now' | date: "%Y" }} Institut für Angewandte Informatik e.V.</li>
+      <li>Copyright {{ 'now' | date: "%Y" }} Fraunhofer-Institut für Werkstoffmechanik IWM</li>
     </ul>
     {% endif %}
-  </div>
-</div>
-
-
-<div class="section" id="DatenschutzSection" data-anchor="Datenschutz">
-  <div class="container">
-    {% include datenschutz.html %}
   </div>
 </div>
