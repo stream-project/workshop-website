@@ -10,3 +10,4 @@ PREFIX akswgroups: <http://aksw.org/Groups/>
 PREFIX akswpartner: <http://aksw.org/Partner/>
 PREFIX site: <http://ns.ontowiki.net/SysOnt/Site/>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX dummy: <http://dummy.org/>
