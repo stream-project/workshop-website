@@ -15,6 +15,7 @@ type: Event
         <a href="{{ rootResource | rdf_property: "site:programm" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:programm" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:registrationPage" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:registrationPage" | rdf_property: "rdfs:label", page.language }}</a>
         <a href="{{ rootResource | rdf_property: "site:flyer" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "site:flyer" | rdf_property: "rdfs:label", page.language }}</a>
+        <a href="{{ rootResource | rdf_property: "dummy:calendar" | rdf_property: "dummy:uri" }}" role="button" class="btn btn-success">{{ rootResource | rdf_property: "dummy:calendar" | rdf_property: "rdfs:label", page.language }}</a>
       </p>
 
       <dl>
@@ -23,6 +24,10 @@ type: Event
         <dt>{{ "schema:location" | rdf_property: "rdfs:label", page.language }}</dt>
         {% assign location = rootResource | rdf_property: "schema:location" %}
         <dd><a href="{{ location.page_url }}">{% include address.html location=location %}</a></dd>
+        <dt>{{ rootResource | rdf_property: "dummy:language" | rdf_property: "rdfs:comment", page.language }}</dt>
+        <dd>{{ rootResource | rdf_property: "dummy:language" | rdf_property: "rdfs:label", page.language }}</dd>
+        <dt>{{ rootResource | rdf_property: "dummy:costs" | rdf_property: "rdfs:comment", page.language }}</dt>
+        <dd>{{ rootResource | rdf_property: "dummy:costs" | rdf_property: "rdfs:label", page.language }}</dd>
         <div class="tiny">
           © Simon Waldherr / https://commons.wikimedia.org/wiki/User:SimonWaldherr / CC BY-SA 4.0
         </div>
@@ -93,7 +98,7 @@ type: Event
     <ul class="nav flex-column">
       <li><a href="https://www.iwm.fraunhofer.de/de/impressum.html">Impressum</a></li>
       <li><a href="https://www.iwm.fraunhofer.de/de/datenschutzerklaerung.html">Datenschutzerklärung</a></li>
-      <li><a href="https://infai.org/das-institut/kontakt/">Kontaktformular</a></li>
+      <li><a href="https://www.iwm.fraunhofer.de/de/kontakt.html">Kontaktformular</a></li>
       <li>Copyright {{ 'now' | date: "%Y" }} Fraunhofer-Institut für Werkstoffmechanik IWM</li>
     </ul>
     {% endif %}
